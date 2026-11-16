@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="규칙 판정 · 독립 판정 모델(판정 서버) · 판정 집계의 사용법">
+        <meta name="description" content="규칙 판정 · 독립 판정 모델(판정 서버) · 판정 집계의 사용법(기업 API 호출 없음)">
       
       
       
@@ -27,7 +27,7 @@
     
     
       
-        <title>GET /ping - TTA 신뢰성 평가 v2 판정 모듈 개발 문서 (윤승현 · seunghyun)</title>
+        <title>GET /ping - TTA 신뢰성 평가 판정 모듈 개발 문서 (윤승현 · seunghyun)</title>
       
     
     
@@ -94,7 +94,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="상단/헤더">
-    <a href="../.." title="TTA 신뢰성 평가 v2 판정 모듈 개발 문서 (윤승현 · seunghyun)" class="md-header__button md-logo" aria-label="TTA 신뢰성 평가 v2 판정 모듈 개발 문서 (윤승현 · seunghyun)" data-md-component="logo">
+    <a href="../.." title="TTA 신뢰성 평가 판정 모듈 개발 문서 (윤승현 · seunghyun)" class="md-header__button md-logo" aria-label="TTA 신뢰성 평가 판정 모듈 개발 문서 (윤승현 · seunghyun)" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -108,7 +108,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            TTA 신뢰성 평가 v2 판정 모듈 개발 문서 (윤승현 · seunghyun)
+            TTA 신뢰성 평가 판정 모듈 개발 문서 (윤승현 · seunghyun)
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -218,13 +218,13 @@
 
 <nav class="md-nav md-nav--primary" aria-label="네비게이션" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="TTA 신뢰성 평가 v2 판정 모듈 개발 문서 (윤승현 · seunghyun)" class="md-nav__button md-logo" aria-label="TTA 신뢰성 평가 v2 판정 모듈 개발 문서 (윤승현 · seunghyun)" data-md-component="logo">
+    <a href="../.." title="TTA 신뢰성 평가 판정 모듈 개발 문서 (윤승현 · seunghyun)" class="md-nav__button md-logo" aria-label="TTA 신뢰성 평가 판정 모듈 개발 문서 (윤승현 · seunghyun)" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
-    TTA 신뢰성 평가 v2 판정 모듈 개발 문서 (윤승현 · seunghyun)
+    TTA 신뢰성 평가 판정 모듈 개발 문서 (윤승현 · seunghyun)
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -431,10 +431,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#무엇을-하나--언제-쓰나" class="md-nav__link">
+  <a href="#무엇" class="md-nav__link">
     <span class="md-ellipsis">
       
-        무엇을 하나 · 언제 쓰나
+        무엇
       
     </span>
   </a>
@@ -442,10 +442,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#경로--메서드" class="md-nav__link">
+  <a href="#왜--언제-쓰나" class="md-nav__link">
     <span class="md-ellipsis">
       
-        경로 · 메서드
+        왜 — 언제 쓰나
       
     </span>
   </a>
@@ -453,21 +453,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#요청-필드" class="md-nav__link">
+  <a href="#어떻게--응답-필드" class="md-nav__link">
     <span class="md-ellipsis">
       
-        요청 필드
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#응답-필드" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        응답 필드
+        어떻게 — 응답 필드
       
     </span>
   </a>
@@ -479,17 +468,6 @@
     <span class="md-ellipsis">
       
         예시
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#응답-예시" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        응답 예시
       
     </span>
   </a>
@@ -863,10 +841,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#무엇을-하나--언제-쓰나" class="md-nav__link">
+  <a href="#무엇" class="md-nav__link">
     <span class="md-ellipsis">
       
-        무엇을 하나 · 언제 쓰나
+        무엇
       
     </span>
   </a>
@@ -874,10 +852,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#경로--메서드" class="md-nav__link">
+  <a href="#왜--언제-쓰나" class="md-nav__link">
     <span class="md-ellipsis">
       
-        경로 · 메서드
+        왜 — 언제 쓰나
       
     </span>
   </a>
@@ -885,21 +863,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#요청-필드" class="md-nav__link">
+  <a href="#어떻게--응답-필드" class="md-nav__link">
     <span class="md-ellipsis">
       
-        요청 필드
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#응답-필드" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        응답 필드
+        어떻게 — 응답 필드
       
     </span>
   </a>
@@ -911,17 +878,6 @@
     <span class="md-ellipsis">
       
         예시
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#응답-예시" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        응답 예시
       
     </span>
   </a>
@@ -968,27 +924,30 @@
 
 
 <h1 id="get-ping--살아-있는지-확인">GET /ping — 살아 있는지 확인<a class="headerlink" href="#get-ping--살아-있는지-확인" title="Permanent link">&para;</a></h1>
-<h2 id="무엇을-하나--언제-쓰나">무엇을 하나 · 언제 쓰나<a class="headerlink" href="#무엇을-하나--언제-쓰나" title="Permanent link">&para;</a></h2>
+<div class="admonition abstract">
+<p class="admonition-title">이 쪽에서 알 수 있는 것</p>
 <ul>
-<li>판정 서버가 켜져 있는지, 어떤 모델 이름으로 떠 있는지, 지금까지의 호출 통계를 돌려줌</li>
+<li>판정 서버가 켜져 있는지 · 어떤 판정 모델(실제 · 가짜)로 떠 있는지 확인하는 법</li>
+<li>응답 필드(호출 통계 포함)의 뜻</li>
+<li>토큰을 설정했을 때 부르는 법</li>
+</ul>
+</div>
+<h2 id="무엇">무엇<a class="headerlink" href="#무엇" title="Permanent link">&para;</a></h2>
+<ul>
+<li>판정 서버의 상태 · 모델 이름 · 지금까지의 호출 통계를 돌려줌 (<code>src/judge_api/app.py:208-213</code>)</li>
 <li><strong>판정 모델을 부르지 않음</strong> — 사용 한도를 쓰지 않음</li>
-<li>쓰는 때<ul>
-<li>서버를 켠 직후(<code>make judge-up</code>이 3초 뒤 자동으로 부름, <code>Makefile:19</code>)</li>
-<li>실행기 <code>run_judge.py</code>가 판정을 시작하기 전에 1번. <code>ok</code>가 참이 아니면 멈춤 (<code>src/judge_api/run_judge.py:219-221</code>)</li>
-<li>긴 판정 도중 진행 · 오류 수를 볼 때</li>
-</ul>
-</li>
-</ul>
-<h2 id="경로--메서드">경로 · 메서드<a class="headerlink" href="#경로--메서드" title="Permanent link">&para;</a></h2>
-<ul>
-<li><code>GET /ping</code> (<code>src/judge_api/app.py:333-335</code>)</li>
 <li>요청 본문 · 쿼리 없음</li>
 </ul>
-<h2 id="요청-필드">요청 필드<a class="headerlink" href="#요청-필드" title="Permanent link">&para;</a></h2>
+<h2 id="왜--언제-쓰나">왜 — 언제 쓰나<a class="headerlink" href="#왜--언제-쓰나" title="Permanent link">&para;</a></h2>
 <ul>
-<li>없음</li>
+<li>서버를 켠 직후(<code>make judge-up</code>이 3초 뒤 자동으로 부름, <code>Makefile</code> <code>judge-up</code>)</li>
+<li>실행기가 판정을 시작하기 전 1번. <code>ok</code>가 참이 아니면 멈춤 (<code>src/judge_api/run_judge.py:354-356</code>)</li>
+<li>긴 판정 도중 진행 · 오류 수를 볼 때</li>
 </ul>
-<h2 id="응답-필드">응답 필드<a class="headerlink" href="#응답-필드" title="Permanent link">&para;</a></h2>
+<h2 id="어떻게--응답-필드">어떻게 — 응답 필드<a class="headerlink" href="#어떻게--응답-필드" title="Permanent link">&para;</a></h2>
+<ul>
+<li>응답 형식: <code>PingResp</code> (<code>src/judge_api/schemas.py:151-159</code>)</li>
+</ul>
 <table>
 <thead>
 <tr>
@@ -1009,42 +968,48 @@
 <td><code>ts</code></td>
 <td>문자열</td>
 <td>서버 시각(UTC, ISO 8601, 밀리초까지)</td>
-<td>예: <code>2026-11-16T05:00:00.000+00:00</code></td>
+<td>—</td>
 </tr>
 <tr>
 <td><code>judge_model</code></td>
 <td>문자열</td>
-<td>주 판정 모델 이름(<code>JUDGE_MODEL</code>)</td>
-<td>—</td>
+<td>기본 판정 모델 이름(환경 변수 <code>JUDGE_MODEL</code>)</td>
+<td>가짜 판정 모델이고 값이 비면 <code>offline-fake-judge</code></td>
 </tr>
 <tr>
 <td><code>xling_model</code></td>
 <td>문자열</td>
 <td>교차 확인 모델 이름(<code>JUDGE_MODEL_XLING</code>)</td>
-<td>—</td>
+<td>위와 같음</td>
+</tr>
+<tr>
+<td><code>backend</code></td>
+<td>문자열</td>
+<td>판정 모델 종류(환경 변수 <code>JUDGE_BACKEND</code>)</td>
+<td><code>real</code>(실제) · <code>fake</code>(가짜, 외부 호출 없음)</td>
 </tr>
 <tr>
 <td><code>stats</code></td>
 <td>객체</td>
-<td>서버가 켜진 뒤 성공한 판정 수와 오류 수(아래 표)</td>
+<td>서버가 켜진 뒤의 판정 수 · 오류 수(아래 표)</td>
 <td>—</td>
 </tr>
 <tr>
-<td><code>shannon</code></td>
+<td><code>model_http</code></td>
 <td>객체 또는 null</td>
-<td>주 판정 모델 API 호출 통계(아래 표). 서버 시작 처리 전이면 null</td>
+<td>판정 모델 API 호출 통계(아래 표). 가짜 판정 모델이거나 아직 한 번도 부르지 않았으면 null</td>
 <td>—</td>
 </tr>
 <tr>
 <td><code>concurrency_limit</code></td>
 <td>정수 또는 null</td>
-<td>주 판정 모델 API에 지금 허용한 동시 호출 수(자동 조절 값). 시작 처리 전이면 null</td>
+<td>판정 모델 API에 지금 허용한 동시 호출 수(자동 조절 값). <code>model_http</code>가 null이면 null</td>
 <td>처음 4</td>
 </tr>
 </tbody>
 </table>
 <ul>
-<li><code>stats</code> 안 (<code>src/judge_api/app.py:41</code>, <code>:261</code>, <code>:284</code>, <code>:298</code>, <code>:310-313</code>)</li>
+<li><code>stats</code> 안 (<code>src/judge_api/app.py:43-44</code>, <code>:67</code>, <code>:117</code>, <code>:121</code>, <code>:137</code>, <code>:149-155</code>)</li>
 </ul>
 <table>
 <thead>
@@ -1060,11 +1025,11 @@
 </tr>
 <tr>
 <td><code>model_errors</code></td>
-<td>판정 모델 호출 실패 횟수(502를 돌려준 원인)</td>
+<td>502를 돌려준 횟수(판정 모델 호출 실패 · 출력 형식 오류)</td>
 </tr>
 <tr>
 <td><code>xling_mode</code></td>
-<td><code>JUDGE_XLING</code> 값(<code>on</code> · <code>off</code> · <code>auto</code>)</td>
+<td><code>JUDGE_XLING</code> 값(<code>on</code> · <code>off</code> · <code>auto</code>). 서버 시작 처리 전이면 null</td>
 </tr>
 <tr>
 <td><code>xling_skipped</code></td>
@@ -1081,7 +1046,7 @@
 </tbody>
 </table>
 <ul>
-<li><code>shannon</code> 안 (<code>src/common/core.py:159</code>, <code>:187-188</code>)</li>
+<li><code>model_http</code> 안 (<code>src/common/http.py:132</code>, <code>:164-189</code>)</li>
 </ul>
 <table>
 <thead>
@@ -1118,15 +1083,17 @@
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>curl<span class="w"> </span>-s<span class="w"> </span>http://127.0.0.1:8787/ping
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="c1"># JUDGE_API_TOKEN 을 설정했다면</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>curl<span class="w"> </span>-s<span class="w"> </span>-H<span class="w"> </span><span class="s2">"Authorization: Bearer </span><span class="nv">$JUDGE_API_TOKEN</span><span class="s2">"</span><span class="w"> </span>http://127.0.0.1:8787/ping
 </code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">asyncio</span><span class="o">,</span><span class="w"> </span><span class="nn">sys</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s2">"src"</span><span class="p">)</span>            <span class="c1"># 저장소 최상위에서 실행</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="kn">from</span><span class="w"> </span><span class="nn">judge_api.client</span><span class="w"> </span><span class="kn">import</span> <span class="n">JudgeClient</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># 저장소 최상위에서: .venv/bin/python 이 파일.py</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">asyncio</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="kn">from</span><span class="w"> </span><span class="nn">src.judge_api.client</span><span class="w"> </span><span class="kn">import</span> <span class="n">JudgeClient</span>
 <a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
 <a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>    <span class="n">c</span> <span class="o">=</span> <span class="n">JudgeClient</span><span class="p">()</span>                <span class="c1"># 기본 주소: JUDGE_API_URL 또는 http://127.0.0.1:8787</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>    <span class="n">c</span> <span class="o">=</span> <span class="n">JudgeClient</span><span class="p">()</span>                <span class="c1"># 주소: JUDGE_API_URL 또는 http://127.0.0.1:8787, 토큰: JUDGE_API_TOKEN</span>
 <a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>    <span class="nb">print</span><span class="p">(</span><span class="k">await</span> <span class="n">c</span><span class="o">.</span><span class="n">ping</span><span class="p">())</span>
 <a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>    <span class="k">await</span> <span class="n">c</span><span class="o">.</span><span class="n">aclose</span><span class="p">()</span>
 <a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>
@@ -1135,32 +1102,31 @@
 </div>
 </div>
 </div>
-<h2 id="응답-예시">응답 예시<a class="headerlink" href="#응답-예시" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>예시(실제 호출 결과 아님)</strong> — 서버를 켠 뒤 판정을 몇 번 한 상태를 코드의 응답 구조대로 손으로 씀</li>
+<li>응답 예시: <code>JUDGE_BACKEND=fake</code>로 FastAPI <code>TestClient</code>에서 판정 1건을 부른 뒤 실제로 받은 값(<code>ts</code>만 가림)</li>
 </ul>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">{</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="nt">"ok"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span><span class="nt">"ts"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2026-11-16T05:00:00.000+00:00"</span><span class="p">,</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">  </span><span class="nt">"judge_model"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;JUDGE_MODEL 값&gt;"</span><span class="p">,</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">  </span><span class="nt">"xling_model"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;JUDGE_MODEL_XLING 값&gt;"</span><span class="p">,</span>
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">  </span><span class="nt">"stats"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">    </span><span class="nt">"faithfulness"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w"> </span><span class="nt">"rubric"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="nt">"meta"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="nt">"robustness"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="nt">"model_errors"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">    </span><span class="nt">"xling_mode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"auto"</span><span class="p">,</span><span class="w"> </span><span class="nt">"xling_skipped"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="nt">"xling_circuit_open"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
-<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">  </span><span class="p">},</span>
-<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">  </span><span class="nt">"shannon"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">"calls"</span><span class="p">:</span><span class="w"> </span><span class="mi">16</span><span class="p">,</span><span class="w"> </span><span class="nt">"ok"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w"> </span><span class="nt">"retries"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="nt">"fail"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">"200"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w"> </span><span class="nt">"429"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">}},</span>
-<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">  </span><span class="nt">"concurrency_limit"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span>
-<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="p">}</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span><span class="nt">"ts"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;서버 시각&gt;"</span><span class="p">,</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">  </span><span class="nt">"judge_model"</span><span class="p">:</span><span class="w"> </span><span class="s2">"offline-fake-judge"</span><span class="p">,</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">  </span><span class="nt">"xling_model"</span><span class="p">:</span><span class="w"> </span><span class="s2">"offline-fake-judge"</span><span class="p">,</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">  </span><span class="nt">"backend"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fake"</span><span class="p">,</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">  </span><span class="nt">"stats"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">"faithfulness"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="nt">"rubric"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="nt">"meta"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="nt">"robustness"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="nt">"model_errors"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">            </span><span class="nt">"xling_mode"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="nt">"xling_skipped"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="nt">"xling_circuit_open"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">},</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">  </span><span class="nt">"model_http"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">  </span><span class="nt">"concurrency_limit"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="p">}</span>
 </code></pre></div>
 <h2 id="판정-값-읽는-법">판정 값 읽는 법<a class="headerlink" href="#판정-값-읽는-법" title="Permanent link">&para;</a></h2>
 <ul>
 <li>판정 값 없음. <code>ok</code>가 <code>true</code>면 켜진 것</li>
-<li>판정이 자꾸 502로 끝날 때: <code>stats.model_errors</code> · <code>shannon.status</code>의 429 · 5xx 횟수를 볼 것</li>
+<li>판정이 자꾸 502로 끝날 때: <code>stats.model_errors</code> · <code>model_http.status</code>의 429 · 5xx 횟수를 볼 것</li>
+<li><code>backend</code>가 <code>fake</code>면 판정 결과는 시험용(실제 판정 아님)</li>
 </ul>
 <h2 id="주의할-점">주의할 점<a class="headerlink" href="#주의할-점" title="Permanent link">&para;</a></h2>
 <ul>
-<li><code>JudgeClient.ping()</code>은 실패해도 예외를 내지 않고 <code>{"error": ...}</code>를 돌려줌 → <code>ok</code> 키로 확인할 것 (<code>src/judge_api/client.py:38-40</code>)</li>
-<li><code>shannon</code> · <code>concurrency_limit</code>가 null이면 서버 시작 처리(<code>startup</code>)가 돌지 않은 것 — <code>uvicorn</code>으로 띄운 서버에서는 값이 있음. FastAPI <code>TestClient</code>를 <code>with</code> 없이 쓰면 null로 나옴</li>
+<li><code>JudgeClient.ping()</code>은 실패해도 예외를 내지 않고 <code>{"error": ...}</code>를 돌려줌 → <code>ok</code> 키로 확인 (<code>src/judge_api/client.py:57-59</code>)</li>
+<li><code>stats.xling_mode</code>가 null이면 서버 시작 처리(lifespan)가 돌지 않은 것 — <code>uvicorn</code>으로 띄운 서버는 값이 있음. <code>TestClient</code>를 <code>with</code> 없이 쓰거나 같은 프로세스 호출(<code>in_process=True</code>)이면 null</li>
 <li><code>stats</code>는 서버를 끄면 사라짐(메모리에만 있음)</li>
 <li>응답에 모델 이름이 들어 있음 → 결과를 밖으로 공유할 때 주의</li>
 </ul>

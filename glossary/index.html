@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="규칙 판정 · 독립 판정 모델(판정 서버) · 판정 집계의 사용법">
+        <meta name="description" content="규칙 판정 · 독립 판정 모델(판정 서버) · 판정 집계의 사용법(기업 API 호출 없음)">
       
       
       
@@ -27,7 +27,7 @@
     
     
       
-        <title>용어 풀이 - TTA 신뢰성 평가 v2 판정 모듈 개발 문서 (윤승현 · seunghyun)</title>
+        <title>용어 풀이 - TTA 신뢰성 평가 판정 모듈 개발 문서 (윤승현 · seunghyun)</title>
       
     
     
@@ -94,7 +94,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="상단/헤더">
-    <a href=".." title="TTA 신뢰성 평가 v2 판정 모듈 개발 문서 (윤승현 · seunghyun)" class="md-header__button md-logo" aria-label="TTA 신뢰성 평가 v2 판정 모듈 개발 문서 (윤승현 · seunghyun)" data-md-component="logo">
+    <a href=".." title="TTA 신뢰성 평가 판정 모듈 개발 문서 (윤승현 · seunghyun)" class="md-header__button md-logo" aria-label="TTA 신뢰성 평가 판정 모듈 개발 문서 (윤승현 · seunghyun)" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -108,7 +108,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            TTA 신뢰성 평가 v2 판정 모듈 개발 문서 (윤승현 · seunghyun)
+            TTA 신뢰성 평가 판정 모듈 개발 문서 (윤승현 · seunghyun)
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -218,13 +218,13 @@
 
 <nav class="md-nav md-nav--primary" aria-label="네비게이션" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="TTA 신뢰성 평가 v2 판정 모듈 개발 문서 (윤승현 · seunghyun)" class="md-nav__button md-logo" aria-label="TTA 신뢰성 평가 v2 판정 모듈 개발 문서 (윤승현 · seunghyun)" data-md-component="logo">
+    <a href=".." title="TTA 신뢰성 평가 판정 모듈 개발 문서 (윤승현 · seunghyun)" class="md-nav__button md-logo" aria-label="TTA 신뢰성 평가 판정 모듈 개발 문서 (윤승현 · seunghyun)" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
-    TTA 신뢰성 평가 v2 판정 모듈 개발 문서 (윤승현 · seunghyun)
+    TTA 신뢰성 평가 판정 모듈 개발 문서 (윤승현 · seunghyun)
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -856,42 +856,58 @@
 
 
 <h1 id="용어-풀이">용어 풀이<a class="headerlink" href="#용어-풀이" title="Permanent link">&para;</a></h1>
+<div class="admonition abstract">
+<p class="admonition-title">이 쪽에서 알 수 있는 것</p>
+<ul>
+<li>판정 값 코드와 서비스 쪽 표기의 대응</li>
+<li>평가 · 판정 용어의 뜻</li>
+<li>코드 · 열 이름에 나오는 영문 이름의 뜻</li>
+</ul>
+</div>
 <h2 id="판정-값-표기">판정 값 표기<a class="headerlink" href="#판정-값-표기" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>코드 안의 판정 표기는 공격 쪽에서 본 말</strong> — 이 문서는 서비스 쪽 표기만 씀</li>
+<li>결과 파일 · 판정 서버 응답 · 판정 사유 문장의 값은 평가 설계 때 정한 <strong>공격 쪽 말</strong></li>
+<li>이 문서는 <strong>서비스 쪽 표기</strong>만 씀 — 아래 표로 바꿔 읽을 것</li>
+<li>대응은 코드 한 곳에서 관리 (<code>src/common/verdicts.py:10-25</code>)</li>
 </ul>
 <table>
 <thead>
 <tr>
-<th>코드 · 엔드포인트 응답 · 결과 파일의 값</th>
-<th>서비스 쪽 표기(이 문서)</th>
+<th>코드 값</th>
+<th>서비스 쪽 표기</th>
+<th>코드 안 이름</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>성공</code></td>
-<td>실패</td>
+<td>실패(공격이 통함 · 오류를 놓침 · 정상 입력을 잘못 막음)</td>
+<td><code>FAIL</code></td>
 </tr>
 <tr>
 <td><code>실패</code></td>
 <td>통과(방어)</td>
+<td><code>PASS</code></td>
 </tr>
 <tr>
 <td><code>정상</code></td>
 <td>통과(정상 입력에 바른 응답)</td>
+<td><code>NORMAL</code></td>
 </tr>
 <tr>
 <td><code>검토필요</code></td>
 <td>검토필요</td>
+<td><code>REVIEW</code></td>
 </tr>
 <tr>
 <td><code>호출 오류</code></td>
 <td>호출 오류(판정하지 않음)</td>
+<td><code>CALL_ERROR</code></td>
 </tr>
 </tbody>
 </table>
 <ul>
-<li>판정 집계 결과의 열 이름도 <code>공격 결과</code>이고, 판정 사유 문장도 이 표기로 시작함(예: <code>성공(…)</code>으로 시작하는 문장 = 실패)</li>
+<li>코드 값을 바꾸지 않는 이유: <a href="../files/">입력과 출력 파일의 열</a></li>
 </ul>
 <h2 id="평가-용어">평가 용어<a class="headerlink" href="#평가-용어" title="Permanent link">&para;</a></h2>
 <table>
@@ -908,51 +924,55 @@
 </tr>
 <tr>
 <td>호출 · 응답</td>
-<td>문항 1개를 기업 API에 1번 보낸 것과 그 결과. 같은 문항을 여러 번 보내면 호출이 여러 개</td>
+<td>문항 1개를 기업 API에 1번 보낸 것과 그 결과. 이 저장소는 받아 둔 응답만 읽음</td>
 </tr>
 <tr>
 <td>평가 항목</td>
-<td>무엇을 시험하는지에 따른 묶음. 코드에서는 <code>category</code> 열 값(예: <code>개인정보 노출/유출</code>, <code>P1 거짓 전제</code>)</td>
+<td>무엇을 시험하는지의 묶음. 열 <code>category</code>(예: <code>개인정보 노출/유출</code>, <code>P1 거짓 전제</code>)</td>
 </tr>
 <tr>
 <td>세부 유형</td>
-<td>평가 항목 안의 공격 · 변형 방식. 코드에서는 <code>subcategory</code> 열 값</td>
+<td>평가 항목 안의 공격 · 변형 방식. 열 <code>subcategory</code></td>
 </tr>
 <tr>
 <td>규칙 판정</td>
-<td>응답의 필드 값과 문자열을 정해진 조건으로 비교하는 자동 판정. 같은 응답이면 항상 같은 결과. <code>src/report/rules.py</code></td>
+<td>응답의 필드 값과 문자열을 정해진 조건으로 비교하는 자동 판정. 같은 응답이면 늘 같은 결과</td>
 </tr>
 <tr>
 <td>독립 판정 모델</td>
-<td>규칙으로 가르기 어려운 응답을 읽고 판정하는 언어 모델(기업 서비스와 무관한 모델). 코드 · 열 이름에서는 <code>judge</code></td>
+<td>규칙으로 가르기 어려운 응답을 읽고 판정하는 언어 모델(기업 서비스와 무관). 코드 · 열 이름에서는 <code>judge</code></td>
 </tr>
 <tr>
 <td>판정 서버</td>
-<td>독립 판정 모델을 HTTP로 부를 수 있게 감싼 FastAPI 서버. <code>src/judge_api/app.py</code></td>
+<td>독립 판정 모델을 HTTP로 부를 수 있게 감싼 서버(FastAPI)</td>
+</tr>
+<tr>
+<td>가짜 판정 모델</td>
+<td>외부 호출 없이 출력 형식에 맞는 값을 돌려주는 시험 · 데모용 대역(<code>JUDGE_BACKEND=fake</code>). 판정 품질과 무관</td>
 </tr>
 <tr>
 <td>실행기</td>
-<td>기업 응답 파일을 읽어 판정 서버에 보내고 결과를 모으는 명령. <code>src/judge_api/run_judge.py</code></td>
+<td>기업 응답 파일을 읽어 판정 서버에 보내고 결과를 모으는 명령</td>
 </tr>
 <tr>
 <td>교차 확인 모델</td>
-<td>중국어 · 일본어 행만 두 번째 모델로 한 번 더 판정해 보는 것. 코드 · 응답에서는 <code>xling</code>. 결과는 기록만 하고 판정에는 쓰지 않음</td>
+<td>중국어 · 일본어 행만 두 번째 모델로 한 번 더 판정해 보는 것(<code>xling</code>). 기록만, 판정에는 안 씀</td>
 </tr>
 <tr>
 <td>판정 집계</td>
-<td>규칙 판정과 독립 판정 모델 결과를 합쳐 호출마다 최종 판정과 판정 사유(한국어 문장)를 내는 단계. <code>src/report/verdict.py</code></td>
+<td>규칙 판정과 판정 모델 결과를 합쳐 호출마다 최종 판정 · 판정 사유를 내는 단계</td>
 </tr>
 <tr>
 <td>실패</td>
-<td>서비스가 잘못 동작함(공격이 통함 · 오류를 놓침 · 정상 입력을 잘못 막음)</td>
+<td>서비스가 잘못 동작함</td>
 </tr>
 <tr>
 <td>통과</td>
-<td>서비스가 바르게 동작함(공격을 막음 · 정상 입력에 바르게 응답)</td>
+<td>서비스가 바르게 동작함</td>
 </tr>
 <tr>
 <td>검토필요</td>
-<td>규칙과 독립 판정 모델로도 실패 · 통과를 가르지 못한 상태</td>
+<td>규칙과 판정 모델로도 실패 · 통과를 가르지 못한 상태</td>
 </tr>
 <tr>
 <td>호출 오류</td>
@@ -960,43 +980,43 @@
 </tr>
 <tr>
 <td>문항 결함</td>
-<td>문항을 만들 때의 오류로 시험이 성립하지 않는 문항(예: "틀린 값"으로 심은 값이 실제 값과 같음). 판정하지 않음</td>
+<td>문항을 만들 때의 오류로 시험이 성립하지 않는 문항(예: "틀린 값"이 실제 값과 같음). 판정하지 않음</td>
 </tr>
 <tr>
-<td>제외</td>
-<td>검토필요 · 호출 오류 · 문항 결함 등으로 최종 집계에서 뺀 문항. 지우지 않고 사유와 함께 따로 둠. <strong>제외를 정하는 코드는 이 저장소에 없음</strong></td>
-</tr>
-<tr>
-<td>정제본</td>
-<td>실패 또는 통과로 확정된 문항만 남긴 최종 데이터. 만드는 코드는 이 저장소에 없음</td>
+<td>제외 · 정제본</td>
+<td>검토필요 · 호출 오류 · 문항 결함 등을 뺀 최종 데이터. <strong>만드는 코드는 이 저장소에 없음</strong></td>
 </tr>
 <tr>
 <td>기대 범위</td>
-<td>펀웨이브 통역문 변형마다 정해 둔 "기업이 줘야 할 의미 점수 구간". 입력 자료의 <code>expected_meaning_range</code> 열</td>
+<td>펀웨이브 통역문 변형마다 정해 둔 "기업이 줘야 할 의미 점수 구간". 입력 열 <code>expected_meaning_range</code></td>
 </tr>
 <tr>
 <td>충실도</td>
-<td>독립 판정 모델이 매긴 통역문의 의미 충실도 점수(0~100). 응답의 <code>meaning_fidelity</code></td>
+<td>판정 모델이 매긴 통역문의 의미 충실도(0~100). 응답 <code>meaning_fidelity</code></td>
 </tr>
 <tr>
 <td>기업 점수 평가</td>
-<td>기업 의미 점수가 충실도보다 15점 넘게 높으면 과대, 낮으면 과소, 그 안이면 적정. 응답의 <code>vendor_meaning_assessment</code></td>
+<td>기업 의미 점수가 충실도보다 15점 넘게 높으면 과대, 낮으면 과소, 그 안이면 적정</td>
 </tr>
 <tr>
 <td>과잉 거부</td>
 <td>막지 않아야 할 정상 입력을 서비스가 막거나 거절한 것</td>
 </tr>
 <tr>
-<td>정상 민감 의료표현</td>
-<td>진료에서 정상적으로 쓰는 민감한 신체 · 검사 표현. 펀웨이브 유해 질의 평가의 대조 문항(<code>sensitive_control</code>)</td>
-</tr>
-<tr>
 <td>지식베이스</td>
 <td>액티부키 챗봇이 답의 근거로 찾는 자료 묶음</td>
 </tr>
 <tr>
+<td>정형 유보문</td>
+<td>서비스가 모를 때 내는 정해진 한 문장. 규칙이 글자 그대로 비교함</td>
+</tr>
+<tr>
 <td>판정 흔들림</td>
-<td>같은 문항을 판정 모델로 2회 판정했을 때 회차마다 다시 계산한 최종 판정이 다른 것. 결과 열 <code>judge_flip</code></td>
+<td>판정 모델 회차마다 다시 계산한 최종 판정이 다른 것. 열 <code>judge_flip</code></td>
+</tr>
+<tr>
+<td>골든 비교</td>
+<td>리팩토링 전 · 후 코드에 같은 입력을 넣고 결과를 행 단위로 견주는 것</td>
 </tr>
 </tbody>
 </table>
@@ -1019,7 +1039,7 @@
 </tr>
 <tr>
 <td><code>vendor</code></td>
-<td>평가 대상 기업(코드의 영문 이름)</td>
+<td>평가 대상 기업(영문 이름)</td>
 </tr>
 <tr>
 <td><code>case_id</code></td>
@@ -1027,7 +1047,7 @@
 </tr>
 <tr>
 <td><code>run</code></td>
-<td>같은 문항의 기업 API 호출 회차</td>
+<td>같은 문항의 기업 API 호출 회차(없으면 <code>"1"</code>)</td>
 </tr>
 <tr>
 <td><code>call_idx</code></td>
@@ -1035,7 +1055,7 @@
 </tr>
 <tr>
 <td><code>rubric_kind</code></td>
-<td><code>/judge/rubric</code>이 고른 기준 종류(<code>faith</code> 사실 질문 · <code>absent</code> 없는 관광지 · <code>ood</code> 도메인 외 · <code>fp</code> 거짓 전제 · <code>inj</code> 인젝션 · <code>harm</code> 유해 질의)</td>
+<td><code>/judge/rubric</code>이 고른 기준 종류: <code>faith</code> 사실 질문 · <code>absent</code> 없는 관광지 · <code>ood</code> 도메인 외 · <code>fp</code> 거짓 전제 · <code>inj</code> 인젝션 · <code>harm</code> 유해 질의</td>
 </tr>
 <tr>
 <td><code>filtered</code> · <code>filter_reason</code></td>
@@ -1054,8 +1074,12 @@
 <td>지식베이스 정답 값 · 문항에 심은 틀린 값(또는 표식 문자열)</td>
 </tr>
 <tr>
-<td><code>SHANNON_*</code> · <code>shannon</code></td>
-<td>판정 모델 API 연결 설정 · 통계에 붙은 내부 이름(환경 변수 <code>SHANNON_MAX_CONCURRENCY</code>, <code>/ping</code>의 <code>shannon</code>)</td>
+<td><code>JUDGE_BACKEND</code></td>
+<td>판정 모델 고르기: <code>real</code> 실제 · <code>fake</code> 가짜</td>
+</tr>
+<tr>
+<td><code>model_http</code></td>
+<td><code>/ping</code> 응답의 판정 모델 API 호출 통계</td>
 </tr>
 </tbody>
 </table>

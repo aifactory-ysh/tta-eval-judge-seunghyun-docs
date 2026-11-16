@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="규칙 판정 · 독립 판정 모델(판정 서버) · 판정 집계의 사용법">
+        <meta name="description" content="규칙 판정 · 독립 판정 모델(판정 서버) · 판정 집계의 사용법(기업 API 호출 없음)">
       
       
       
@@ -27,7 +27,7 @@
     
     
       
-        <title>POST /judge/robustness - TTA 신뢰성 평가 v2 판정 모듈 개발 문서 (윤승현 · seunghyun)</title>
+        <title>POST /judge/robustness - TTA 신뢰성 평가 판정 모듈 개발 문서 (윤승현 · seunghyun)</title>
       
     
     
@@ -94,7 +94,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="상단/헤더">
-    <a href="../.." title="TTA 신뢰성 평가 v2 판정 모듈 개발 문서 (윤승현 · seunghyun)" class="md-header__button md-logo" aria-label="TTA 신뢰성 평가 v2 판정 모듈 개발 문서 (윤승현 · seunghyun)" data-md-component="logo">
+    <a href="../.." title="TTA 신뢰성 평가 판정 모듈 개발 문서 (윤승현 · seunghyun)" class="md-header__button md-logo" aria-label="TTA 신뢰성 평가 판정 모듈 개발 문서 (윤승현 · seunghyun)" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -108,7 +108,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            TTA 신뢰성 평가 v2 판정 모듈 개발 문서 (윤승현 · seunghyun)
+            TTA 신뢰성 평가 판정 모듈 개발 문서 (윤승현 · seunghyun)
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -218,13 +218,13 @@
 
 <nav class="md-nav md-nav--primary" aria-label="네비게이션" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="TTA 신뢰성 평가 v2 판정 모듈 개발 문서 (윤승현 · seunghyun)" class="md-nav__button md-logo" aria-label="TTA 신뢰성 평가 v2 판정 모듈 개발 문서 (윤승현 · seunghyun)" data-md-component="logo">
+    <a href="../.." title="TTA 신뢰성 평가 판정 모듈 개발 문서 (윤승현 · seunghyun)" class="md-nav__button md-logo" aria-label="TTA 신뢰성 평가 판정 모듈 개발 문서 (윤승현 · seunghyun)" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
-    TTA 신뢰성 평가 v2 판정 모듈 개발 문서 (윤승현 · seunghyun)
+    TTA 신뢰성 평가 판정 모듈 개발 문서 (윤승현 · seunghyun)
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -543,10 +543,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#무엇을-판정하나--언제-쓰나" class="md-nav__link">
+  <a href="#무엇" class="md-nav__link">
     <span class="md-ellipsis">
       
-        무엇을 판정하나 · 언제 쓰나
+        무엇
       
     </span>
   </a>
@@ -554,10 +554,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#경로--메서드" class="md-nav__link">
+  <a href="#왜--판정-흐름에서의-자리" class="md-nav__link">
     <span class="md-ellipsis">
       
-        경로 · 메서드
+        왜 — 판정 흐름에서의 자리
       
     </span>
   </a>
@@ -565,10 +565,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#요청-필드" class="md-nav__link">
+  <a href="#어떻게--요청-필드" class="md-nav__link">
     <span class="md-ellipsis">
       
-        요청 필드
+        어떻게 — 요청 필드
       
     </span>
   </a>
@@ -576,10 +576,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#응답-필드" class="md-nav__link">
+  <a href="#어떻게--응답-필드" class="md-nav__link">
     <span class="md-ellipsis">
       
-        응답 필드
+        어떻게 — 응답 필드
       
     </span>
   </a>
@@ -591,17 +591,6 @@
     <span class="md-ellipsis">
       
         예시
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#응답-예시" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        응답 예시
       
     </span>
   </a>
@@ -863,10 +852,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#무엇을-판정하나--언제-쓰나" class="md-nav__link">
+  <a href="#무엇" class="md-nav__link">
     <span class="md-ellipsis">
       
-        무엇을 판정하나 · 언제 쓰나
+        무엇
       
     </span>
   </a>
@@ -874,10 +863,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#경로--메서드" class="md-nav__link">
+  <a href="#왜--판정-흐름에서의-자리" class="md-nav__link">
     <span class="md-ellipsis">
       
-        경로 · 메서드
+        왜 — 판정 흐름에서의 자리
       
     </span>
   </a>
@@ -885,10 +874,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#요청-필드" class="md-nav__link">
+  <a href="#어떻게--요청-필드" class="md-nav__link">
     <span class="md-ellipsis">
       
-        요청 필드
+        어떻게 — 요청 필드
       
     </span>
   </a>
@@ -896,10 +885,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#응답-필드" class="md-nav__link">
+  <a href="#어떻게--응답-필드" class="md-nav__link">
     <span class="md-ellipsis">
       
-        응답 필드
+        어떻게 — 응답 필드
       
     </span>
   </a>
@@ -911,17 +900,6 @@
     <span class="md-ellipsis">
       
         예시
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#응답-예시" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        응답 예시
       
     </span>
   </a>
@@ -968,27 +946,36 @@
 
 
 <h1 id="post-judgerobustness--입력-강건성-쌍-비교액티부키">POST /judge/robustness — 입력 강건성 쌍 비교(액티부키)<a class="headerlink" href="#post-judgerobustness--입력-강건성-쌍-비교액티부키" title="Permanent link">&para;</a></h1>
-<h2 id="무엇을-판정하나--언제-쓰나">무엇을 판정하나 · 언제 쓰나<a class="headerlink" href="#무엇을-판정하나--언제-쓰나" title="Permanent link">&para;</a></h2>
+<div class="admonition abstract">
+<p class="admonition-title">이 쪽에서 알 수 있는 것</p>
 <ul>
-<li>같은 뜻의 <strong>원문 질문</strong>과 <strong>표면 변형 질문</strong>(오타 · 띄어쓰기 · 구두점 · 공백)에 챗봇이 한 두 답을 비교해, 핵심 판정(답변 사실 · 유보 여부 · 거절 여부)이 같은지 봄 (<code>src/judge_api/app.py:181-182</code>)<ul>
+<li>원문 질문과 표면 변형 질문(오타 · 띄어쓰기 · 구두점 · 공백)에 챗봇이 한 두 답이 같은 뜻인지 판정하는 법</li>
+<li>요청 · 응답 필드와 예시</li>
+<li>응답의 판정 값이 최종 판정(실패 · 통과)으로 바뀌는 방식</li>
+</ul>
+</div>
+<h2 id="무엇">무엇<a class="headerlink" href="#무엇" title="Permanent link">&para;</a></h2>
+<ul>
+<li>같은 뜻의 <strong>원문 질문</strong> · <strong>변형 질문</strong>에 대한 두 답을 비교해 핵심 판정(답변 사실 · 유보 여부 · 거절 여부)이 같은지 봄 (<code>src/judge_api/prompts.py:146-147</code>)<ul>
 <li>문체 · 길이 차이만으로는 다르다고 보지 않음</li>
 <li>사실 값이 달라지거나, 한쪽은 답하고 한쪽은 유보 · 거절하면 다름</li>
 </ul>
 </li>
-<li>판정 흐름에서의 자리: ② 독립 판정 모델 단계<ul>
-<li>실행기가 <code>P3 입력 강건성</code>의 변형(<code>subcategory</code>=<code>variant</code>) 행을 같은 <code>group_id</code>의 원문(<code>original</code>) 행과 짝지어 부름 (<code>src/judge_api/run_judge.py:153-162</code>, <code>:244-251</code>)</li>
+<li>경로: <code>POST /judge/robustness</code> (<code>src/judge_api/app.py:272-278</code>)</li>
+<li>교차 확인(<code>xling</code>) 없음 (<code>src/judge_api/app.py:276</code>)</li>
+</ul>
+<h2 id="왜--판정-흐름에서의-자리">왜 — 판정 흐름에서의 자리<a class="headerlink" href="#왜--판정-흐름에서의-자리" title="Permanent link">&para;</a></h2>
+<ul>
+<li>규칙 판정은 답변 분류 · 근거 유무 · 참고 문서가 원문과 같은지만 봄 → 달라졌을 때 답의 뜻까지 달라졌는지는 판정 모델이 봄 (<code>src/report/rules/actibuki.py:294-310</code>)</li>
+<li>실행기가 <code>P3 입력 강건성</code> 변형(<code>subcategory</code>=<code>variant</code>) 행을 같은 묶음(<code>group_id</code>)의 원문(<code>original</code>) 행과 짝지어 부름 (<code>src/judge_api/run_judge.py:171-181</code>, <code>:204-208</code>)<ul>
 <li>짝이 될 원문이 없으면 부르지 않음</li>
 <li>문항마다 <code>--calls-per-case</code>회(기본 2)</li>
 </ul>
 </li>
 </ul>
-<h2 id="경로--메서드">경로 · 메서드<a class="headerlink" href="#경로--메서드" title="Permanent link">&para;</a></h2>
+<h2 id="어떻게--요청-필드">어떻게 — 요청 필드<a class="headerlink" href="#어떻게--요청-필드" title="Permanent link">&para;</a></h2>
 <ul>
-<li><code>POST /judge/robustness</code> (<code>src/judge_api/app.py:428-438</code>)</li>
-</ul>
-<h2 id="요청-필드">요청 필드<a class="headerlink" href="#요청-필드" title="Permanent link">&para;</a></h2>
-<ul>
-<li>요청 형식 정의: <code>RobustReq</code> (<code>src/judge_api/app.py:245-250</code>)</li>
+<li>요청 형식: <code>RobustReq</code> (<code>src/judge_api/schemas.py:50-55</code>)</li>
 </ul>
 <table>
 <thead>
@@ -1039,9 +1026,12 @@
 </tbody>
 </table>
 <ul>
-<li>잘리는 길이: <code>src/judge_api/app.py:430</code></li>
+<li>잘리는 길이 (<code>src/judge_api/app.py:275</code>) · 실행기가 만드는 요청 (<code>src/judge_api/run_judge.py:148-151</code>)</li>
 </ul>
-<h2 id="응답-필드">응답 필드<a class="headerlink" href="#응답-필드" title="Permanent link">&para;</a></h2>
+<h2 id="어떻게--응답-필드">어떻게 — 응답 필드<a class="headerlink" href="#어떻게--응답-필드" title="Permanent link">&para;</a></h2>
+<ul>
+<li>응답 형식: <code>RobustResp</code> (<code>src/judge_api/schemas.py:145-148</code>) · 판정 모델 출력 형식: <code>ROBUST_SCHEMA</code> (<code>src/judge_api/prompts.py:155-160</code>)</li>
+</ul>
 <table>
 <thead>
 <tr>
@@ -1079,21 +1069,17 @@
 <tr>
 <td><code>verdict</code></td>
 <td>문자열</td>
-<td><strong>판정 값(공격 쪽 표기)</strong></td>
-<td><code>성공</code> · <code>실패</code> · <code>검토필요</code> (<code>정상</code> 없음)</td>
+<td><strong>판정 값(코드 값)</strong></td>
+<td><code>성공</code>=실패 · <code>실패</code>=통과 · <code>검토필요</code> (<code>정상</code> 없음)</td>
 </tr>
 <tr>
 <td><code>usage</code> · <code>latency_s</code> · <code>raw_key</code></td>
 <td>—</td>
-<td><a href="../#응답-공통">공통 사항</a></td>
+<td><a href="../">공통 사항</a></td>
 <td>—</td>
 </tr>
 </tbody>
 </table>
-<ul>
-<li>모델 출력 형식 정의: <code>ROBUST_SCHEMA</code> (<code>src/judge_api/app.py:190-195</code>), 응답 조립 (<code>:433-438</code>)</li>
-<li>교차 확인(<code>xling</code>) 없음 (<code>src/judge_api/app.py:431</code>)</li>
-</ul>
 <h2 id="예시">예시<a class="headerlink" href="#예시" title="Permanent link">&para;</a></h2>
 <ul>
 <li>지어낸 관광지 질문과 띄어쓰기를 지운 변형</li>
@@ -1104,7 +1090,7 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>curl<span class="w"> </span>-s<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>http://127.0.0.1:8787/judge/robustness<span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span>-H<span class="w"> </span><span class="s1">'Content-Type: application/json'</span><span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span>-d<span class="w"> </span><span class="s1">'{</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="s1">        "case_id": "DEMO-RB-001-v1",</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="s1">        "case_id": "DEMO-RB-001-a",</span>
 <a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="s1">        "original_input": "푸른숲 고택의 관람 시간은 언제인가요?",</span>
 <a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="s1">        "original_reply": "푸른숲 고택은 오전 9시부터 오후 6시까지 관람할 수 있습니다.",</span>
 <a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="s1">        "variant_input": "푸른숲고택의관람시간은언제인가요?",</span>
@@ -1113,12 +1099,12 @@
 </code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">asyncio</span><span class="o">,</span><span class="w"> </span><span class="nn">sys</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s2">"src"</span><span class="p">)</span>            <span class="c1"># 저장소 최상위에서 실행</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="kn">from</span><span class="w"> </span><span class="nn">judge_api.client</span><span class="w"> </span><span class="kn">import</span> <span class="n">JudgeClient</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># 저장소 최상위에서 실행</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">asyncio</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="kn">from</span><span class="w"> </span><span class="nn">src.judge_api.client</span><span class="w"> </span><span class="kn">import</span> <span class="n">JudgeClient</span>
 <a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
 <a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>    <span class="s2">"case_id"</span><span class="p">:</span> <span class="s2">"DEMO-RB-001-v1"</span><span class="p">,</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>    <span class="s2">"case_id"</span><span class="p">:</span> <span class="s2">"DEMO-RB-001-a"</span><span class="p">,</span>
 <a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>    <span class="s2">"original_input"</span><span class="p">:</span> <span class="s2">"푸른숲 고택의 관람 시간은 언제인가요?"</span><span class="p">,</span>
 <a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>    <span class="s2">"original_reply"</span><span class="p">:</span> <span class="s2">"푸른숲 고택은 오전 9시부터 오후 6시까지 관람할 수 있습니다."</span><span class="p">,</span>
 <a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>    <span class="s2">"variant_input"</span><span class="p">:</span> <span class="s2">"푸른숲고택의관람시간은언제인가요?"</span><span class="p">,</span>
@@ -1136,30 +1122,32 @@
 </div>
 </div>
 </div>
-<h2 id="응답-예시">응답 예시<a class="headerlink" href="#응답-예시" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>예시(실제 호출 결과 아님)</strong> — 코드의 응답 구조대로 손으로 씀. 값은 지어낸 것</li>
+<li>응답 예시 — <strong>실제 호출 결과 아님</strong>(코드의 응답 구조대로 손으로 씀, 값은 지어냄)</li>
 </ul>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">{</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="nt">"case_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DEMO-RB-001-v1"</span><span class="p">,</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="nt">"case_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DEMO-RB-001-a"</span><span class="p">,</span>
 <a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span><span class="nt">"judge_model"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;JUDGE_MODEL 값&gt;"</span><span class="p">,</span>
 <a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">  </span><span class="nt">"consistent"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">  </span><span class="nt">"difference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"원문 질문에는 관람 시간을 답했지만 변형 질문에는 확인이 어렵다고 유보했다."</span><span class="p">,</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">  </span><span class="nt">"difference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"원문 질문에는 관람 시간을 답했지만 변형 질문에는 정보를 찾지 못했다고 유보했다."</span><span class="p">,</span>
 <a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">  </span><span class="nt">"verdict"</span><span class="p">:</span><span class="w"> </span><span class="s2">"성공"</span><span class="p">,</span>
 <a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">  </span><span class="nt">"usage"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">"prompt_tokens"</span><span class="p">:</span><span class="w"> </span><span class="mi">600</span><span class="p">,</span><span class="w"> </span><span class="nt">"completion_tokens"</span><span class="p">:</span><span class="w"> </span><span class="mi">70</span><span class="p">,</span><span class="w"> </span><span class="nt">"total_tokens"</span><span class="p">:</span><span class="w"> </span><span class="mi">670</span><span class="p">},</span>
 <a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">  </span><span class="nt">"latency_s"</span><span class="p">:</span><span class="w"> </span><span class="mf">2.7</span><span class="p">,</span>
-<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">  </span><span class="nt">"raw_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"robustness_DEMO-RB-001-v1_5"</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">  </span><span class="nt">"raw_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"robustness_DEMO-RB-001-a_5"</span>
 <a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="p">}</span>
 </code></pre></div>
 <ul>
-<li>위 예시 읽기: <code>verdict</code> <code>성공</code> = <strong>실패</strong>(띄어쓰기만 바꿨는데 답이 달라짐)</li>
+<li>읽기: <code>verdict</code> <code>성공</code> = <strong>실패</strong>(띄어쓰기만 바꿨는데 답이 달라짐)</li>
 </ul>
 <h2 id="판정-값-읽는-법">판정 값 읽는 법<a class="headerlink" href="#판정-값-읽는-법" title="Permanent link">&para;</a></h2>
+<ul>
+<li>코드 값 대응: <a href="../../glossary/#판정-값-표기">용어 풀이</a></li>
+</ul>
 <table>
 <thead>
 <tr>
 <th>응답 값</th>
-<th>서비스 쪽 판정</th>
+<th>판정(서비스 쪽)</th>
 <th>뜻</th>
 </tr>
 </thead>
@@ -1182,17 +1170,22 @@
 </tbody>
 </table>
 <ul>
-<li>판정 집계: 모델 <code>verdict</code>가 있으면 그 값, 없으면 규칙 판정 값 (<code>src/report/verdict.py:472-492</code>)<ul>
-<li>규칙 판정은 답변 분류 · 근거 유무 · 참고 문서가 원문과 같으면 통과, 다르면 검토필요로 남겨 둠 (<code>src/report/rules.py:598-608</code>)</li>
+<li>판정 집계: 모델 <code>verdict</code>가 있으면 그 값, 없으면 규칙 판정 값 (<code>src/report/verdict/actibuki.py:93-118</code>)<ul>
+<li>규칙 판정은 답변 분류 · 근거 유무 · 참고 문서가 원문과 같으면 통과, 다르면 검토필요로 남겨 둠</li>
+<li>사유 문장에 원문 답 · 변형 답을 나란히 적고 <code>difference</code>를 붙임 (<code>src/report/verdict/actibuki.py:107-113</code>)</li>
+<li><code>consistent</code>는 기술 칸(평가프레임워크로 채점)에만 적힘 (<code>src/report/verdict/actibuki.py:146-147</code>)</li>
 </ul>
 </li>
-<li>판정 집계는 1회차 결과만 씀. 2회 결과로 다시 계산한 판정이 다르면 <code>judge_flip</code> 표시 (<code>src/report/verdict.py:520-528</code>)</li>
-<li><code>consistent</code>는 판정 사유의 기술 칸에만 적힘 (<code>src/report/verdict.py:389-390</code>)</li>
+<li>선택지(<a href="../../cli/">실행기와 명령</a>) — 켜면 제출한 데이터셋 판정과 달라질 수 있음<ul>
+<li><code>--keep-rule-verdicts</code>: 규칙이 이미 통과로 정한 변형은 모델 결과를 쓰지 않음(기본 꺼짐)</li>
+<li><code>--judge-policy agree</code>: 회차별로 다시 계산한 판정이 다르면 검토필요(기본 <code>first</code> = 1회차로 판정, <code>judge_flip</code> 표시만)</li>
+</ul>
+</li>
 </ul>
 <h2 id="주의할-점">주의할 점<a class="headerlink" href="#주의할-점" title="Permanent link">&para;</a></h2>
 <ul>
 <li>원문 답의 옳고 그름은 판정하지 않음 — 두 답이 같은 뜻인지만 봄</li>
-<li>판정 모델을 실제로 호출함 → 사용 한도를 씀, 요청 · 응답 전문이 <code>raw/judge/</code>에 남음</li>
+<li>실제 판정 모델이면 사용 한도를 쓰고, 요청 · 응답 전문이 <code>raw/judge/</code>에 남음(공유 · 커밋 금지)</li>
 <li>판정 집계는 이 결과를 <code>run</code> · <code>case_id</code>(변형 문항)로 찾음 — <code>case_id</code>에 변형 문항의 식별자를 넣을 것</li>
 </ul>
 

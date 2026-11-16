@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="규칙 판정 · 독립 판정 모델(판정 서버) · 판정 집계의 사용법">
+        <meta name="description" content="규칙 판정 · 독립 판정 모델(판정 서버) · 판정 집계의 사용법(기업 API 호출 없음)">
       
       
       
@@ -25,7 +25,7 @@
     
     
       
-        <title>한계와 빠진 것 - TTA 신뢰성 평가 v2 판정 모듈 개발 문서 (윤승현 · seunghyun)</title>
+        <title>한계와 빠진 것 - TTA 신뢰성 평가 판정 모듈 개발 문서 (윤승현 · seunghyun)</title>
       
     
     
@@ -92,7 +92,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="상단/헤더">
-    <a href=".." title="TTA 신뢰성 평가 v2 판정 모듈 개발 문서 (윤승현 · seunghyun)" class="md-header__button md-logo" aria-label="TTA 신뢰성 평가 v2 판정 모듈 개발 문서 (윤승현 · seunghyun)" data-md-component="logo">
+    <a href=".." title="TTA 신뢰성 평가 판정 모듈 개발 문서 (윤승현 · seunghyun)" class="md-header__button md-logo" aria-label="TTA 신뢰성 평가 판정 모듈 개발 문서 (윤승현 · seunghyun)" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -106,7 +106,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            TTA 신뢰성 평가 v2 판정 모듈 개발 문서 (윤승현 · seunghyun)
+            TTA 신뢰성 평가 판정 모듈 개발 문서 (윤승현 · seunghyun)
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -216,13 +216,13 @@
 
 <nav class="md-nav md-nav--primary" aria-label="네비게이션" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="TTA 신뢰성 평가 v2 판정 모듈 개발 문서 (윤승현 · seunghyun)" class="md-nav__button md-logo" aria-label="TTA 신뢰성 평가 v2 판정 모듈 개발 문서 (윤승현 · seunghyun)" data-md-component="logo">
+    <a href=".." title="TTA 신뢰성 평가 판정 모듈 개발 문서 (윤승현 · seunghyun)" class="md-nav__button md-logo" aria-label="TTA 신뢰성 평가 판정 모듈 개발 문서 (윤승현 · seunghyun)" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
-    TTA 신뢰성 평가 v2 판정 모듈 개발 문서 (윤승현 · seunghyun)
+    TTA 신뢰성 평가 판정 모듈 개발 문서 (윤승현 · seunghyun)
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -737,10 +737,54 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#한계--알려진-약점" class="md-nav__link">
+  <a href="#원칙" class="md-nav__link">
     <span class="md-ellipsis">
       
-        한계 · 알려진 약점
+        원칙
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#고친-것" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        고친 것
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#선택지로-둔-것" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        선택지로 둔 것
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#못-고치는-것과-이유" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        못 고치는 것과 이유
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#남은-한계" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        남은 한계
       
     </span>
   </a>
@@ -793,10 +837,54 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#한계--알려진-약점" class="md-nav__link">
+  <a href="#원칙" class="md-nav__link">
     <span class="md-ellipsis">
       
-        한계 · 알려진 약점
+        원칙
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#고친-것" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        고친 것
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#선택지로-둔-것" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        선택지로 둔 것
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#못-고치는-것과-이유" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        못 고치는 것과 이유
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#남은-한계" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        남은 한계
       
     </span>
   </a>
@@ -832,87 +920,272 @@
 
 
 <h1 id="한계와-빠진-것">한계와 빠진 것<a class="headerlink" href="#한계와-빠진-것" title="Permanent link">&para;</a></h1>
-<h2 id="한계--알려진-약점">한계 · 알려진 약점<a class="headerlink" href="#한계--알려진-약점" title="Permanent link">&para;</a></h2>
+<div class="admonition abstract">
+<p class="admonition-title">이 쪽에서 알 수 있는 것</p>
 <ul>
-<li><strong>판정 표기가 공격 쪽 말</strong> — 코드 · 열 이름 · 판정 사유 문장의 판정 값이 서비스 쪽 표기와 반대 방향. <a href="../glossary/#판정-값-표기">용어 풀이</a>의 대응표대로 바꿔 읽어야 함</li>
-<li><strong>문자열 비교의 한계(액티부키 규칙)</strong><ul>
-<li>정답 · 틀린 값을 글자 일치로 찾음 — 다른 말로 풀어 쓴 답은 놓침 (<code>src/report/rules.py:427-448</code>)</li>
-<li>거절 · 부정 표현을 정해진 목록으로 찾음 — 목록에 없는 말투는 놓침 (<code>:343</code>, <code>:345</code>)</li>
+<li>알려진 약점 가운데 고친 것(무엇을 · 어떻게)</li>
+<li>판정이 달라질 수 있어 기본값은 그대로 두고 선택지로만 넣은 것</li>
+<li>이 저장소에서 못 고치는 것과 이유, 이 저장소에 없는 것</li>
+</ul>
+</div>
+<h2 id="원칙">원칙<a class="headerlink" href="#원칙" title="Permanent link">&para;</a></h2>
+<ul>
+<li>이 코드는 이미 제출한 데이터셋의 실패 / 통과를 만든 코드 → <strong>기본 동작의 판정 값 · 판정 사유 문장은 바꾸지 않음</strong></li>
+<li>확인 방법: 리팩토링 전 · 후 코드에 같은 입력을 넣어 결과를 행 단위로 비교(골든 비교)<ul>
+<li>실제 자료로: 규칙 판정 · 판정 집계 결과의 모든 열 차이 0(이 저장소 밖에서 돌림, 자료는 올리지 않음)</li>
+<li>지어낸 예시로: <code>tests/test_regression.py</code>가 리팩토링 전 코드의 결과(<code>tests/expected/</code>)와 비교</li>
 </ul>
 </li>
-<li><strong>서비스 고정 문구에 의존</strong> — 자료 인용 머리말과 정형 유보문을 글자 그대로 비교함 (<code>src/report/rules.py:347-348</code>). 서비스가 문구를 바꾸면 규칙 결과가 달라짐</li>
-<li><strong>액티부키는 모델 결과가 규칙 결과를 덮어씀</strong> — 규칙이 확정한 행도 모델 결과가 있으면 모델 판정을 씀(<a href="../flow/">판정 흐름</a>). 모델 오판이 그대로 최종 판정이 됨</li>
-<li><strong>판정 모델은 1회차 기준</strong> — 2회 결과가 달라도 판정은 1회차로 내고 흔들림 표시만 남김 (<code>src/report/verdict.py:105-115</code>, <code>:520-528</code>)</li>
-<li><strong>펀웨이브는 근거충실성만 모델 결과를 판정에 씀</strong> — 실행기는 반복 · 다국어 · 인젝션 행도 모델에 보내지만 판정 집계는 그 결과를 판정 값에 쓰지 않음(인젝션은 사유 문장에 참고로만 붙임) (<code>src/judge_api/run_judge.py:31</code> · <code>src/report/verdict.py:294-298</code>)</li>
-<li><strong>문턱 값은 코드 상수</strong> — 40 · 70 · 85점, 10 · 20점 범위, 15점 차이, 충실도 39 · 60 · 85 등. 근거가 된 기업 답변서 · 평가 설계 문서는 이 저장소에 없음. 문턱 사이 값은 검토필요로 남음</li>
-<li><strong>기대 범위는 입력 자료에 들어 있음</strong> — 펀웨이브 근거충실성 규칙은 <code>expected_meaning_range</code> · <code>expected_final_range</code> 열 값에 기댐. 값을 정하는 문항 생성 코드는 이 저장소에 없음</li>
-<li><strong>사본 프롬프트 누락</strong> — 서버가 써 내는 <code>prompts/judge_rubric_actibuki.md</code>에 유해 질의용 출력 형식이 빠져 있음(<code>src/judge_api/app.py:206</code>의 목록에 <code>harm</code>이 없음). 실제 호출에는 <code>app.py:131</code>의 형식을 씀</li>
-<li><strong>호출 원본이 로컬에 쌓임</strong> — 판정 모델 요청 · 응답 전문이 <code>raw/</code> 아래 파일로 저장됨 (<code>src/common/core.py:225-226</code>). 문항 · 응답 원문이 들어가므로 공유 · 커밋 금지(<code>.gitignore</code> 대상)</li>
-<li><strong>확인 범위</strong> — 이 저장소 기준으로는 문법 검사 · import · <code>--help</code> · 지어낸 소규모 자료로 규칙 판정 → 판정 집계까지만 확인함. 실제 판정 모델 호출은 이 저장소에서 다시 돌려 보지 않음</li>
-<li><strong>판정 서버에 인증이 없음</strong> — 로컬(<code>127.0.0.1</code>)에서만 띄울 것(<a href="../endpoints/#인증">공통 사항</a>)</li>
-<li><strong>엔드포인트 응답 형식이 OpenAPI에 없음</strong> — <code>/openapi.json</code>에는 요청 형식만 있고 응답은 빈 형식(<code>{}</code>). 응답 필드는 이 문서의 표(코드에서 확인)를 볼 것</li>
-<li><strong>판정 모델 출력은 형식 강제에 기댐</strong> — 판정 모델 API가 JSON 형식 강제(strict JSON schema)를 지키지 않으면 필수 키가 빠질 수 있고, 이때 서버가 500을 낼 수 있음(코드 읽기로만 확인, <code>src/judge_api/app.py:351</code>)</li>
-<li><strong>이 문서의 응답 예시는 실제 호출 결과가 아님</strong> — 판정 모델을 부르지 않고 코드의 응답 구조대로 손으로 씀. 오류 응답 422 · 404 · 405는 FastAPI <code>TestClient</code>로 받은 실제 값</li>
+</ul>
+<h2 id="고친-것">고친 것<a class="headerlink" href="#고친-것" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>약점</th>
+<th>고친 방법</th>
+<th>판정 값 영향</th>
+<th>근거</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>run</code> 기본값이 판정 집계(판본 이름 문자열)와 실행기(<code>1</code>)에서 달라, <code>run</code> 열이 없는 입력이면 판정 모델 결과를 못 찾고 조용히 규칙 결과만 씀</td>
+<td>한 상수 <code>DEFAULT_RUN = "1"</code>로 통일</td>
+<td>없음(제출 자료에는 <code>run</code> 열이 있었음)</td>
+<td><code>src/common/config.py:19</code></td>
+</tr>
+<tr>
+<td>판정 서버가 써 내는 지시문 사본에 유해 질의 출력 형식이 빠짐</td>
+<td>기준 종류 목록 <code>RUBRIC_KINDS</code>로 사본을 씀</td>
+<td>없음(사본은 사람이 읽는 용도)</td>
+<td><code>src/judge_api/prompts.py:162</code>, <code>src/judge_api/app.py:47-61</code></td>
+</tr>
+<tr>
+<td>판정 모델 출력에 필수 키가 빠지면 HTTP 500</td>
+<td>출력 형식의 필수 키 · 충실도 정수 여부를 검사해 HTTP 502 <code>judge_output_invalid</code>(실행기가 다시 시도)</td>
+<td>없음(제출 자료의 판정 모델 결과에는 빠진 키가 없었음)</td>
+<td><code>src/judge_api/app.py:97-128</code></td>
+</tr>
+<tr>
+<td>OpenAPI(<code>/openapi.json</code>)에 응답 형식이 비어 있음</td>
+<td>응답 형식(pydantic 모델) 정의. 응답 값은 판정 모델이 낸 그대로 전달(형식 변환 없음)</td>
+<td>없음(응답 키 · 값 같음, <code>/ping</code>만 아래 참고)</td>
+<td><code>src/judge_api/schemas.py:58-159</code></td>
+</tr>
+<tr>
+<td>판정 서버에 인증이 없음</td>
+<td>기본 주소 127.0.0.1 유지 + 환경 변수 <code>JUDGE_API_TOKEN</code>이 있으면 모든 엔드포인트가 Bearer 토큰 요구(없으면 지금처럼). 클라이언트 · 실행기도 토큰을 보냄</td>
+<td>없음</td>
+<td><code>src/judge_api/app.py:73-82</code>, <code>src/judge_api/client.py:23-26</code></td>
+</tr>
+<tr>
+<td>판정 값이 공격 쪽 말이라 코드에서 헷갈림</td>
+<td>코드 안에서는 서비스 쪽 이름(<code>FAIL</code> · <code>PASS</code> …)만 쓰고 대응은 한 곳에서 관리. 결과 열 이름 · 값 · 지시문 · 사유 문장은 그대로(<a href="../files/">이유</a>)</td>
+<td>없음</td>
+<td><code>src/common/verdicts.py:10-25</code></td>
+</tr>
+<tr>
+<td>import 할 때 저장소에 <code>data/</code> · <code>raw/</code> · <code>docs/</code> · <code>prompts/</code> · <code>report/</code> 폴더를 만듦</td>
+<td>쓰기 직전에 만듦, 경로는 설정 한 곳(<code>EVAL_DATA_DIR</code> · <code>EVAL_RAW_DIR</code>로 바꿈)</td>
+<td>없음</td>
+<td><code>src/common/config.py:30-52</code></td>
+</tr>
+<tr>
+<td>실행 기록(<code>rules_&lt;기업&gt;.md</code> 등)을 문서 폴더 <code>docs/</code>에 씀</td>
+<td>데이터 폴더 <code>logs/</code>에 씀</td>
+<td>없음(내용 같음)</td>
+<td><code>src/common/config.py:40-42</code></td>
+</tr>
+<tr>
+<td>개인정보 행이 없는 입력이면 규칙 판정 요약에서 0으로 나눠 멈춤</td>
+<td>비율 계산에 0 나누기 방지</td>
+<td>없음(요약 글만)</td>
+<td><code>src/report/rules/funwave.py:307-308</code></td>
+</tr>
+<tr>
+<td>펀웨이브 반복 통계 파일만 바로 써서 덜 쓰인 파일을 읽을 수 있음</td>
+<td>임시 파일에 쓴 뒤 바꿔치기</td>
+<td>없음</td>
+<td><code>src/common/tabular.py:37-42</code></td>
+</tr>
+<tr>
+<td>교차 확인 모델 클라이언트를 서버 종료 때 닫지 않음</td>
+<td>두 클라이언트 모두 닫음</td>
+<td>없음</td>
+<td><code>src/judge_api/backend.py:78-82</code></td>
+</tr>
+<tr>
+<td>판정 모델 · 서비스 제공처 이름이 환경 변수 · 응답 키에 들어 있음</td>
+<td>환경 변수를 일반 이름으로(아래 표), <code>/ping</code>의 통계 키를 <code>model_http</code>로</td>
+<td>없음(<code>/ping</code>만 키 이름 바뀜)</td>
+<td><code>src/common/http.py:198-209</code></td>
+</tr>
+<tr>
+<td>판정에 쓰지 않는 함수 · 모델별 단가표 · 늘 빈 문자열을 내는 함수 · 쓰지 않는 이름표</td>
+<td>지움</td>
+<td>없음</td>
+<td>—</td>
+</tr>
+<tr>
+<td>판정 모델 · 기업 API 없이 돌려 볼 방법이 없음</td>
+<td>가짜 판정 모델(<code>JUDGE_BACKEND=fake</code>) · 같은 프로세스 안 판정 서버(<code>--in-process</code>) · 지어낸 예시 입력 · <code>make demo</code></td>
+<td>없음(기본은 실제 판정 모델)</td>
+<td><code>src/judge_api/backend.py:87-119</code>, <code>src/demo.py</code></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>바뀐 환경 변수</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>전</th>
+<th>후</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>판정 모델 API 주소 · 키(제공처 이름이 든 이름)</td>
+<td><code>JUDGE_MODEL_BASE_URL</code> · <code>JUDGE_MODEL_API_KEY</code></td>
+</tr>
+<tr>
+<td>동시 호출 상한(제공처 이름이 든 이름)</td>
+<td><code>JUDGE_MAX_CONCURRENCY</code></td>
+</tr>
+<tr>
+<td>(없음)</td>
+<td><code>JUDGE_BACKEND</code> · <code>JUDGE_API_TOKEN</code> · <code>EVAL_DATA_DIR</code> · <code>EVAL_RAW_DIR</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="선택지로-둔-것">선택지로 둔 것<a class="headerlink" href="#선택지로-둔-것" title="Permanent link">&para;</a></h2>
+<ul>
+<li>기본값은 제출한 데이터셋의 동작 그대로. <strong>켜면 제출한 데이터셋의 판정과 달라질 수 있음</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>약점</th>
+<th>선택지</th>
+<th>기본값</th>
+<th>켰을 때</th>
+<th>근거</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>판정 모델을 2회 돌려도 1회차만 씀</td>
+<td><code>--judge-policy agree</code></td>
+<td><code>first</code></td>
+<td>회차별 판정이 갈린 문항을 검토필요로</td>
+<td><code>src/report/verdict/__init__.py:111-113</code></td>
+</tr>
+<tr>
+<td>액티부키는 판정 모델 결과가 규칙 결과를 덮어씀</td>
+<td><code>--keep-rule-verdicts</code></td>
+<td>꺼짐</td>
+<td>규칙이 실패 · 통과로 정한 행은 규칙 결과 유지</td>
+<td><code>src/report/verdict/__init__.py:76-82</code></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>넣지 않은 것과 이유</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>약점</th>
+<th>이유</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>펀웨이브는 근거충실성만 판정 모델 결과를 씀</td>
+<td>나머지 평가 항목(개인정보 · 유해 · 다국어 · 인젝션 · 반복)의 기준은 "막았나 · 점수가 문턱을 넘었나"라서 판정 모델이 볼 몫이 없음. 판정 모델은 통역 충실도만 냄</td>
+</tr>
+<tr>
+<td>정답 · 거절 표현을 글자로 비교</td>
+<td>글자로 못 잡은 행은 이미 검토필요로 넘겨 판정 모델이 다시 봄. 규칙 단계에 뜻 비교를 넣으면 판정 모델 호출이 필요해져 "외부 호출 없음 · 늘 같은 결과"라는 규칙 판정의 성질이 깨짐</td>
+</tr>
+</tbody>
+</table>
+<h2 id="못-고치는-것과-이유">못 고치는 것과 이유<a class="headerlink" href="#못-고치는-것과-이유" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>약점</th>
+<th>왜 이 저장소에서 못 고치나</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>문턱 값(40 · 70 · 85점, 10 · 20점 범위, 15점 차이, 충실도 39 · 60 · 85)의 근거</td>
+<td>근거는 기업 답변서 · 평가 설계 문서(이 저장소 밖, 기업 제공 문서라 올릴 수 없음). 코드에서는 이름 붙은 상수로 모아 둠(<a href="../criteria/">기업별 판정 기준</a>)</td>
+</tr>
+<tr>
+<td>펀웨이브 근거충실성의 기대 범위</td>
+<td>값이 입력 자료의 열(<code>expected_meaning_range</code> · <code>expected_final_range</code>)에 있음. 값을 정하는 문항 생성 단계는 이 저장소 범위 밖</td>
+</tr>
+<tr>
+<td>서비스 고정 문구(자료 인용 머리말 · 정형 유보문)를 글자 그대로 비교</td>
+<td>기준이 되는 문구는 기업 서비스가 정함. 서비스가 문구를 바꾸면 이 코드도 같이 바꿔야 함(<code>src/report/rules/actibuki.py:35-37</code>)</td>
+</tr>
+<tr>
+<td>정제본 · 제외 분류</td>
+<td>제출 양식 · 지식베이스 내용과 얽혀 있어 이 저장소에 없음</td>
+</tr>
+</tbody>
+</table>
+<h2 id="남은-한계">남은 한계<a class="headerlink" href="#남은-한계" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>판정 모델 출력은 형식 강제에 기댐</strong> — 형식이 어긋나면 이제 502로 알리지만, 값의 옳고 그름은 판정 모델 몫</li>
+<li><strong>호출 원본이 로컬에 쌓임</strong> — <code>raw/</code> 아래 요청 · 응답 전문(문항 · 응답 원문 포함). 공유 · 커밋 금지(<code>.gitignore</code> 대상)</li>
+<li><strong>가짜 판정 모델은 판정 품질과 무관</strong> — 흐름 · 형식 확인용</li>
+<li><strong>엔드포인트 문서의 응답 예시는 손으로 씀</strong> — 오류 응답(401 · 404 · 405 · 422 · 502)만 시험 클라이언트로 받은 실제 값</li>
+<li><strong>확인 범위</strong> — 실제 판정 모델 호출은 이 저장소에서 다시 돌려 보지 않음(가짜 판정 모델 · 기록해 둔 판정 결과로만 확인)</li>
 </ul>
 <h2 id="이-저장소에-들어-있지-않은-것과-이유">이 저장소에 들어 있지 않은 것과 이유<a class="headerlink" href="#이-저장소에-들어-있지-않은-것과-이유" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
 <th>빠진 것</th>
-<th>원 작업 폴더 위치</th>
 <th>이유</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>문항 생성</td>
-<td><code>src/gen/</code>, <code>prompts/gen_*.md</code></td>
 <td>유해 요청 문장 · 욕설 목록이 들어 있음. 판정 범위 밖</td>
 </tr>
 <tr>
 <td>품질 검사(중복 · 결함 거르기)</td>
-<td><code>src/dedup/</code></td>
 <td>판정 범위 밖</td>
 </tr>
 <tr>
 <td>기업 API 호출</td>
-<td><code>src/infer/</code></td>
-<td>기업 API 주소 · 호출 방식이 들어 있음. 판정 범위 밖</td>
+<td>기업 API 주소 · 호출 방식이 들어 있음. 이 저장소는 받아 둔 응답만 읽음</td>
 </tr>
 <tr>
 <td>수치 계산</td>
-<td><code>src/report/metrics.py</code></td>
-<td>응답 하나의 판정이 아니라 여러 응답을 세는 단계. 호출 단위로 세며 검토필요 · 제외 문항까지 포함해, 정제본 기준 공식 수치와 다르게 나옴(혼동 방지). 문턱 값은 <code>rules.py</code>와 겹침</td>
+<td>여러 응답을 세는 단계. 정제본 기준 공식 수치와 다르게 나올 수 있어 혼동 방지</td>
 </tr>
 <tr>
 <td>정제본 · 제외 분류 · 엑셀</td>
-<td><code>report/tta_format/build_clean_dataset.py</code> 등</td>
-<td>엑셀 양식 · 제출 서식과 얽혀 있고 지식베이스 · 문항 내용이 문구에 섞여 있음. 그래서 "제외" 세부 분류는 이 저장소에서 확인할 수 없음</td>
+<td>제출 양식과 얽혀 있고 지식베이스 · 문항 내용이 섞여 있음</td>
 </tr>
 <tr>
-<td>판정 대상 목록 만들기 · 묶음 실행</td>
-<td><code>scripts/judge_clean_ids.py</code>, <code>scripts/judge_batches_v2.sh</code></td>
-<td>판정 모델 사용 한도 때문에 실제 운영에서 대상 문항을 줄이던 보조 도구. 판정 기준과 무관</td>
+<td>판정 대상 줄이기 · 묶음 실행 보조 도구</td>
+<td>판정 모델 사용 한도 때문에 운영 중 쓰던 도구. 판정 기준과 무관</td>
 </tr>
 <tr>
-<td>반복 안정성 정답 값 재확인</td>
-<td><code>scripts/judge_repeat_calls.py</code></td>
-<td><a href="../cli/">실행기와 명령</a>의 보조 파일(<code>data/repeat_kb_semantic_actibuki.jsonl</code>)을 만드는 도구. 없으면 규칙 판정은 문자열 비교만으로 돎</td>
+<td>반복 안정성 정답 재확인 도구</td>
+<td>보조 파일(<code>repeat_kb_semantic_actibuki.jsonl</code>)을 만드는 도구. 없으면 글자 비교만 씀</td>
 </tr>
 <tr>
-<td>프롬프트 사본</td>
-<td><code>prompts/judge_*.md</code></td>
-<td>판정 서버가 시작할 때 <code>app.py</code> 안의 문자열로 다시 써 내는 사본(읽지 않음). 모델 이름이 들어감</td>
-</tr>
-<tr>
-<td>자료 일체</td>
-<td><code>data/</code> · <code>raw/</code> · <code>reference/</code> · <code>report/</code> · <code>docs/</code></td>
-<td>실제 문항 · 기업 응답 · 지식베이스 · 기업 제공 문서 · 작업 기록</td>
-</tr>
-<tr>
-<td>비밀 값</td>
-<td><code>.env</code></td>
-<td>키 · 주소. 이름만 <code>.env.example</code>에 둠</td>
+<td>자료 일체 · 비밀 값</td>
+<td>실제 문항 · 기업 응답 · 지식베이스 · 키. 이름만 <code>.env.example</code>에 둠</td>
 </tr>
 </tbody>
 </table>

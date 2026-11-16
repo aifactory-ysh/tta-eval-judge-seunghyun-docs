@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="규칙 판정 · 독립 판정 모델(판정 서버) · 판정 집계의 사용법">
+        <meta name="description" content="규칙 판정 · 독립 판정 모델(판정 서버) · 판정 집계의 사용법(기업 API 호출 없음)">
       
       
       
@@ -27,7 +27,7 @@
     
     
       
-        <title>빠른 시작 - TTA 신뢰성 평가 v2 판정 모듈 개발 문서 (윤승현 · seunghyun)</title>
+        <title>빠른 시작 - TTA 신뢰성 평가 판정 모듈 개발 문서 (윤승현 · seunghyun)</title>
       
     
     
@@ -94,7 +94,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="상단/헤더">
-    <a href=".." title="TTA 신뢰성 평가 v2 판정 모듈 개발 문서 (윤승현 · seunghyun)" class="md-header__button md-logo" aria-label="TTA 신뢰성 평가 v2 판정 모듈 개발 문서 (윤승현 · seunghyun)" data-md-component="logo">
+    <a href=".." title="TTA 신뢰성 평가 판정 모듈 개발 문서 (윤승현 · seunghyun)" class="md-header__button md-logo" aria-label="TTA 신뢰성 평가 판정 모듈 개발 문서 (윤승현 · seunghyun)" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -108,7 +108,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            TTA 신뢰성 평가 v2 판정 모듈 개발 문서 (윤승현 · seunghyun)
+            TTA 신뢰성 평가 판정 모듈 개발 문서 (윤승현 · seunghyun)
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -218,13 +218,13 @@
 
 <nav class="md-nav md-nav--primary" aria-label="네비게이션" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="TTA 신뢰성 평가 v2 판정 모듈 개발 문서 (윤승현 · seunghyun)" class="md-nav__button md-logo" aria-label="TTA 신뢰성 평가 v2 판정 모듈 개발 문서 (윤승현 · seunghyun)" data-md-component="logo">
+    <a href=".." title="TTA 신뢰성 평가 판정 모듈 개발 문서 (윤승현 · seunghyun)" class="md-nav__button md-logo" aria-label="TTA 신뢰성 평가 판정 모듈 개발 문서 (윤승현 · seunghyun)" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
-    TTA 신뢰성 평가 v2 판정 모듈 개발 문서 (윤승현 · seunghyun)
+    TTA 신뢰성 평가 판정 모듈 개발 문서 (윤승현 · seunghyun)
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -323,6 +323,29 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#무엇--왜" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        무엇 · 왜
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1부--기업-api--판정-모델-없이-데모-돌리기" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1부 — 기업 API · 판정 모델 없이 데모 돌리기
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1부 — 기업 API · 판정 모델 없이 데모 돌리기">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#1-설치" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -332,67 +355,100 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#2-환경-변수" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#2-데모" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. 환경 변수
+        2. 데모
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#3-판정-서버-켜기" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#3-외부-호출-0-확인" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. 판정 서버 켜기
+        3. 외부 호출 0 확인
       
     </span>
   </a>
   
 </li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
-  <a href="#4-살아-있는지-확인" class="md-nav__link">
+  <a href="#2부--실제-판정-모델-붙이기" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. 살아 있는지 확인
+        2부 — 실제 판정 모델 붙이기
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2부 — 실제 판정 모델 붙이기">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#4-환경-변수" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 환경 변수
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#5-첫-요청" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#5-판정-서버-켜기" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5. 첫 요청
+        5. 판정 서버 켜기
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#6-끄기" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#6-기업-응답-파일-판정" class="md-nav__link">
     <span class="md-ellipsis">
       
-        6. 끄기
+        6. 기업 응답 파일 판정
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#다음-단계" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#7-끄기" class="md-nav__link">
     <span class="md-ellipsis">
       
-        다음 단계
+        7. 끄기
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#예시--판정-서버에-요청-1건" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        예시 — 판정 서버에 요청 1건
       
     </span>
   </a>
@@ -850,6 +906,29 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#무엇--왜" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        무엇 · 왜
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1부--기업-api--판정-모델-없이-데모-돌리기" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1부 — 기업 API · 판정 모델 없이 데모 돌리기
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1부 — 기업 API · 판정 모델 없이 데모 돌리기">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#1-설치" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -859,67 +938,100 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#2-환경-변수" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#2-데모" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. 환경 변수
+        2. 데모
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#3-판정-서버-켜기" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#3-외부-호출-0-확인" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. 판정 서버 켜기
+        3. 외부 호출 0 확인
       
     </span>
   </a>
   
 </li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
-  <a href="#4-살아-있는지-확인" class="md-nav__link">
+  <a href="#2부--실제-판정-모델-붙이기" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. 살아 있는지 확인
+        2부 — 실제 판정 모델 붙이기
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2부 — 실제 판정 모델 붙이기">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#4-환경-변수" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 환경 변수
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#5-첫-요청" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#5-판정-서버-켜기" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5. 첫 요청
+        5. 판정 서버 켜기
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#6-끄기" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#6-기업-응답-파일-판정" class="md-nav__link">
     <span class="md-ellipsis">
       
-        6. 끄기
+        6. 기업 응답 파일 판정
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#다음-단계" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#7-끄기" class="md-nav__link">
     <span class="md-ellipsis">
       
-        다음 단계
+        7. 끄기
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#예시--판정-서버에-요청-1건" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        예시 — 판정 서버에 요청 1건
       
     </span>
   </a>
@@ -944,162 +1056,146 @@
 
 
 <h1 id="빠른-시작">빠른 시작<a class="headerlink" href="#빠른-시작" title="Permanent link">&para;</a></h1>
+<div class="admonition abstract">
+<p class="admonition-title">이 쪽에서 알 수 있는 것</p>
 <ul>
-<li>목표: 판정 서버를 로컬에서 켜고 → 살아 있는지 확인하고 → 요청 1건을 보내고 → 끄기</li>
-<li>모든 명령은 <strong>저장소 최상위 폴더</strong>에서 실행(판정 서버를 <code>src.judge_api.app</code> 경로로 띄우기 때문)</li>
+<li>기업 API · 판정 모델 없이 데모를 돌리는 단계(복사해서 바로 실행)</li>
+<li>외부 호출이 0인지 확인하는 방법</li>
+<li>실제 판정 모델을 붙여 실제 기업 응답 파일을 판정하는 단계</li>
+</ul>
+</div>
+<h2 id="무엇--왜">무엇 · 왜<a class="headerlink" href="#무엇--왜" title="Permanent link">&para;</a></h2>
+<ul>
+<li>1부: <strong>데모</strong> — 지어낸 예시 입력(<code>examples/</code>)으로 세 단계를 끝까지 돌림. 키 · 주소 없이 됨</li>
+<li>2부: <strong>실제 판정 모델 붙이기</strong> — 받아 둔 기업 응답 파일을 실제 판정 모델로 판정</li>
+<li>어느 쪽도 <strong>기업 API는 부르지 않음</strong>(입력은 미리 받아 둔 응답 파일)</li>
+<li>모든 명령은 <strong>저장소 최상위 폴더</strong>에서 실행</li>
 </ul>
 <pre class="mermaid"><code>flowchart LR
-    A["1 설치&lt;br/&gt;make venv"] --&gt; B["2 환경 변수&lt;br/&gt;.env"]
-    B --&gt; C["3 판정 서버 켜기&lt;br/&gt;make judge-up"]
-    C --&gt; D["4 살아 있는지 확인&lt;br/&gt;GET /ping"]
-    D --&gt; E["5 첫 요청&lt;br/&gt;POST /judge/..."]
-    E --&gt; F["6 끄기&lt;br/&gt;make judge-down"]</code></pre>
-<h2 id="1-설치">1. 설치<a class="headerlink" href="#1-설치" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>make<span class="w"> </span>venv<span class="w">     </span><span class="c1"># .venv 를 만들고 requirements.txt 설치</span>
+    A["1 설치"] --&gt; B["2 데모&lt;br/&gt;make demo"]
+    B --&gt; C["3 외부 호출 0 확인"]
+    C --&gt; D["4 .env 채우기"]
+    D --&gt; E["5 판정 서버 켜기"]
+    E --&gt; F["6 기업 응답 파일 판정"]
+    F --&gt; G["7 끄기"]</code></pre>
+<h2 id="1부--기업-api--판정-모델-없이-데모-돌리기">1부 — 기업 API · 판정 모델 없이 데모 돌리기<a class="headerlink" href="#1부--기업-api--판정-모델-없이-데모-돌리기" title="Permanent link">&para;</a></h2>
+<h3 id="1-설치">1. 설치<a class="headerlink" href="#1-설치" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>make<span class="w"> </span>venv
 </code></pre></div>
 <ul>
-<li>Python 3.9에서 확인한 버전으로 고정됨(<code>requirements.txt</code>)</li>
-<li><code>make venv</code>가 하는 일: <code>python3 -m venv .venv</code> → <code>pip install -r requirements.txt</code> (<code>Makefile:10-11</code>)</li>
+<li><code>.venv</code>를 만들고 <code>requirements.txt</code> 설치(Python 3.9에서 확인한 버전)</li>
 </ul>
-<h2 id="2-환경-변수">2. 환경 변수<a class="headerlink" href="#2-환경-변수" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>cp<span class="w"> </span>.env.example<span class="w"> </span>.env<span class="w">    </span><span class="c1"># 값을 채움. 값은 담당자에게 따로 받음</span>
+<h3 id="2-데모">2. 데모<a class="headerlink" href="#2-데모" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>make<span class="w"> </span>demo
 </code></pre></div>
 <ul>
-<li><code>.env</code>는 <code>src/common/core.py</code>가 import 될 때 읽음 (<code>src/common/core.py:25</code>). <code>.gitignore</code> 대상</li>
+<li>하는 일(<code>src/demo.py</code>)<ol>
+<li><code>examples/inference_&lt;기업&gt;.json</code> → <code>build/demo/data/inference_&lt;기업&gt;.parquet</code></li>
+<li>① 규칙 판정</li>
+<li>② 실행기 → 판정 서버 → <strong>가짜 판정 모델</strong>(같은 프로세스 안, 포트 없음)</li>
+<li>③ 판정 집계 → <code>build/demo/data/verdict_&lt;기업&gt;.parquet</code></li>
+</ol>
+</li>
+<li>화면에 문항별 <code>rule_verdict</code>(규칙 판정)와 <code>공격 결과</code>(최종 판정, 코드 값)가 나옴</li>
+<li>가짜 판정 모델: 출력 형식에 맞는 값을 지시문의 해시로 정해 돌려줌 — <strong>판정 품질과 무관</strong>, 흐름 확인용</li>
+<li>판정 모델 단계 없이 ① → ③만: <code>make demo-rules</code></li>
 </ul>
+<h3 id="3-외부-호출-0-확인">3. 외부 호출 0 확인<a class="headerlink" href="#3-외부-호출-0-확인" title="Permanent link">&para;</a></h3>
+<ul>
+<li>데모는 실행 중 <code>httpx</code>(HTTP 라이브러리)의 네트워크 전송을 막아 둠 → 밖으로 나가는 호출이 있으면 오류로 멈춤 (<code>src/demo.py:33-38</code>)</li>
+<li>끝까지 돌면 마지막 줄에 아래가 나옴</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>외부 호출: 0 (네트워크 전송 계층을 막은 채로 끝까지 실행됨, 판정 모델 API 호출 원본 0건)
+</code></pre></div>
+<ul>
+<li>직접 확인</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>ls<span class="w"> </span>build/demo/raw/<span class="w">            </span><span class="c1"># judge_client 만 있음(판정 서버를 같은 프로세스에서 부른 기록)</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>ls<span class="w"> </span>build/demo/raw/judge<span class="w"> </span><span class="m">2</span>&gt;/dev/null<span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"판정 모델 API 호출 원본 없음"</span>
+</code></pre></div>
+<ul>
+<li>시험으로도 확인: <code>make venv-dev &amp;&amp; make test</code> — 시험도 네트워크 전송을 막은 채로 돎(<code>tests/conftest.py</code>)</li>
+</ul>
+<h2 id="2부--실제-판정-모델-붙이기">2부 — 실제 판정 모델 붙이기<a class="headerlink" href="#2부--실제-판정-모델-붙이기" title="Permanent link">&para;</a></h2>
+<h3 id="4-환경-변수">4. 환경 변수<a class="headerlink" href="#4-환경-변수" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>cp<span class="w"> </span>.env.example<span class="w"> </span>.env<span class="w">    </span><span class="c1"># 값은 담당자에게 따로 받음</span>
+</code></pre></div>
 <table>
 <thead>
 <tr>
 <th>환경 변수</th>
-<th>필수 여부</th>
+<th>필수</th>
 <th>뜻</th>
-<th>쓰는 곳</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>JUDGE_MODEL</code></td>
-<td>판정 서버 필수(없으면 import 실패)</td>
+<td>예</td>
 <td>판정 모델 이름</td>
-<td><code>src/judge_api/app.py:27</code></td>
 </tr>
 <tr>
 <td><code>JUDGE_MODEL_XLING</code></td>
-<td>판정 서버 필수(없으면 import 실패)</td>
-<td>중국어 · 일본어 행 교차 확인용 두 번째 모델 이름. <code>JUDGE_XLING=off</code>여도 값은 있어야 함</td>
-<td><code>src/judge_api/app.py:28</code></td>
+<td>예</td>
+<td>중국어 · 일본어 행 교차 확인용 두 번째 모델 이름</td>
 </tr>
 <tr>
-<td><code>UNCENSORED_BASE_URL</code></td>
-<td>판정 서버 필수(서버 시작 때 읽음)</td>
-<td>판정 모델을 제공하는 OpenAI 호환 API의 기본 주소. 뒤에 <code>/chat/completions</code>를 붙여 호출</td>
-<td><code>src/common/core.py:236</code>, <code>:280</code></td>
+<td><code>JUDGE_MODEL_BASE_URL</code></td>
+<td>예</td>
+<td>판정 모델을 제공하는 OpenAI 호환 API 주소(뒤에 <code>/chat/completions</code>를 붙여 부름)</td>
 </tr>
 <tr>
-<td><code>UNCENSORED_API_KEY</code></td>
-<td>판정 서버 필수(서버 시작 때 읽음)</td>
-<td>위 API의 키. <code>Authorization: Bearer</code>로 보냄</td>
-<td><code>src/common/core.py:237</code></td>
+<td><code>JUDGE_MODEL_API_KEY</code></td>
+<td>예</td>
+<td>위 API의 키</td>
 </tr>
 <tr>
-<td><code>SHANNON_MAX_CONCURRENCY</code></td>
-<td>선택(기본 24)</td>
-<td>판정 서버 → 판정 모델 API 동시 호출 상한</td>
-<td><code>src/common/core.py:233</code></td>
+<td><code>JUDGE_API_TOKEN</code></td>
+<td>아니오</td>
+<td>넣으면 판정 서버가 <code>Authorization: Bearer &lt;토큰&gt;</code>을 요구하고 실행기도 보냄</td>
 </tr>
 <tr>
-<td><code>JUDGE_XLING</code></td>
-<td>선택(기본 <code>auto</code>)</td>
-<td>교차 확인 모델 사용: <code>on</code> · <code>off</code> · <code>auto</code></td>
-<td><code>src/judge_api/app.py:33</code></td>
-</tr>
-<tr>
-<td><code>JUDGE_XLING_COOLDOWN_S</code></td>
-<td>선택(기본 600)</td>
-<td><code>auto</code>일 때 교차 확인 모델이 실패하면 건너뛰는 시간(초)</td>
-<td><code>src/judge_api/app.py:34</code></td>
-</tr>
-<tr>
-<td><code>JUDGE_API_URL</code></td>
-<td>선택(기본 <code>http://127.0.0.1:8787</code>)</td>
-<td>클라이언트 · 실행기가 부를 판정 서버 주소</td>
-<td><code>src/judge_api/client.py:16</code></td>
+<td><code>JUDGE_BACKEND</code></td>
+<td>아니오</td>
+<td><code>real</code>(기본) · <code>fake</code>(가짜 판정 모델)</td>
 </tr>
 </tbody>
 </table>
 <ul>
-<li>필수 값이 없을 때: <code>RuntimeError: missing env &lt;이름&gt;</code> (<code>src/common/core.py:36-40</code>)</li>
-<li>규칙 판정 · 판정 집계는 환경 변수 없이 돌아감(외부 호출 없음)</li>
+<li>전체 목록: <a href="../cli/#환경-변수">실행기와 명령</a></li>
+<li>규칙 판정 · 판정 집계는 환경 변수가 필요 없음</li>
 </ul>
-<h2 id="3-판정-서버-켜기">3. 판정 서버 켜기<a class="headerlink" href="#3-판정-서버-켜기" title="Permanent link">&para;</a></h2>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Makefile</label><label for="__tabbed_1_2">직접 실행</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>make<span class="w"> </span>judge-up
+<h3 id="5-판정-서버-켜기">5. 판정 서버 켜기<a class="headerlink" href="#5-판정-서버-켜기" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>make<span class="w"> </span>judge-up<span class="w">      </span><span class="c1"># 127.0.0.1:8787 (로컬 전용)</span>
 </code></pre></div>
 <ul>
-<li>백그라운드로 켜고 3초 뒤 <code>/ping</code>을 한 번 부름 (<code>Makefile:18-19</code>)</li>
-<li>로그: <code>judge_api.log</code> · 프로세스 번호: <code>.judge.pid</code> (둘 다 <code>.gitignore</code> 대상)</li>
+<li>켜지면 <code>/ping</code> 응답(<code>"ok": true</code>)이 찍힘</li>
+<li>같은 컴퓨터 밖으로 열지 말 것 — 열어야 하면 <code>JUDGE_API_TOKEN</code>을 넣을 것</li>
 </ul>
-</div>
-<div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>.venv/bin/uvicorn<span class="w"> </span>src.judge_api.app:app<span class="w"> </span>--host<span class="w"> </span><span class="m">127</span>.0.0.1<span class="w"> </span>--port<span class="w"> </span><span class="m">8787</span>
+<h3 id="6-기업-응답-파일-판정">6. 기업 응답 파일 판정<a class="headerlink" href="#6-기업-응답-파일-판정" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># 입력: data/inference_&lt;기업&gt;.parquet (미리 받아 둔 기업 응답)</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>make<span class="w"> </span>rules<span class="w">   </span><span class="nv">VENDOR</span><span class="o">=</span>funwave
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>make<span class="w"> </span>judge<span class="w">   </span><span class="nv">VENDOR</span><span class="o">=</span>funwave<span class="w"> </span><span class="nv">CALLS</span><span class="o">=</span><span class="m">2</span><span class="w">     </span><span class="c1"># 판정 모델 API를 실제로 부름(사용 한도 씀)</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>make<span class="w"> </span>verdict<span class="w"> </span><span class="nv">VENDOR</span><span class="o">=</span>funwave
 </code></pre></div>
 <ul>
-<li>앞에 띄운 터미널에서 계속 돎. <code>Ctrl+C</code>로 끔</li>
+<li>결과: <code>data/verdict_funwave.parquet</code> — 열 설명은 <a href="../files/">입력과 출력 파일의 열</a></li>
+<li>판정 모델 요청 · 응답 전문이 <code>raw/judge/</code>에 남음(문항 · 응답 원문 포함) → 공유 · 커밋 금지</li>
 </ul>
-</div>
-</div>
-</div>
-<ul>
-<li>서버가 시작할 때 하는 일 (<code>src/judge_api/app.py:254-262</code>)<ul>
-<li>판정 모델 API용 HTTP 클라이언트 두 개를 만듦(주 모델 · 교차 확인 모델)</li>
-<li>판정 지시문 사본을 <code>prompts/judge_*.md</code>로 써 냄 — 모델 이름이 들어가므로 커밋 금지(<code>.gitignore</code> 대상)</li>
-</ul>
-</li>
-<li>인증이 없으므로 <code>--host 127.0.0.1</code>(로컬 전용)로만 띄울 것(<a href="../endpoints/#인증">공통 사항</a>)</li>
-</ul>
-<h2 id="4-살아-있는지-확인">4. 살아 있는지 확인<a class="headerlink" href="#4-살아-있는지-확인" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>curl<span class="w"> </span>-s<span class="w"> </span>http://127.0.0.1:8787/ping
+<h3 id="7-끄기">7. 끄기<a class="headerlink" href="#7-끄기" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>make<span class="w"> </span>judge-down
+</code></pre></div>
+<h2 id="예시--판정-서버에-요청-1건">예시 — 판정 서버에 요청 1건<a class="headerlink" href="#예시--판정-서버에-요청-1건" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>curl<span class="w"> </span>-s<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>http://127.0.0.1:8787/judge/faithfulness<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">  </span>-H<span class="w"> </span><span class="s1">'Content-Type: application/json'</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">  </span>-d<span class="w"> </span><span class="s1">'{"case_id": "DEMO-FT-001", "language": "en", "role": "doctor",</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="s1">       "source": "하루에 두 번 식후에 이 약을 드세요.",</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="s1">       "input": "Take this medicine twice a day after meals.",</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="s1">       "vendor_result": {"meaning": 92, "final": 88}}'</span>
 </code></pre></div>
 <ul>
-<li><code>"ok": true</code>가 오면 켜진 것. 응답 필드는 <a href="../endpoints/ping/">GET /ping</a></li>
-<li>이 호출은 판정 모델을 부르지 않음</li>
-<li>브라우저로 <code>http://127.0.0.1:8787/docs</code>를 열면 FastAPI가 자동으로 만든 요청 화면(Swagger UI)이 뜸</li>
-</ul>
-<h2 id="5-첫-요청">5. 첫 요청<a class="headerlink" href="#5-첫-요청" title="Permanent link">&para;</a></h2>
-<div class="admonition warning">
-<p class="admonition-title">판정 모델을 실제로 호출함</p>
-<ul>
-<li><code>/judge/*</code> 요청은 판정 모델 API를 부름 → 사용 한도를 씀</li>
-<li>요청 · 응답 전문이 <code>raw/judge/</code> 아래에 파일로 남음 (<code>src/common/core.py:225-226</code>). 공유 · 커밋 금지</li>
-</ul>
-</div>
-<ul>
-<li>지어낸 짧은 진료 대화 1건으로 통역 충실도를 판정하는 예</li>
-</ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>curl<span class="w"> </span>-s<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>http://127.0.0.1:8787/judge/faithfulness<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span>-H<span class="w"> </span><span class="s1">'Content-Type: application/json'</span><span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">  </span>-d<span class="w"> </span><span class="s1">'{</span>
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="s1">        "case_id": "DEMO-FT-001",</span>
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="s1">        "language": "en",</span>
-<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="s1">        "role": "doctor",</span>
-<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="s1">        "source": "이 약은 하루에 두 번, 식사 후에 드세요.",</span>
-<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="s1">        "input": "Take this medicine twice a day after meals.",</span>
-<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="s1">        "vendor_result": {"meaning": 92, "final": 88}</span>
-<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="s1">      }'</span>
-</code></pre></div>
-<ul>
+<li>토큰을 켰으면 <code>-H "Authorization: Bearer $JUDGE_API_TOKEN"</code> 추가</li>
 <li>응답 읽는 법: <a href="../endpoints/faithfulness/">POST /judge/faithfulness</a></li>
-<li>응답은 수십 초가 걸릴 수 있음(판정 모델 호출 제한 시간 240초, <code>src/common/core.py:241</code>)</li>
-</ul>
-<h2 id="6-끄기">6. 끄기<a class="headerlink" href="#6-끄기" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>make<span class="w"> </span>judge-down<span class="w">     </span><span class="c1"># .judge.pid 의 프로세스를 끄고 파일을 지움 (Makefile:21-22)</span>
-</code></pre></div>
-<h2 id="다음-단계">다음 단계<a class="headerlink" href="#다음-단계" title="Permanent link">&para;</a></h2>
-<ul>
-<li>기업 응답 파일 전체를 판정: <a href="../cli/">실행기와 명령</a></li>
-<li>파이썬에서 부르기: <a href="../endpoints/client/">파이썬 클라이언트 JudgeClient</a></li>
 </ul>
 
 

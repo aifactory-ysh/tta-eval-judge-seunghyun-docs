@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="규칙 판정 · 독립 판정 모델(판정 서버) · 판정 집계의 사용법">
+        <meta name="description" content="규칙 판정 · 독립 판정 모델(판정 서버) · 판정 집계의 사용법(기업 API 호출 없음)">
       
       
       
@@ -27,7 +27,7 @@
     
     
       
-        <title>엔드포인트 사용법 — 공통 사항 - TTA 신뢰성 평가 v2 판정 모듈 개발 문서 (윤승현 · seunghyun)</title>
+        <title>엔드포인트 사용법 — 공통 사항 - TTA 신뢰성 평가 판정 모듈 개발 문서 (윤승현 · seunghyun)</title>
       
     
     
@@ -94,7 +94,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="상단/헤더">
-    <a href=".." title="TTA 신뢰성 평가 v2 판정 모듈 개발 문서 (윤승현 · seunghyun)" class="md-header__button md-logo" aria-label="TTA 신뢰성 평가 v2 판정 모듈 개발 문서 (윤승현 · seunghyun)" data-md-component="logo">
+    <a href=".." title="TTA 신뢰성 평가 판정 모듈 개발 문서 (윤승현 · seunghyun)" class="md-header__button md-logo" aria-label="TTA 신뢰성 평가 판정 모듈 개발 문서 (윤승현 · seunghyun)" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -108,7 +108,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            TTA 신뢰성 평가 v2 판정 모듈 개발 문서 (윤승현 · seunghyun)
+            TTA 신뢰성 평가 판정 모듈 개발 문서 (윤승현 · seunghyun)
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -218,13 +218,13 @@
 
 <nav class="md-nav md-nav--primary" aria-label="네비게이션" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="TTA 신뢰성 평가 v2 판정 모듈 개발 문서 (윤승현 · seunghyun)" class="md-nav__button md-logo" aria-label="TTA 신뢰성 평가 v2 판정 모듈 개발 문서 (윤승현 · seunghyun)" data-md-component="logo">
+    <a href=".." title="TTA 신뢰성 평가 판정 모듈 개발 문서 (윤승현 · seunghyun)" class="md-nav__button md-logo" aria-label="TTA 신뢰성 평가 판정 모듈 개발 문서 (윤승현 · seunghyun)" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
-    TTA 신뢰성 평가 v2 판정 모듈 개발 문서 (윤승현 · seunghyun)
+    TTA 신뢰성 평가 판정 모듈 개발 문서 (윤승현 · seunghyun)
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -728,10 +728,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#엔드포인트-한눈에" class="md-nav__link">
+  <a href="#무엇--엔드포인트-한눈에" class="md-nav__link">
     <span class="md-ellipsis">
       
-        엔드포인트 한눈에
+        무엇 — 엔드포인트 한눈에
       
     </span>
   </a>
@@ -739,10 +739,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#판정-흐름에서-언제-쓰는가" class="md-nav__link">
+  <a href="#왜--판정-흐름에서의-자리" class="md-nav__link">
     <span class="md-ellipsis">
       
-        판정 흐름에서 언제 쓰는가
+        왜 — 판정 흐름에서의 자리
       
     </span>
   </a>
@@ -750,21 +750,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#기본-주소" class="md-nav__link">
+  <a href="#어떻게--주소--요청-형식" class="md-nav__link">
     <span class="md-ellipsis">
       
-        기본 주소
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#요청-형식" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        요청 형식
+        어떻게 — 주소 · 요청 형식
       
     </span>
   </a>
@@ -775,7 +764,18 @@
   <a href="#인증" class="md-nav__link">
     <span class="md-ellipsis">
       
-        인증
+        어떻게 — 인증(선택)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#어떻게--외부-호출-없이-시험하기" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        어떻게 — 외부 호출 없이 시험하기
       
     </span>
   </a>
@@ -786,7 +786,7 @@
   <a href="#응답-공통" class="md-nav__link">
     <span class="md-ellipsis">
       
-        응답 공통
+        응답 공통 — /judge/*
       
     </span>
   </a>
@@ -844,7 +844,15 @@
 
 
 <h1 id="엔드포인트-사용법--공통-사항">엔드포인트 사용법 — 공통 사항<a class="headerlink" href="#엔드포인트-사용법--공통-사항" title="Permanent link">&para;</a></h1>
-<h2 id="엔드포인트-한눈에">엔드포인트 한눈에<a class="headerlink" href="#엔드포인트-한눈에" title="Permanent link">&para;</a></h2>
+<div class="admonition abstract">
+<p class="admonition-title">이 쪽에서 알 수 있는 것</p>
+<ul>
+<li>판정 서버(독립 판정 모델을 HTTP로 감싼 서버)의 엔드포인트 5개와 각각 언제 쓰는지</li>
+<li>모든 엔드포인트에 공통인 주소 · 인증(토큰) · 응답 필드 · 오류 응답 · 다시 시도 규칙</li>
+<li>외부 호출 없이 시험하는 방법(가짜 판정 모델 · 같은 프로세스 호출)</li>
+</ul>
+</div>
+<h2 id="무엇--엔드포인트-한눈에">무엇 — 엔드포인트 한눈에<a class="headerlink" href="#무엇--엔드포인트-한눈에" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
@@ -853,22 +861,25 @@
 <th>대상 기업</th>
 <th>판정 모델 호출</th>
 <th>쪽</th>
+<th>근거</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>GET /ping</code></td>
-<td>서버가 살아 있는지 · 호출 통계 확인</td>
+<td>서버가 살아 있는지 · 호출 통계</td>
 <td>—</td>
 <td>안 함</td>
 <td><a href="ping/">보기</a></td>
+<td><code>src/judge_api/app.py:208-213</code></td>
 </tr>
 <tr>
 <td><code>POST /judge/faithfulness</code></td>
-<td>통역문의 의미 충실도를 독립 채점하고 기업 점수가 적정한지 평가</td>
+<td>통역문의 의미 충실도를 독립 채점, 기업 점수가 적정한지 평가</td>
 <td>펀웨이브</td>
 <td>함</td>
 <td><a href="faithfulness/">보기</a></td>
+<td><code>src/judge_api/app.py:216-237</code></td>
 </tr>
 <tr>
 <td><code>POST /judge/rubric/{vendor}</code></td>
@@ -876,73 +887,157 @@
 <td>액티부키(<code>vendor</code>=<code>actibuki</code>만)</td>
 <td>함</td>
 <td><a href="rubric/">보기</a></td>
+<td><code>src/judge_api/app.py:240-260</code></td>
 </tr>
 <tr>
 <td><code>POST /judge/meta</code></td>
-<td>기업 점수와 독립 판정 모델 결과가 어긋난 원인 분류</td>
+<td>기업 점수와 판정 모델 결과가 어긋난 원인 분류</td>
 <td>펀웨이브</td>
 <td>함</td>
 <td><a href="meta/">보기</a></td>
+<td><code>src/judge_api/app.py:263-269</code></td>
 </tr>
 <tr>
 <td><code>POST /judge/robustness</code></td>
-<td>원문 질문과 변형 질문에 대한 두 답의 뜻이 같은지 비교</td>
+<td>원문 질문 · 변형 질문의 두 답이 같은 뜻인지 비교</td>
 <td>액티부키</td>
 <td>함</td>
 <td><a href="robustness/">보기</a></td>
+<td><code>src/judge_api/app.py:272-278</code></td>
 </tr>
 </tbody>
 </table>
 <ul>
-<li>근거: 라우트 정의 <code>src/judge_api/app.py:333</code>, <code>:338</code>, <code>:364</code>, <code>:415</code>, <code>:428</code></li>
+<li>파이썬에서 부르기: <a href="client/">파이썬 클라이언트 JudgeClient</a></li>
 <li>FastAPI가 자동으로 여는 경로(판정 모델 호출 없음)<ul>
-<li><code>GET /docs</code> — 요청을 직접 보내 볼 수 있는 화면(Swagger UI)</li>
+<li><code>GET /docs</code> — 요청을 직접 보내 보는 화면(Swagger UI)</li>
 <li><code>GET /redoc</code> — 읽기용 API 문서</li>
-<li><code>GET /openapi.json</code> — 요청 형식 정의(OpenAPI 3.1). 응답 형식은 비어 있음(<code>{}</code>) — 응답 필드는 이 문서의 표를 볼 것</li>
+<li><code>GET /openapi.json</code> — 요청 · 응답 형식 정의(OpenAPI 3.1). 응답 형식도 들어 있음 (<code>src/judge_api/schemas.py:58-159</code>)</li>
 </ul>
 </li>
+<li>이 서버는 <strong>기업 API를 부르지 않음</strong> — 기업 응답은 미리 받아 둔 값을 요청 본문에 담아 보냄</li>
 </ul>
-<h2 id="판정-흐름에서-언제-쓰는가">판정 흐름에서 언제 쓰는가<a class="headerlink" href="#판정-흐름에서-언제-쓰는가" title="Permanent link">&para;</a></h2>
+<h2 id="왜--판정-흐름에서의-자리">왜 — 판정 흐름에서의 자리<a class="headerlink" href="#왜--판정-흐름에서의-자리" title="Permanent link">&para;</a></h2>
+<ul>
+<li>규칙 판정(글자 · 값 비교)으로 가르기 어려운 응답을 판정 모델이 읽고 판정함</li>
+<li>결과는 판정 집계(③ 단계, <code>src/report/verdict/</code>)가 규칙 판정과 합침 → <a href="../flow/">판정 흐름</a></li>
+</ul>
 <pre class="mermaid"><code>flowchart TD
-    S["실행기 run_judge.py&lt;br/&gt;기업 응답 파일 읽기"] --&gt; P["GET /ping&lt;br/&gt;시작할 때 1번"]
+    S["실행기 run_judge&lt;br/&gt;기업 응답 파일 읽기"] --&gt; P["GET /ping&lt;br/&gt;시작할 때 1번"]
     P --&gt; V{"기업"}
     V -- "펀웨이브" --&gt; F["POST /judge/faithfulness&lt;br/&gt;문항마다 --calls-per-case 회(기본 2)"]
-    F --&gt; M{"1회차 결과가&lt;br/&gt;적정 + 동일상황인가"}
+    F --&gt; M{"1회차 결과가&lt;br/&gt;적정이고 동일상황인가"}
     M -- "아니오" --&gt; MT["POST /judge/meta&lt;br/&gt;1번(--no-meta 면 건너뜀)"]
-    M -- "예" --&gt; END["data/judge_기업.parquet"]
+    M -- "예" --&gt; END["judge_기업.parquet"]
     MT --&gt; END
     V -- "액티부키" --&gt; K{"P3 입력 강건성&lt;br/&gt;변형 문항인가"}
     K -- "아니오" --&gt; RB["POST /judge/rubric/actibuki&lt;br/&gt;문항마다 --calls-per-case 회"]
     K -- "예" --&gt; RO["POST /judge/robustness&lt;br/&gt;같은 묶음 원문 답과 짝지어&lt;br/&gt;--calls-per-case 회"]
     RB --&gt; END
     RO --&gt; END
-    END --&gt; AGG["③ 판정 집계 verdict.py가 읽음"]</code></pre>
+    END --&gt; AGG["③ 판정 집계가 읽음"]</code></pre>
 <ul>
-<li>근거: 실행기의 대상 선택 · 호출 (<code>src/judge_api/run_judge.py:141-162</code>, <code>:219-251</code>), 메타 평가 대상 (<code>:302-315</code>)</li>
-<li>판정 집계가 각 결과를 쓰는 방식은 엔드포인트별 쪽의 "판정 값 읽는 법"과 <a href="../flow/">판정 흐름</a></li>
+<li>실행기의 대상 선택 · 호출 (<code>src/judge_api/run_judge.py:159-208</code>), 메타 평가 대상 (<code>src/judge_api/run_judge.py:268-287</code>)</li>
+<li>실행 명령 · 선택지: <a href="../cli/">실행기와 명령</a></li>
 </ul>
-<h2 id="기본-주소">기본 주소<a class="headerlink" href="#기본-주소" title="Permanent link">&para;</a></h2>
+<h2 id="어떻게--주소--요청-형식">어떻게 — 주소 · 요청 형식<a class="headerlink" href="#어떻게--주소--요청-형식" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>내용</th>
+<th>근거</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>기본 주소</td>
+<td><code>http://127.0.0.1:8787</code> (로컬 전용)</td>
+<td><code>Makefile</code> <code>judge-up</code>, <code>src/judge_api/client.py:16</code></td>
+</tr>
+<tr>
+<td>주소 바꾸기</td>
+<td>서버는 <code>uvicorn --host --port</code>, 클라이언트 · 실행기는 환경 변수 <code>JUDGE_API_URL</code> 또는 실행기 <code>--judge-url</code></td>
+<td><code>src/judge_api/run_judge.py:331</code></td>
+</tr>
+<tr>
+<td>요청 본문</td>
+<td>JSON, 헤더 <code>Content-Type: application/json</code></td>
+<td>—</td>
+</tr>
+<tr>
+<td>본문 검사</td>
+<td>FastAPI(pydantic)가 검사. 표에 없는 필드는 무시(오류 아님)</td>
+<td><code>src/judge_api/schemas.py:17-55</code></td>
+</tr>
+<tr>
+<td>긴 글</td>
+<td>판정 모델에 넘기기 전에 잘림(뒤에 <code>…</code>). 기본 2,000자, 필드별 길이는 각 쪽</td>
+<td><code>src/judge_api/app.py:87-94</code></td>
+</tr>
+<tr>
+<td>판정 모델 호출 조건</td>
+<td><code>temperature</code> 0 · 정해진 JSON 형식(strict JSON schema)으로만 답하게 함 · 최대 출력 3,000 토큰</td>
+<td><code>src/judge_api/backend.py:21-22</code>, <code>src/common/http.py:233-262</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="인증">어떻게 — 인증(선택)<a class="headerlink" href="#인증" title="Permanent link">&para;</a></h2>
 <ul>
-<li>판정 서버: <code>http://127.0.0.1:8787</code> (<code>Makefile:19</code>, <code>src/judge_api/client.py:16</code>)</li>
-<li>바꾸려면: 서버는 <code>uvicorn</code>의 <code>--host</code> · <code>--port</code>, 클라이언트 · 실행기는 환경 변수 <code>JUDGE_API_URL</code> 또는 실행기의 <code>--judge-url</code></li>
+<li>환경 변수 <code>JUDGE_API_TOKEN</code>이 <strong>있을 때만</strong> 검사함 (<code>src/judge_api/app.py:73-79</code>)<ul>
+<li>모든 경로(<code>/ping</code> 포함)가 헤더 <code>Authorization: Bearer &lt;토큰&gt;</code>을 요구</li>
+<li>없거나 틀리면 401 <code>{"detail": "invalid or missing bearer token"}</code></li>
 </ul>
-<h2 id="요청-형식">요청 형식<a class="headerlink" href="#요청-형식" title="Permanent link">&para;</a></h2>
+</li>
+<li>환경 변수가 없으면 검사하지 않음(예전과 같음)</li>
+<li>토큰과 별개로 기본 바인드는 <code>127.0.0.1</code>(로컬 전용) — 외부에 열면 판정 모델 사용 한도를 남이 쓸 수 있음</li>
+<li>클라이언트 · 실행기는 같은 환경 변수(또는 <code>JudgeClient(token=...)</code>)로 토큰을 보냄 (<code>src/judge_api/client.py:21-26</code>)</li>
+<li>판정 서버 → 판정 모델 API 구간의 인증은 <code>JUDGE_MODEL_API_KEY</code> (<code>src/common/http.py:198-210</code>)</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">JUDGE_API_TOKEN</span><span class="o">=</span>&lt;아무<span class="w"> </span>긴<span class="w"> </span>문자열&gt;
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>curl<span class="w"> </span>-s<span class="w"> </span>-H<span class="w"> </span><span class="s2">"Authorization: Bearer </span><span class="nv">$JUDGE_API_TOKEN</span><span class="s2">"</span><span class="w"> </span>http://127.0.0.1:8787/ping
+</code></pre></div>
+<h2 id="어떻게--외부-호출-없이-시험하기">어떻게 — 외부 호출 없이 시험하기<a class="headerlink" href="#어떻게--외부-호출-없이-시험하기" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>방법</th>
+<th>하는 일</th>
+<th>근거</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>JUDGE_BACKEND=fake</code></td>
+<td>판정 모델 대신 가짜 판정 모델. 출력 형식에 맞는 값을 지시문 내용의 해시로 정해 늘 같은 값을 돌려줌. 판정 품질과 무관</td>
+<td><code>src/judge_api/backend.py:87-119</code></td>
+</tr>
+<tr>
+<td><code>JudgeClient(in_process=True)</code></td>
+<td>포트 없이 같은 프로세스 안의 판정 서버를 부름(네트워크로 나가지 않음)</td>
+<td><code>src/judge_api/client.py:28-32</code></td>
+</tr>
+<tr>
+<td>실행기 <code>--in-process</code></td>
+<td>위 클라이언트로 실행기 전체를 돌림</td>
+<td><code>src/judge_api/run_judge.py:332</code></td>
+</tr>
+</tbody>
+</table>
 <ul>
-<li><code>POST</code> 본문은 JSON, 헤더 <code>Content-Type: application/json</code></li>
-<li>요청 본문 검사는 FastAPI(pydantic)가 함 — 표에 없는 필드는 무시됨(오류 아님)</li>
-<li>긴 글은 판정 모델에 넘기기 전에 잘림(뒤에 <code>…</code>). 잘리는 길이는 필드마다 엔드포인트 쪽에 적음 (<code>src/judge_api/app.py:271-277</code>)</li>
-<li>판정 모델 호출 조건: <code>temperature</code> 0 · 정해진 JSON 형식(strict JSON schema)으로만 답하게 함 · 최대 출력 3,000 토큰 (<code>src/judge_api/app.py:282</code>, <code>src/common/core.py:276-277</code>)</li>
+<li>가짜 판정 모델의 응답 특징<ul>
+<li><code>judge_model</code> = <code>offline-fake-judge</code> (환경 변수 <code>JUDGE_MODEL</code>을 비웠을 때)</li>
+<li><code>reasoning</code> 등 글 필드 = "가짜 판정 모델(오프라인 시험용)의 응답입니다. 실제 판정이 아닙니다."</li>
+<li><code>usage</code> = null, <code>latency_s</code> = 0</li>
 </ul>
-<h2 id="인증">인증<a class="headerlink" href="#인증" title="Permanent link">&para;</a></h2>
-<ul>
-<li><strong>없음</strong> — 판정 서버에 인증 · 접근 제한 코드가 없음(<code>src/judge_api/app.py</code> 전체에 인증 의존성 · 미들웨어 없음)</li>
-<li>그래서 <code>--host 127.0.0.1</code>로만 띄울 것. 외부에 열면 누구나 판정 모델 사용 한도를 쓸 수 있음</li>
-<li>판정 서버 → 판정 모델 API 구간의 인증은 서버가 <code>UNCENSORED_API_KEY</code>로 처리 (<code>src/common/core.py:237</code>)</li>
+</li>
+<li>한 번에 돌려 보기: <code>make demo</code> (<a href="../quickstart/">빠른 시작</a>)</li>
 </ul>
-<h2 id="응답-공통">응답 공통<a class="headerlink" href="#응답-공통" title="Permanent link">&para;</a></h2>
+<h2 id="응답-공통">응답 공통 — <code>/judge/*</code><a class="headerlink" href="#응답-공통" title="Permanent link">&para;</a></h2>
 <ul>
 <li>성공하면 HTTP 200 + JSON 객체</li>
-<li><code>/judge/*</code> 응답에 공통으로 붙는 필드</li>
+<li>서버는 판정 모델이 낸 값을 <strong>바꾸지 않고</strong> 그대로 돌려줌. OpenAPI의 응답 형식은 문서용 (<code>src/judge_api/app.py:205-206</code>)</li>
+<li>모든 <code>/judge/*</code> 응답에 붙는 필드 (<code>src/judge_api/schemas.py:68-75</code>)</li>
 </ul>
 <table>
 <thead>
@@ -950,46 +1045,52 @@
 <th>필드</th>
 <th>형</th>
 <th>뜻</th>
+<th>근거</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>case_id</code></td>
 <td>문자열</td>
-<td>요청에 넣은 <code>case_id</code> 그대로</td>
+<td>요청의 <code>case_id</code> 그대로</td>
+<td><code>src/judge_api/schemas.py:71</code></td>
 </tr>
 <tr>
 <td><code>judge_model</code></td>
 <td>문자열</td>
-<td>판정에 쓴 모델 이름(환경 변수 <code>JUDGE_MODEL</code> 값)</td>
+<td>판정에 쓴 모델 이름(환경 변수 <code>JUDGE_MODEL</code>)</td>
+<td><code>src/judge_api/schemas.py:72</code></td>
 </tr>
 <tr>
 <td><code>usage</code></td>
 <td>객체 또는 null</td>
-<td>판정 모델 API가 돌려준 토큰 사용량(<code>prompt_tokens</code> · <code>completion_tokens</code> · <code>total_tokens</code> 등, 제공 API 형식 그대로)</td>
+<td>판정 모델 API가 돌려준 토큰 사용량(<code>prompt_tokens</code> · <code>completion_tokens</code> · <code>total_tokens</code> 등). 가짜 판정 모델이면 null</td>
+<td><code>src/judge_api/schemas.py:61-65</code></td>
 </tr>
 <tr>
 <td><code>latency_s</code></td>
 <td>숫자</td>
 <td>판정 모델 호출 1번에 걸린 시간(초)</td>
+<td><code>src/judge_api/schemas.py:74</code></td>
 </tr>
 <tr>
 <td><code>raw_key</code></td>
 <td>문자열</td>
-<td>판정 서버가 남긴 호출 원본 파일 이름의 열쇠. 파일 위치 <code>raw/judge/&lt;raw_key&gt;.json</code>. <code>xling</code> 안의 <code>raw_key</code>는 <code>raw/judge_xling/&lt;raw_key&gt;.json</code> (<code>src/judge_api/app.py:258-260</code>, <code>:282</code>, <code>src/common/core.py:238</code>, <code>:226</code>)</td>
+<td>호출 원본 파일 이름의 열쇠. 위치 <code>raw/judge/&lt;raw_key&gt;.json</code> (실제 판정 모델일 때만 파일이 생김)</td>
+<td><code>src/judge_api/app.py:112-128</code></td>
 </tr>
 </tbody>
 </table>
 <ul>
-<li><code>xling</code> · <code>xling_agree</code>: 교차 확인 결과. <code>/judge/faithfulness</code> · <code>/judge/rubric/{vendor}</code>에만, 그리고 아래 조건을 모두 채울 때만 붙음 (<code>src/judge_api/app.py:294-318</code>)<ul>
-<li>요청의 <code>language</code>가 <code>zh</code> 또는 <code>ja</code></li>
-<li><code>JUDGE_XLING</code>이 <code>off</code>가 아님</li>
-<li><code>JUDGE_XLING=auto</code>일 때 최근 교차 확인 실패 뒤 건너뛰는 시간(<code>JUDGE_XLING_COOLDOWN_S</code>)이 지났음</li>
+<li><code>xling</code> · <code>xling_agree</code>(교차 확인 결과) — <code>/judge/faithfulness</code> · <code>/judge/rubric/{vendor}</code>에만, 아래를 모두 채울 때만 붙음 (<code>src/judge_api/app.py:131-156</code>)<ul>
+<li>요청 <code>language</code>가 <code>zh</code> 또는 <code>ja</code></li>
+<li>환경 변수 <code>JUDGE_XLING</code>이 <code>off</code>가 아님</li>
+<li><code>JUDGE_XLING=auto</code>이면 최근 교차 확인 실패 뒤 건너뛰는 시간(<code>JUDGE_XLING_COOLDOWN_S</code>, 기본 600초)이 지났음</li>
 <li>교차 확인 모델 호출이 성공함</li>
 </ul>
 </li>
-<li><code>xling</code>이 없을 때 → "대상 아님"인지 "교차 확인 실패로 건너뜀"인지 응답만으로는 구분할 수 없음(실패 사유는 내부 키 <code>_xling_error</code>로만 남고 응답에서 빠짐, <code>src/judge_api/app.py:300</code>, <code>:314</code>, <code>:352</code>)</li>
-<li>판정 집계(<code>verdict.py</code>)는 <code>xling</code>을 읽지 않음 — 기록용</li>
+<li><code>xling</code>이 없을 때: "대상 아님"인지 "실패로 건너뜀"인지 응답만으로는 구분 못 함(실패 사유는 서버 안에서만 씀)</li>
+<li>판정 집계는 <code>xling</code>을 읽지 않음 — 기록용</li>
 </ul>
 <h2 id="오류-응답">오류 응답<a class="headerlink" href="#오류-응답" title="Permanent link">&para;</a></h2>
 <table>
@@ -999,74 +1100,130 @@
 <th>언제</th>
 <th>본문</th>
 <th>다시 보내면 되나</th>
+<th>근거</th>
 </tr>
 </thead>
 <tbody>
 <tr>
+<td>401</td>
+<td><code>JUDGE_API_TOKEN</code>이 설정됐는데 토큰이 없거나 틀림</td>
+<td><code>{"detail": "invalid or missing bearer token"}</code></td>
+<td>아니오 — 토큰을 고칠 것</td>
+<td><code>src/judge_api/app.py:79</code></td>
+</tr>
+<tr>
 <td>422</td>
 <td>필수 필드 누락 · 형이 틀림 · JSON이 아님</td>
-<td>FastAPI 기본 형식 <code>{"detail": [{"type", "loc", "msg", "input", ...}]}</code></td>
+<td>FastAPI 기본 <code>{"detail": [{"type", "loc", "msg", "input", ...}]}</code></td>
 <td>아니오 — 요청을 고칠 것</td>
+<td>—</td>
 </tr>
 <tr>
 <td>404</td>
 <td>없는 경로, 또는 <code>/judge/rubric/{vendor}</code>의 <code>vendor</code>가 <code>actibuki</code>가 아님</td>
 <td><code>{"detail": "..."}</code></td>
 <td>아니오</td>
+<td><code>src/judge_api/app.py:243</code></td>
 </tr>
 <tr>
 <td>405</td>
 <td>메서드가 틀림(예: <code>POST /ping</code>)</td>
 <td><code>{"detail": "Method Not Allowed"}</code></td>
 <td>아니오</td>
+<td>—</td>
 </tr>
 <tr>
 <td>502</td>
-<td>판정 모델 호출 실패(서버 안에서 여러 번 다시 시도한 뒤), 또는 모델 답을 JSON으로 읽지 못함</td>
-<td><code>{"detail": {"error", "model", "status", "text"}}</code> (<code>src/judge_api/app.py:283-285</code>)</td>
-<td>예 — 잠시 뒤 다시</td>
+<td>판정 모델 호출 실패(서버 안에서 다시 시도한 뒤), 모델 답을 JSON으로 못 읽음</td>
+<td><code>{"detail": {"error", "model", "status", "text"}}</code></td>
+<td>예 — 잠시 뒤</td>
+<td><code>src/judge_api/app.py:116-118</code></td>
 </tr>
 <tr>
-<td>500</td>
-<td>처리 중 예외. 코드상 예: 판정 모델이 낸 JSON에 필수 키가 빠짐(<code>int(primary["meaning_fidelity"])</code> 등, <code>src/judge_api/app.py:351</code>) — 실제 발생은 확인하지 못함</td>
-<td>FastAPI 기본(<code>Internal Server Error</code>)</td>
-<td>클라이언트는 다시 시도함</td>
+<td>502</td>
+<td>판정 모델 출력에 필수 키가 없음, 또는 <code>meaning_fidelity</code>가 정수가 아님</td>
+<td><code>{"detail": {"error": "judge_output_invalid", "missing" 또는 "reason", "model", "text"}}</code></td>
+<td>예 — 잠시 뒤</td>
+<td><code>src/judge_api/app.py:97-122</code></td>
 </tr>
 </tbody>
 </table>
 <ul>
-<li>아래 422 · 404 · 405 본문은 판정 모델을 부르지 않는 경로에서 FastAPI <code>TestClient</code>로 실제 받은 값</li>
+<li>아래 본문은 모두 FastAPI <code>TestClient</code>로 실제 받은 값(가짜 판정 모델, 502는 판정 모델 호출부를 바꿔 끼워 만듦)</li>
 </ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1">// POST /judge/faithfulness  본문 {}  → 422</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="p">{</span><span class="s2">"detail"</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="p">{</span><span class="s2">"type"</span><span class="o">:</span><span class="w"> </span><span class="s2">"missing"</span><span class="p">,</span><span class="w"> </span><span class="s2">"loc"</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"body"</span><span class="p">,</span><span class="w"> </span><span class="s2">"case_id"</span><span class="p">],</span><span class="w"> </span><span class="s2">"msg"</span><span class="o">:</span><span class="w"> </span><span class="s2">"Field required"</span><span class="p">,</span><span class="w"> </span><span class="s2">"input"</span><span class="o">:</span><span class="w"> </span><span class="p">{}},</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="p">{</span><span class="s2">"type"</span><span class="o">:</span><span class="w"> </span><span class="s2">"missing"</span><span class="p">,</span><span class="w"> </span><span class="s2">"loc"</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"body"</span><span class="p">,</span><span class="w"> </span><span class="s2">"input"</span><span class="p">],</span><span class="w"> </span><span class="s2">"msg"</span><span class="o">:</span><span class="w"> </span><span class="s2">"Field required"</span><span class="p">,</span><span class="w"> </span><span class="s2">"input"</span><span class="o">:</span><span class="w"> </span><span class="p">{}}</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="p">]}</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="c1">// POST /judge/robustness  본문이 JSON 아님 → 422</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="p">{</span><span class="s2">"detail"</span><span class="o">:</span><span class="w"> </span><span class="p">[{</span><span class="s2">"type"</span><span class="o">:</span><span class="w"> </span><span class="s2">"json_invalid"</span><span class="p">,</span><span class="w"> </span><span class="s2">"loc"</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"body"</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">],</span><span class="w"> </span><span class="s2">"msg"</span><span class="o">:</span><span class="w"> </span><span class="s2">"JSON decode error"</span><span class="p">,</span><span class="w"> </span><span class="s2">"input"</span><span class="o">:</span><span class="w"> </span><span class="p">{},</span><span class="w"> </span><span class="s2">"ctx"</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="s2">"error"</span><span class="o">:</span><span class="w"> </span><span class="s2">"Expecting value"</span><span class="p">}}]}</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="c1">// POST /judge/rubric/funwave  (본문은 올바름) → 404</span>
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="p">{</span><span class="s2">"detail"</span><span class="o">:</span><span class="w"> </span><span class="s2">"no rubric for vendor funwave; funwave rows use /judge/faithfulness"</span><span class="p">}</span>
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="c1">// POST /ping → 405</span>
-<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="p">{</span><span class="s2">"detail"</span><span class="o">:</span><span class="w"> </span><span class="s2">"Method Not Allowed"</span><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1">// POST /judge/faithfulness  본문 {}  → 422</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="p">{</span><span class="s2">"detail"</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="p">{</span><span class="s2">"type"</span><span class="o">:</span><span class="w"> </span><span class="s2">"missing"</span><span class="p">,</span><span class="w"> </span><span class="s2">"loc"</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"body"</span><span class="p">,</span><span class="w"> </span><span class="s2">"case_id"</span><span class="p">],</span><span class="w"> </span><span class="s2">"msg"</span><span class="o">:</span><span class="w"> </span><span class="s2">"Field required"</span><span class="p">,</span><span class="w"> </span><span class="s2">"input"</span><span class="o">:</span><span class="w"> </span><span class="p">{}},</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span><span class="p">{</span><span class="s2">"type"</span><span class="o">:</span><span class="w"> </span><span class="s2">"missing"</span><span class="p">,</span><span class="w"> </span><span class="s2">"loc"</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"body"</span><span class="p">,</span><span class="w"> </span><span class="s2">"input"</span><span class="p">],</span><span class="w"> </span><span class="s2">"msg"</span><span class="o">:</span><span class="w"> </span><span class="s2">"Field required"</span><span class="p">,</span><span class="w"> </span><span class="s2">"input"</span><span class="o">:</span><span class="w"> </span><span class="p">{}}</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="p">]}</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="c1">// POST /judge/robustness  본문이 JSON 아님 → 422</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="p">{</span><span class="s2">"detail"</span><span class="o">:</span><span class="w"> </span><span class="p">[{</span><span class="s2">"type"</span><span class="o">:</span><span class="w"> </span><span class="s2">"json_invalid"</span><span class="p">,</span><span class="w"> </span><span class="s2">"loc"</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"body"</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">],</span><span class="w"> </span><span class="s2">"msg"</span><span class="o">:</span><span class="w"> </span><span class="s2">"JSON decode error"</span><span class="p">,</span><span class="w"> </span><span class="s2">"input"</span><span class="o">:</span><span class="w"> </span><span class="p">{},</span><span class="w"> </span><span class="s2">"ctx"</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="s2">"error"</span><span class="o">:</span><span class="w"> </span><span class="s2">"Expecting value"</span><span class="p">}}]}</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="c1">// POST /judge/rubric/funwave  (본문은 올바름) → 404</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="p">{</span><span class="s2">"detail"</span><span class="o">:</span><span class="w"> </span><span class="s2">"no rubric for vendor funwave; funwave rows use /judge/faithfulness"</span><span class="p">}</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="c1">// POST /ping → 405</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="p">{</span><span class="s2">"detail"</span><span class="o">:</span><span class="w"> </span><span class="s2">"Method Not Allowed"</span><span class="p">}</span>
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="c1">// JUDGE_API_TOKEN 설정, 토큰 없이 GET /ping → 401</span>
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="p">{</span><span class="s2">"detail"</span><span class="o">:</span><span class="w"> </span><span class="s2">"invalid or missing bearer token"</span><span class="p">}</span>
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="c1">// 판정 모델 API가 429로 끝남 → 502</span>
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="p">{</span><span class="s2">"detail"</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="s2">"error"</span><span class="o">:</span><span class="w"> </span><span class="s2">"http_429"</span><span class="p">,</span><span class="w"> </span><span class="s2">"model"</span><span class="o">:</span><span class="w"> </span><span class="s2">"offline-fake-judge"</span><span class="p">,</span><span class="w"> </span><span class="s2">"status"</span><span class="o">:</span><span class="w"> </span><span class="mf">429</span><span class="p">,</span><span class="w"> </span><span class="s2">"text"</span><span class="o">:</span><span class="w"> </span><span class="s2">""</span><span class="p">}}</span>
+<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>
+<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a><span class="c1">// 판정 모델 출력이 {"reasoning": "r"} 뿐 → 502</span>
+<a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a><span class="p">{</span><span class="s2">"detail"</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="s2">"error"</span><span class="o">:</span><span class="w"> </span><span class="s2">"judge_output_invalid"</span><span class="p">,</span>
+<a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a><span class="w">            </span><span class="s2">"missing"</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"meaning_fidelity"</span><span class="p">,</span><span class="w"> </span><span class="s2">"errors_found"</span><span class="p">,</span><span class="w"> </span><span class="s2">"comment_accuracy"</span><span class="p">,</span><span class="w"> </span><span class="s2">"terminology_accuracy"</span><span class="p">,</span><span class="w"> </span><span class="s2">"correct_relevance"</span><span class="p">,</span><span class="w"> </span><span class="s2">"confidence"</span><span class="p">],</span>
+<a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a><span class="w">            </span><span class="s2">"model"</span><span class="o">:</span><span class="w"> </span><span class="s2">"offline-fake-judge"</span><span class="p">,</span><span class="w"> </span><span class="s2">"text"</span><span class="o">:</span><span class="w"> </span><span class="s2">"{\"reasoning\": \"r\"}"</span><span class="p">}}</span>
+<a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a>
+<a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a><span class="c1">// meaning_fidelity 가 "high" → 502</span>
+<a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a><span class="p">{</span><span class="s2">"detail"</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="s2">"error"</span><span class="o">:</span><span class="w"> </span><span class="s2">"judge_output_invalid"</span><span class="p">,</span><span class="w"> </span><span class="s2">"reason"</span><span class="o">:</span><span class="w"> </span><span class="s2">"meaning_fidelity is not an integer"</span><span class="p">,</span><span class="w"> </span><span class="s2">"model"</span><span class="o">:</span><span class="w"> </span><span class="s2">"offline-fake-judge"</span><span class="p">,</span><span class="w"> </span><span class="s2">"text"</span><span class="o">:</span><span class="w"> </span><span class="s2">"x"</span><span class="p">}}</span>
 </code></pre></div>
 <ul>
-<li>502 본문 예시(<strong>예시, 실제 호출 결과 아님</strong> — 코드 <code>src/judge_api/app.py:285</code>의 구조대로 씀)</li>
+<li><code>detail.error</code> 값의 꼴 (판정 모델 호출 실패일 때)</li>
 </ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">{</span><span class="nt">"detail"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">"error"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http_429"</span><span class="p">,</span><span class="w"> </span><span class="nt">"model"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;JUDGE_MODEL 값&gt;"</span><span class="p">,</span><span class="w"> </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">429</span><span class="p">,</span><span class="w"> </span><span class="nt">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">}}</span>
-</code></pre></div>
-<ul>
-<li><code>detail.error</code> 값의 꼴 (<code>src/common/core.py:181-183</code>, <code>:212</code>, <code>:216</code>, <code>:284</code>, <code>:294</code>)<ul>
-<li><code>http_&lt;상태 코드&gt;</code> — 판정 모델 API가 오류 상태를 줌</li>
-<li><code>timeout:&lt;예외 이름&gt;</code> — 판정 모델 API 응답 시간 초과(240초)</li>
-<li><code>&lt;예외 이름&gt;:&lt;메시지&gt;</code> — 연결 실패 등</li>
-<li><code>bad_response:...</code> — 응답에 <code>choices</code>가 없음</li>
-<li><code>json_parse:...</code> — 모델 답을 JSON으로 읽지 못함</li>
-</ul>
-</li>
-</ul>
+<table>
+<thead>
+<tr>
+<th>값</th>
+<th>뜻</th>
+<th>근거</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>http_&lt;상태 코드&gt;</code></td>
+<td>판정 모델 API가 오류 상태를 줌</td>
+<td><code>src/common/http.py:173</code></td>
+</tr>
+<tr>
+<td><code>timeout:&lt;예외 이름&gt;</code></td>
+<td>응답 시간 초과(240초)</td>
+<td><code>src/common/http.py:149</code></td>
+</tr>
+<tr>
+<td><code>&lt;예외 이름&gt;:&lt;메시지&gt;</code></td>
+<td>연결 실패 등</td>
+<td><code>src/common/http.py:151</code></td>
+</tr>
+<tr>
+<td><code>bad_response:...</code></td>
+<td>응답에 <code>choices</code>가 없음</td>
+<td><code>src/common/http.py:252</code></td>
+</tr>
+<tr>
+<td><code>json_parse:...</code></td>
+<td>모델 답을 JSON으로 읽지 못함</td>
+<td><code>src/common/http.py:261</code></td>
+</tr>
+<tr>
+<td><code>judge_output_invalid</code></td>
+<td>JSON은 읽었지만 필수 키가 없거나 형이 틀림</td>
+<td><code>src/judge_api/app.py:97-109</code></td>
+</tr>
+</tbody>
+</table>
 <h2 id="다시-시도">다시 시도<a class="headerlink" href="#다시-시도" title="Permanent link">&para;</a></h2>
 <pre class="mermaid"><code>sequenceDiagram
     participant C as 클라이언트 JudgeClient
@@ -1091,38 +1248,38 @@
 <td>클라이언트 → 판정 서버</td>
 <td>5</td>
 <td>429 · 502 · 503 · 504 · 시간 초과 · 500</td>
-<td><code>src/judge_api/client.py:22</code>, <code>src/common/core.py:194-221</code></td>
+<td><code>src/judge_api/client.py:40</code>, <code>src/common/http.py:157-188</code></td>
 </tr>
 <tr>
-<td>판정 서버 → 판정 모델(주 모델)</td>
+<td>판정 서버 → 판정 모델(기본 모델)</td>
 <td>8</td>
 <td>같음</td>
-<td><code>src/common/core.py:232</code>, <code>:194-221</code></td>
+<td><code>src/common/http.py:198</code>, <code>src/judge_api/backend.py:75</code></td>
 </tr>
 <tr>
 <td>판정 서버 → 교차 확인 모델</td>
 <td>1(다시 시도 안 함)</td>
 <td>—</td>
-<td><code>src/judge_api/app.py:260</code></td>
+<td><code>src/judge_api/backend.py:73</code></td>
 </tr>
 </tbody>
 </table>
 <ul>
-<li>기다리는 시간 (<code>src/common/core.py:203-213</code>, <code>:217-220</code>)<ul>
-<li>429이고 본문에 <code>quota</code>가 있음: 15~30초 + 늘어나는 대기</li>
+<li>기다리는 시간 (<code>src/common/http.py:108-115</code>, <code>:182-185</code>)<ul>
+<li>429이고 본문에 <code>quota</code>(사용 한도)가 있음: 15~30초 + 늘어나는 대기</li>
 <li>그 밖의 429: 2~3초 + 늘어나는 대기</li>
 <li>502: 0~0.5초</li>
-<li>503 · 504 · 시간 초과 · 500: 늘어나는 대기(1초에서 시작해 두 배씩, 최대 30초) + 0~1초</li>
+<li>503 · 504 · 시간 초과 · 500: 늘어나는 대기(1초에서 두 배씩, 최대 30초) + 0~1초</li>
 </ul>
 </li>
-<li>그 밖의 4xx(400 · 404 · 422 등)는 다시 시도하지 않음</li>
-<li>동시 호출 수 자동 조절 (<code>src/common/core.py:98-143</code>)<ul>
-<li>연속 8번 성공하면 동시 호출 상한 +1, 429 · 502 · 503 · 504 · 시간 초과면 절반으로</li>
-<li>클라이언트 기본: 시작 4 · 최대 16 (<code>src/judge_api/client.py:13</code>)</li>
-<li>판정 서버 → 주 모델: 시작 4 · 최대 <code>SHANNON_MAX_CONCURRENCY</code>(기본 24) / 교차 확인 모델: 시작 2 · 최대 4 (<code>src/judge_api/app.py:258-260</code>)</li>
+<li>그 밖의 4xx(400 · 401 · 404 · 422 등)는 다시 시도하지 않음</li>
+<li>동시 호출 수 자동 조절(AIMD: 성공하면 조금씩 늘리고 막히면 절반으로) (<code>src/common/http.py:56-105</code>)<ul>
+<li>연속 8번 성공 → 상한 +1, 429 · 502 · 503 · 504 · 시간 초과 → 절반</li>
+<li>클라이언트 기본: 시작 4 · 최대 16 (<code>src/judge_api/client.py:21</code>)</li>
+<li>판정 서버 → 기본 모델: 시작 4 · 최대 <code>JUDGE_MAX_CONCURRENCY</code>(기본 24) / 교차 확인 모델: 시작 2 · 최대 4 (<code>src/judge_api/backend.py:73-75</code>, <code>src/common/http.py:200</code>)</li>
 </ul>
 </li>
-<li>제한 시간: 클라이언트 → 서버 900초 (<code>src/judge_api/client.py:13</code>) · 서버 → 판정 모델 240초 (<code>src/common/core.py:241</code>)</li>
+<li>제한 시간: 클라이언트 → 서버 900초 (<code>src/judge_api/client.py:21</code>) · 서버 → 판정 모델 240초 (<code>src/common/http.py:208</code>)</li>
 </ul>
 <h2 id="호출하면-남는-파일">호출하면 남는 파일<a class="headerlink" href="#호출하면-남는-파일" title="Permanent link">&para;</a></h2>
 <table>
@@ -1137,37 +1294,44 @@
 <tbody>
 <tr>
 <td><code>raw/judge/&lt;raw_key&gt;.json</code></td>
-<td>판정 서버</td>
+<td>판정 서버(실제 판정 모델일 때)</td>
 <td>판정 모델 요청 · 응답 전문(문항 · 응답 원문 포함)</td>
-<td><code>src/common/core.py:225-226</code>, <code>src/judge_api/app.py:282</code></td>
+<td><code>src/common/http.py:191</code>, <code>src/judge_api/backend.py:75</code></td>
 </tr>
 <tr>
 <td><code>raw/judge_xling/&lt;raw_key&gt;.json</code></td>
-<td>판정 서버</td>
+<td>판정 서버(실제 판정 모델일 때)</td>
 <td>교차 확인 모델 요청 · 응답 전문</td>
-<td><code>src/judge_api/app.py:260</code>, <code>src/common/core.py:238</code></td>
+<td><code>src/judge_api/backend.py:73</code></td>
 </tr>
 <tr>
 <td><code>raw/judge_client/&lt;열쇠&gt;.json</code></td>
 <td>클라이언트</td>
 <td>판정 서버 요청 · 응답 전문</td>
-<td><code>src/judge_api/client.py:18</code>, <code>src/common/core.py:225-226</code></td>
+<td><code>src/judge_api/client.py:36</code>, <code>src/common/http.py:191</code></td>
 </tr>
 <tr>
-<td><code>data/usage_ledger.jsonl</code></td>
+<td><code>&lt;데이터 폴더&gt;/usage_ledger.jsonl</code></td>
 <td>둘 다</td>
 <td>호출마다 상태 · 토큰 수 · 걸린 시간 한 줄</td>
-<td><code>src/common/core.py:69-95</code></td>
+<td><code>src/common/http.py:42-52</code></td>
 </tr>
 <tr>
-<td><code>prompts/judge_*.md</code></td>
+<td><code>&lt;데이터 폴더&gt;/prompts/judge_*.md</code></td>
 <td>판정 서버(시작할 때)</td>
-<td>판정 지시문 사본(모델 이름 포함)</td>
-<td><code>src/judge_api/app.py:198-208</code></td>
+<td>판정 지시문 · 출력 형식 사본(모델 이름 포함, 유해 질의 형식 포함)</td>
+<td><code>src/judge_api/app.py:47-61</code></td>
+</tr>
+<tr>
+<td><code>&lt;데이터 폴더&gt;/logs/judge_&lt;기업&gt;_run.md</code></td>
+<td>실행기</td>
+<td>실행 요약</td>
+<td><code>src/judge_api/run_judge.py:401</code></td>
 </tr>
 </tbody>
 </table>
 <ul>
+<li><code>&lt;데이터 폴더&gt;</code> = 기본 <code>data/</code>, 환경 변수 <code>EVAL_DATA_DIR</code>로 바꿈. <code>raw/</code>는 <code>EVAL_RAW_DIR</code> (<code>src/common/config.py:30-37</code>)</li>
 <li>모두 <code>.gitignore</code> 대상. 공유 · 커밋 금지</li>
 </ul>
 

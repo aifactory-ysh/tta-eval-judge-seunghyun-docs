@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="규칙 판정 · 독립 판정 모델(판정 서버) · 판정 집계의 사용법">
+        <meta name="description" content="규칙 판정 · 독립 판정 모델(판정 서버) · 판정 집계의 사용법(기업 API 호출 없음)">
       
       
       
@@ -27,7 +27,7 @@
     
     
       
-        <title>실행기와 명령 - TTA 신뢰성 평가 v2 판정 모듈 개발 문서 (윤승현 · seunghyun)</title>
+        <title>실행기와 명령 - TTA 신뢰성 평가 판정 모듈 개발 문서 (윤승현 · seunghyun)</title>
       
     
     
@@ -94,7 +94,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="상단/헤더">
-    <a href=".." title="TTA 신뢰성 평가 v2 판정 모듈 개발 문서 (윤승현 · seunghyun)" class="md-header__button md-logo" aria-label="TTA 신뢰성 평가 v2 판정 모듈 개발 문서 (윤승현 · seunghyun)" data-md-component="logo">
+    <a href=".." title="TTA 신뢰성 평가 판정 모듈 개발 문서 (윤승현 · seunghyun)" class="md-header__button md-logo" aria-label="TTA 신뢰성 평가 판정 모듈 개발 문서 (윤승현 · seunghyun)" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -108,7 +108,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            TTA 신뢰성 평가 v2 판정 모듈 개발 문서 (윤승현 · seunghyun)
+            TTA 신뢰성 평가 판정 모듈 개발 문서 (윤승현 · seunghyun)
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -218,13 +218,13 @@
 
 <nav class="md-nav md-nav--primary" aria-label="네비게이션" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="TTA 신뢰성 평가 v2 판정 모듈 개발 문서 (윤승현 · seunghyun)" class="md-nav__button md-logo" aria-label="TTA 신뢰성 평가 v2 판정 모듈 개발 문서 (윤승현 · seunghyun)" data-md-component="logo">
+    <a href=".." title="TTA 신뢰성 평가 판정 모듈 개발 문서 (윤승현 · seunghyun)" class="md-nav__button md-logo" aria-label="TTA 신뢰성 평가 판정 모듈 개발 문서 (윤승현 · seunghyun)" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
-    TTA 신뢰성 평가 v2 판정 모듈 개발 문서 (윤승현 · seunghyun)
+    TTA 신뢰성 평가 판정 모듈 개발 문서 (윤승현 · seunghyun)
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -604,6 +604,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#무엇--왜" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        무엇 · 왜
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#makefile-목표" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -612,30 +623,13 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Makefile 목표">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#한-기업을-처음부터-끝까지" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        한 기업을 처음부터 끝까지
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
-  <a href="#①-규칙-판정--srcreportrulespy" class="md-nav__link">
+  <a href="#규칙-판정" class="md-nav__link">
     <span class="md-ellipsis">
       
-        ① 규칙 판정 — src/report/rules.py
+        ① 규칙 판정
       
     </span>
   </a>
@@ -643,15 +637,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#②-판정-모델-호출--srcjudge_apirun_judgepy" class="md-nav__link">
+  <a href="#판정-모델-호출" class="md-nav__link">
     <span class="md-ellipsis">
       
-        ② 판정 모델 호출 — src/judge_api/run_judge.py
+        ② 판정 모델 호출(실행기)
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="② 판정 모델 호출 — src/judge_api/run_judge.py">
+    <nav class="md-nav" aria-label="② 판정 모델 호출(실행기)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -693,10 +687,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#③-판정-집계--srcreportverdictpy" class="md-nav__link">
+  <a href="#판정-집계" class="md-nav__link">
     <span class="md-ellipsis">
       
-        ③ 판정 집계 — src/report/verdict.py
+        ③ 판정 집계
       
     </span>
   </a>
@@ -704,10 +698,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#주의할-점" class="md-nav__link">
+  <a href="#환경-변수" class="md-nav__link">
     <span class="md-ellipsis">
       
-        주의할 점
+        환경 변수
       
     </span>
   </a>
@@ -884,6 +878,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#무엇--왜" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        무엇 · 왜
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#makefile-목표" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -892,30 +897,13 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Makefile 목표">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#한-기업을-처음부터-끝까지" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        한 기업을 처음부터 끝까지
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
-  <a href="#①-규칙-판정--srcreportrulespy" class="md-nav__link">
+  <a href="#규칙-판정" class="md-nav__link">
     <span class="md-ellipsis">
       
-        ① 규칙 판정 — src/report/rules.py
+        ① 규칙 판정
       
     </span>
   </a>
@@ -923,15 +911,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#②-판정-모델-호출--srcjudge_apirun_judgepy" class="md-nav__link">
+  <a href="#판정-모델-호출" class="md-nav__link">
     <span class="md-ellipsis">
       
-        ② 판정 모델 호출 — src/judge_api/run_judge.py
+        ② 판정 모델 호출(실행기)
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="② 판정 모델 호출 — src/judge_api/run_judge.py">
+    <nav class="md-nav" aria-label="② 판정 모델 호출(실행기)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -973,10 +961,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#③-판정-집계--srcreportverdictpy" class="md-nav__link">
+  <a href="#판정-집계" class="md-nav__link">
     <span class="md-ellipsis">
       
-        ③ 판정 집계 — src/report/verdict.py
+        ③ 판정 집계
       
     </span>
   </a>
@@ -984,10 +972,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#주의할-점" class="md-nav__link">
+  <a href="#환경-변수" class="md-nav__link">
     <span class="md-ellipsis">
       
-        주의할 점
+        환경 변수
       
     </span>
   </a>
@@ -1012,17 +1000,27 @@
 
 
 <h1 id="실행기와-명령">실행기와 명령<a class="headerlink" href="#실행기와-명령" title="Permanent link">&para;</a></h1>
+<div class="admonition abstract">
+<p class="admonition-title">이 쪽에서 알 수 있는 것</p>
 <ul>
-<li>기업 응답 파일 전체를 세 단계로 판정하는 명령</li>
-<li>모든 명령은 저장소 최상위 폴더에서 실행</li>
+<li>세 단계를 돌리는 명령(Makefile 목표 · 파이썬 모듈)과 선택지</li>
+<li>판정 집계의 선택지(<code>--judge-policy</code> · <code>--keep-rule-verdicts</code>)와 기본값</li>
+<li>환경 변수 전체 목록</li>
+</ul>
+</div>
+<h2 id="무엇--왜">무엇 · 왜<a class="headerlink" href="#무엇--왜" title="Permanent link">&para;</a></h2>
+<ul>
+<li>기업 응답 파일 하나를 세 단계로 판정하는 명령 모음</li>
+<li>모든 명령은 저장소 최상위 폴더에서 실행(<code>python -m src....</code> 꼴)</li>
 <li><code>&lt;기업&gt;</code> = <code>funwave</code>(펀웨이브) 또는 <code>actibuki</code>(액티부키)</li>
+<li>기업 API는 어느 명령도 부르지 않음</li>
 </ul>
 <pre class="mermaid"><code>flowchart LR
-    I["data/inference_기업.parquet"] --&gt; R["make rules&lt;br/&gt;rules.py"]
-    I --&gt; J["make judge&lt;br/&gt;run_judge.py&lt;br/&gt;(판정 서버 필요)"]
+    I["data/inference_기업.parquet&lt;br/&gt;(미리 받아 둔 기업 응답)"] --&gt; R["make rules"]
+    I --&gt; J["make judge&lt;br/&gt;(판정 서버 필요)"]
     R --&gt; RO["data/rules_기업.parquet"]
     J --&gt; JO["data/judge_기업.parquet"]
-    RO --&gt; V["make verdict&lt;br/&gt;verdict.py"]
+    RO --&gt; V["make verdict"]
     JO -. "있으면 읽음" .-&gt; V
     V --&gt; VO["data/verdict_기업.parquet"]</code></pre>
 <h2 id="makefile-목표">Makefile 목표<a class="headerlink" href="#makefile-목표" title="Permanent link">&para;</a></h2>
@@ -1031,98 +1029,95 @@
 <tr>
 <th>목표</th>
 <th>하는 일</th>
-<th>실제 명령</th>
-<th>근거</th>
+<th>외부 호출</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>make venv</code></td>
-<td><code>.venv</code>를 만들고 <code>requirements.txt</code> 설치</td>
-<td><code>python3 -m venv .venv &amp;&amp; .venv/bin/pip install ...</code></td>
-<td><code>Makefile:10-11</code></td>
+<td><code>.venv</code> 만들고 <code>requirements.txt</code> 설치</td>
+<td>패키지 설치만</td>
+</tr>
+<tr>
+<td><code>make venv-dev</code></td>
+<td>위 + <code>requirements-dev.txt</code>(pytest · ruff)</td>
+<td>패키지 설치만</td>
+</tr>
+<tr>
+<td><code>make demo</code></td>
+<td>예시 입력으로 ① → ②(가짜 판정 모델) → ③. 결과 <code>build/demo/</code></td>
+<td>없음</td>
+</tr>
+<tr>
+<td><code>make demo-rules</code></td>
+<td>예시 입력으로 ① → ③</td>
+<td>없음</td>
 </tr>
 <tr>
 <td><code>make rules VENDOR=&lt;기업&gt;</code></td>
 <td>① 규칙 판정</td>
-<td><code>.venv/bin/python src/report/rules.py --vendor &lt;기업&gt;</code></td>
-<td><code>Makefile:14-15</code></td>
+<td>없음</td>
 </tr>
 <tr>
-<td><code>make judge-up</code></td>
-<td>판정 서버를 로컬 8787 포트로 켜고 3초 뒤 <code>/ping</code></td>
-<td><code>.venv/bin/uvicorn src.judge_api.app:app --host 127.0.0.1 --port 8787</code> (백그라운드, 로그 <code>judge_api.log</code>, 프로세스 번호 <code>.judge.pid</code>)</td>
-<td><code>Makefile:18-19</code></td>
+<td><code>make judge-up</code> · <code>make judge-down</code></td>
+<td>판정 서버 켜기(127.0.0.1:<code>PORT</code>, 기본 8787) · 끄기</td>
+<td>—</td>
 </tr>
 <tr>
 <td><code>make judge VENDOR=&lt;기업&gt; CALLS=2</code></td>
-<td>② 판정 모델 호출</td>
-<td><code>.venv/bin/python src/judge_api/run_judge.py --vendor &lt;기업&gt; --calls-per-case 2</code></td>
-<td><code>Makefile:25-26</code></td>
+<td>② 켜 둔 판정 서버로 판정 모델 호출</td>
+<td>판정 모델 API</td>
 </tr>
 <tr>
-<td><code>make judge-down</code></td>
-<td>판정 서버 끄기</td>
-<td><code>kill $(cat .judge.pid)</code> 후 파일 삭제</td>
-<td><code>Makefile:21-22</code></td>
+<td><code>make judge-offline VENDOR=&lt;기업&gt;</code></td>
+<td>② 가짜 판정 모델 · 같은 프로세스 안 판정 서버</td>
+<td>없음</td>
 </tr>
 <tr>
-<td><code>make verdict VENDOR=&lt;기업&gt;</code></td>
+<td><code>make verdict VENDOR=&lt;기업&gt; JUDGE_POLICY=first</code></td>
 <td>③ 판정 집계</td>
-<td><code>.venv/bin/python src/report/verdict.py --vendor &lt;기업&gt;</code></td>
-<td><code>Makefile:29-30</code></td>
+<td>없음</td>
 </tr>
 <tr>
 <td><code>make all VENDOR=&lt;기업&gt;</code></td>
-<td><code>rules</code> → <code>judge</code> → <code>verdict</code> 차례로(판정 서버는 먼저 켜 둘 것)</td>
-<td>—</td>
-<td><code>Makefile:33</code></td>
+<td><code>rules</code> → <code>judge</code> → <code>verdict</code>(판정 서버는 먼저 켜 둘 것)</td>
+<td>판정 모델 API</td>
+</tr>
+<tr>
+<td><code>make test</code> · <code>make lint</code></td>
+<td>회귀 시험 · 코드 검사(ruff · compileall)</td>
+<td>없음</td>
 </tr>
 </tbody>
 </table>
-<ul>
-<li>변수 기본값: <code>VENDOR=funwave</code> · <code>CALLS=2</code> · <code>PY=.venv/bin/python</code> · <code>UVICORN=.venv/bin/uvicorn</code> (<code>Makefile:3-6</code>)</li>
-</ul>
-<h3 id="한-기업을-처음부터-끝까지">한 기업을 처음부터 끝까지<a class="headerlink" href="#한-기업을-처음부터-끝까지" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>make<span class="w"> </span>rules<span class="w">   </span><span class="nv">VENDOR</span><span class="o">=</span>funwave
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>make<span class="w"> </span>judge-up
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>make<span class="w"> </span>judge<span class="w">   </span><span class="nv">VENDOR</span><span class="o">=</span>funwave<span class="w"> </span><span class="nv">CALLS</span><span class="o">=</span><span class="m">2</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>make<span class="w"> </span>judge-down
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>make<span class="w"> </span>verdict<span class="w"> </span><span class="nv">VENDOR</span><span class="o">=</span>funwave
-</code></pre></div>
-<ul>
-<li>판정 모델 없이도 <code>rules</code> → <code>verdict</code>만으로 돌아감 — 이때 판정 모델 몫 항목은 규칙 결과 그대로이거나 검토필요로 남음</li>
-</ul>
-<h2 id="①-규칙-판정--srcreportrulespy">① 규칙 판정 — <code>src/report/rules.py</code><a class="headerlink" href="#①-규칙-판정--srcreportrulespy" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>usage: rules.py [-h] --vendor {funwave,actibuki} [--input INPUT]
+<h2 id="규칙-판정">① 규칙 판정<a class="headerlink" href="#규칙-판정" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>python -m src.report.rules --vendor {funwave,actibuki} [--input INPUT]
 </code></pre></div>
 <table>
 <thead>
 <tr>
 <th>선택지</th>
-<th>필수</th>
 <th>기본값</th>
 <th>뜻</th>
+<th>근거</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>--vendor</code></td>
-<td>예</td>
-<td>—</td>
-<td><code>funwave</code> · <code>actibuki</code></td>
+<td>(필수)</td>
+<td>기업</td>
+<td><code>src/report/rules/__main__.py:20</code></td>
 </tr>
 <tr>
 <td><code>--input</code></td>
-<td>아니오</td>
-<td><code>data/inference_&lt;기업&gt;.parquet</code></td>
+<td><code>&lt;데이터 폴더&gt;/inference_&lt;기업&gt;.parquet</code></td>
 <td>기업 응답 파일</td>
+<td><code>src/report/rules/__main__.py:21</code></td>
 </tr>
 </tbody>
 </table>
 <ul>
-<li>근거: <code>src/report/rules.py:658-668</code></li>
-<li>외부 호출 없음 · 환경 변수 필요 없음</li>
 <li>만드는 파일</li>
 </ul>
 <table>
@@ -1135,31 +1130,27 @@
 </thead>
 <tbody>
 <tr>
-<td><code>data/rules_&lt;기업&gt;.parquet</code></td>
-<td>입력 열 + 규칙 판정 열(<a href="../files/#규칙-판정-결과">입력과 출력 파일의 열</a>)</td>
-<td><code>src/report/rules.py:666</code></td>
+<td><code>rules_&lt;기업&gt;.parquet</code></td>
+<td>입력 열 + 규칙 판정 열(<a href="../files/#규칙-판정-결과">열 설명</a>)</td>
+<td><code>src/report/rules/__main__.py:25</code></td>
 </tr>
 <tr>
-<td><code>data/repeat_stats_&lt;기업&gt;.parquet</code></td>
+<td><code>repeat_stats_&lt;기업&gt;.parquet</code></td>
 <td>반복 호출 통계(해당 문항이 있을 때)</td>
-<td><code>src/report/rules.py:322</code>, <code>:645</code></td>
+<td><code>src/report/rules/funwave.py:299</code>, <code>src/report/rules/actibuki.py:376</code></td>
 </tr>
 <tr>
-<td><code>docs/rules_&lt;기업&gt;.md</code></td>
-<td>평가 항목별 판정 수 요약(실행 기록). 커밋 · 문서 사이트 제외</td>
-<td><code>src/report/rules.py:338</code>, <code>:654</code></td>
+<td><code>logs/rules_&lt;기업&gt;.md</code></td>
+<td>평가 항목별 판정 수 요약(판정에는 안 씀)</td>
+<td><code>src/report/rules/funwave.py:301</code>, <code>src/report/rules/actibuki.py:378</code></td>
 </tr>
 </tbody>
 </table>
 <ul>
-<li>있으면 읽는 보조 파일: <code>data/repeat_kb_semantic_actibuki.jsonl</code> — 반복 안정성 회차별 "정답 값 포함 여부"를 판정 모델로 다시 확인한 결과. 이 저장소에 만드는 코드 없음, 없으면 문자열 비교만 씀 (<code>src/report/rules.py:489-513</code>)</li>
+<li>있으면 읽는 보조 파일: <code>repeat_kb_semantic_actibuki.jsonl</code>(반복 안정성 회차별 정답 포함 여부를 판정 모델로 다시 확인한 결과). 없으면 글자 비교만 씀 (<code>src/report/rules/actibuki.py:147-168</code>)</li>
 </ul>
-<h2 id="②-판정-모델-호출--srcjudge_apirun_judgepy">② 판정 모델 호출 — <code>src/judge_api/run_judge.py</code><a class="headerlink" href="#②-판정-모델-호출--srcjudge_apirun_judgepy" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>usage: run_judge.py [-h] --vendor {funwave,actibuki} [--input INPUT]
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>                    [--out OUT] [--calls-per-case CALLS_PER_CASE]
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>                    [--limit LIMIT] [--case-ids [CASE_IDS ...]] [--no-meta]
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>                    [--force] [--start START] [--cap CAP]
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>                    [--judge-url JUDGE_URL] [--cache-only]
+<h2 id="판정-모델-호출">② 판정 모델 호출(실행기)<a class="headerlink" href="#판정-모델-호출" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>python -m src.judge_api.run_judge --vendor {funwave,actibuki} [선택지]
 </code></pre></div>
 <table>
 <thead>
@@ -1171,54 +1162,44 @@
 </thead>
 <tbody>
 <tr>
-<td><code>--vendor</code></td>
-<td>(필수)</td>
-<td><code>funwave</code> · <code>actibuki</code></td>
-</tr>
-<tr>
 <td><code>--input</code></td>
-<td><code>data/inference_&lt;기업&gt;.parquet</code></td>
+<td><code>&lt;데이터 폴더&gt;/inference_&lt;기업&gt;.parquet</code></td>
 <td>기업 응답 파일</td>
 </tr>
 <tr>
 <td><code>--out</code></td>
-<td><code>data/judge_&lt;기업&gt;.parquet</code></td>
+<td><code>&lt;데이터 폴더&gt;/judge_&lt;기업&gt;.parquet</code></td>
 <td>결과 파일</td>
 </tr>
 <tr>
 <td><code>--calls-per-case</code></td>
 <td>2</td>
-<td>문항마다 판정 모델을 부르는 횟수</td>
+<td>문항마다 판정 횟수</td>
 </tr>
 <tr>
 <td><code>--limit N</code></td>
 <td>없음</td>
-<td>앞에서부터 N 문항만(시험용). 액티부키는 일반 문항 · 변형 문항 각각 N개</td>
+<td>앞에서부터 N 문항만(액티부키는 일반 · 변형 각각 N)</td>
 </tr>
 <tr>
-<td><code>--case-ids A B ...</code></td>
+<td><code>--case-ids A B …</code></td>
 <td>없음</td>
-<td>이 문항만. 액티부키 변형 문항만 골라도 비교할 원문은 전체에서 찾음</td>
+<td>이 문항만(액티부키 변형만 골라도 짝이 되는 원문은 전체에서 찾음)</td>
 </tr>
 <tr>
 <td><code>--no-meta</code></td>
 <td>꺼짐</td>
-<td>펀웨이브 <code>/judge/meta</code> 호출을 건너뜀</td>
+<td>펀웨이브 불일치 원인 분류(<code>/judge/meta</code>) 건너뜀</td>
 </tr>
 <tr>
 <td><code>--force</code></td>
 <td>꺼짐</td>
-<td>이미 있는 결과 파일을 무시하고 처음부터(결과 파일을 새로 씀)</td>
+<td>기존 결과 파일을 무시하고 처음부터</td>
 </tr>
 <tr>
-<td><code>--start</code></td>
-<td>4</td>
-<td>클라이언트 처음 동시 호출 수</td>
-</tr>
-<tr>
-<td><code>--cap</code></td>
-<td>16</td>
-<td>클라이언트 동시 호출 수 상한</td>
+<td><code>--start</code> · <code>--cap</code></td>
+<td>4 · 16</td>
+<td>판정 서버 동시 호출 수 시작값 · 상한</td>
 </tr>
 <tr>
 <td><code>--judge-url</code></td>
@@ -1226,15 +1207,20 @@
 <td>판정 서버 주소</td>
 </tr>
 <tr>
+<td><code>--in-process</code></td>
+<td>꺼짐</td>
+<td>판정 서버를 포트 없이 같은 프로세스에서 부름</td>
+</tr>
+<tr>
 <td><code>--cache-only</code></td>
 <td>꺼짐</td>
-<td><code>raw/judge_client/</code>에 남은 결과만 되살리고 새 호출은 하지 않음(사용 한도가 바닥났을 때)</td>
+<td><code>raw/judge_client/</code>에 남은 결과만 되살리고 새 호출은 안 함</td>
 </tr>
 </tbody>
 </table>
 <ul>
-<li>근거: <code>src/judge_api/run_judge.py:190-205</code></li>
-<li>판정 서버가 켜져 있어야 함 — 시작할 때 <code>/ping</code>이 실패하면 <code>judge API not reachable</code>로 멈춤 (<code>:218-221</code>)</li>
+<li>근거: <code>src/judge_api/run_judge.py:319-334</code></li>
+<li>시작할 때 <code>/ping</code>이 실패하면 <code>judge API not reachable</code>로 멈춤 (<code>src/judge_api/run_judge.py:354-356</code>)</li>
 </ul>
 <h3 id="무엇을-어디로-보내나">무엇을 어디로 보내나<a class="headerlink" href="#무엇을-어디로-보내나" title="Permanent link">&para;</a></h3>
 <table>
@@ -1249,38 +1235,35 @@
 <tbody>
 <tr>
 <td>펀웨이브</td>
-<td>HTTP 200 · <code>error</code> 없음 · 필터에 막히지 않음 · 평가 항목(<code>category</code>의 <code>+</code> 앞부분)이 <code>근거충실성/사실정확성</code> · <code>입력 및 반복 강건성</code>(문항마다 첫 회차만) · <code>다국어 강건성(크로스)</code> · <code>인젝션/맥락 조작</code></td>
+<td>HTTP 200 · 필터에 막히지 않음 · 평가 항목이 근거충실성 · 반복 강건성(첫 회차만) · 다국어 · 인젝션</td>
 <td><code>/judge/faithfulness</code></td>
-<td><code>:31</code>, <code>:66-73</code>, <code>:141-150</code></td>
+<td><code>src/judge_api/run_judge.py:159-168</code></td>
 </tr>
 <tr>
 <td>펀웨이브</td>
-<td>위 결과 중 1회차가 <code>적정</code> + <code>동일상황</code>이 아닌 문항</td>
+<td>위 1회차 결과가 "적정 + 동일상황"이 아닌 문항</td>
 <td><code>/judge/meta</code>(1번)</td>
-<td><code>:302-315</code></td>
+<td><code>src/judge_api/run_judge.py:268-287</code></td>
 </tr>
 <tr>
 <td>액티부키</td>
-<td>HTTP 200 · <code>error</code> 없음인 행(문항마다 첫 회차) 중 <code>P3 입력 강건성</code> 변형이 아닌 것</td>
+<td>HTTP 200인 행(문항마다 첫 회차) 중 입력 강건성 변형이 아닌 것</td>
 <td><code>/judge/rubric/actibuki</code></td>
-<td><code>:153-162</code>, <code>:240-243</code></td>
+<td><code>src/judge_api/run_judge.py:171-181</code></td>
 </tr>
 <tr>
 <td>액티부키</td>
-<td><code>P3 입력 강건성</code> 변형(같은 <code>group_id</code>의 원문과 짝지음)</td>
+<td>입력 강건성 변형(같은 묶음 원문과 짝지음)</td>
 <td><code>/judge/robustness</code></td>
-<td><code>:244-251</code></td>
+<td><code>src/judge_api/run_judge.py:204-208</code></td>
 </tr>
 </tbody>
 </table>
-<ul>
-<li>요청 본문을 만드는 곳: 펀웨이브 <code>funwave_payload</code> (<code>:77-106</code>) · 액티부키 <code>actibuki_payload</code> (<code>:126-137</code>)</li>
-</ul>
 <h3 id="이어서-돌리기">이어서 돌리기<a class="headerlink" href="#이어서-돌리기" title="Permanent link">&para;</a></h3>
 <ul>
-<li>결과 파일에 이미 성공(<code>ok</code>=참)으로 있는 (<code>case_id</code>, <code>run</code>, <code>call_idx</code>, <code>endpoint</code>)는 다시 부르지 않음 (<code>:212-216</code>, <code>:252</code>)</li>
-<li><code>raw/judge_client/</code>에 HTTP 200 결과가 남은 호출도 다시 부르지 않고 되살림 (<code>:262-283</code>)</li>
-<li>실패했다가 다시 성공한 호출은 성공 기록만 남김 (<code>:329-332</code>)</li>
+<li>결과 파일에 이미 성공으로 있는 (문항, 회차, 판정 횟수, 엔드포인트)는 다시 부르지 않음 (<code>src/judge_api/run_judge.py:347-352</code>)</li>
+<li><code>raw/judge_client/</code>에 HTTP 200 결과가 남은 호출도 되살림 (<code>src/judge_api/run_judge.py:248-265</code>)</li>
+<li>실패했다가 다시 성공한 호출은 성공 기록만 남김 (<code>src/judge_api/run_judge.py:308-314</code>)</li>
 </ul>
 <h3 id="만드는-파일">만드는 파일<a class="headerlink" href="#만드는-파일" title="Permanent link">&para;</a></h3>
 <table>
@@ -1288,60 +1271,131 @@
 <tr>
 <th>파일</th>
 <th>내용</th>
-<th>근거</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>data/judge_&lt;기업&gt;.parquet</code></td>
-<td>호출 1번 = 1행(<a href="../files/#판정-모델-호출-결과">입력과 출력 파일의 열</a>)</td>
-<td><code>:333-335</code></td>
+<td><code>judge_&lt;기업&gt;.parquet</code></td>
+<td>판정 서버 호출 1번 = 1행(<a href="../files/#판정-모델-호출-결과">열 설명</a>)</td>
 </tr>
 <tr>
-<td><code>docs/judge_&lt;기업&gt;_run.md</code></td>
-<td>실행 요약(호출 수 · 성공 · 오류 · 동시 호출 수 변화). 커밋 · 문서 사이트 제외</td>
-<td><code>:336-338</code></td>
+<td><code>logs/judge_&lt;기업&gt;_run.md</code></td>
+<td>실행 요약(호출 수 · 성공 · 오류)</td>
 </tr>
 <tr>
 <td><code>raw/judge_client/*.json</code></td>
-<td>클라이언트 호출 원본</td>
-<td><code>src/judge_api/client.py:18</code></td>
+<td>판정 서버 요청 · 응답 원본</td>
 </tr>
 </tbody>
 </table>
-<ul>
-<li>2회 결과 일치(<code>self_consistent</code>): 펀웨이브 <code>faithfulness</code>는 충실도 차이 10 이하, <code>meta</code>는 원인이 같음, 그 밖은 판정 값이 같으면 일치 (<code>:341-356</code>)</li>
-</ul>
-<h2 id="③-판정-집계--srcreportverdictpy">③ 판정 집계 — <code>src/report/verdict.py</code><a class="headerlink" href="#③-판정-집계--srcreportverdictpy" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>usage: verdict.py [-h] --vendor {funwave,actibuki}
+<h2 id="판정-집계">③ 판정 집계<a class="headerlink" href="#판정-집계" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>python -m src.report.verdict --vendor {funwave,actibuki} [--judge-policy {first,agree}] [--keep-rule-verdicts]
 </code></pre></div>
 <table>
 <thead>
 <tr>
 <th>선택지</th>
-<th>필수</th>
+<th>기본값</th>
 <th>뜻</th>
+<th>켜면</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>--vendor</code></td>
-<td>예</td>
-<td><code>funwave</code> · <code>actibuki</code></td>
+<td><code>--judge-policy first</code></td>
+<td><strong>first</strong></td>
+<td>판정 모델을 여러 번 돌린 문항은 1회차 결과로 판정. 회차별 판정이 갈리면 <code>judge_flip</code> 표시만</td>
+<td>—</td>
+</tr>
+<tr>
+<td><code>--judge-policy agree</code></td>
+<td>—</td>
+<td>회차별 판정이 갈린 문항은 검토필요</td>
+<td>제출한 데이터셋 판정과 달라질 수 있음</td>
+</tr>
+<tr>
+<td><code>--keep-rule-verdicts</code></td>
+<td>꺼짐</td>
+<td>(액티부키) 규칙이 실패 · 통과로 정한 행은 판정 모델 결과를 쓰지 않음</td>
+<td>제출한 데이터셋 판정과 달라질 수 있음</td>
 </tr>
 </tbody>
 </table>
 <ul>
-<li>근거: <code>src/report/verdict.py:496-537</code></li>
-<li>읽는 파일: <code>data/rules_&lt;기업&gt;.parquet</code>(필수) · <code>data/judge_&lt;기업&gt;.parquet</code>(없으면 규칙 결과만) · <code>data/actibuki_kb_sites.json</code>(있으면 판정 사유에 지식베이스 속성 이름을 씀, <code>:91-101</code>)</li>
-<li>만드는 파일: <code>data/verdict_&lt;기업&gt;.parquet</code> — 임시 파일에 쓴 뒤 바꿔치기 (<code>:533-536</code>)</li>
-<li>화면에 최종 판정 값별 개수를 찍음(코드 표기) (<code>:537</code>)</li>
-<li>외부 호출 없음 · 환경 변수 필요 없음</li>
+<li>근거: <code>src/report/verdict/__main__.py:19-24</code>, 처리 <code>src/report/verdict/__init__.py:76-121</code></li>
+<li>읽는 파일: <code>rules_&lt;기업&gt;.parquet</code>(필수) · <code>judge_&lt;기업&gt;.parquet</code>(없으면 규칙 결과만) · <code>actibuki_kb_sites.json</code>(있으면 지식베이스 속성 이름을 사유에 씀)</li>
+<li>만드는 파일: <code>verdict_&lt;기업&gt;.parquet</code>(<a href="../files/#판정-집계-결과">열 설명</a>)</li>
+<li>판정 모델 결과와 맞추는 열쇠: (<code>case_id</code>, <code>run</code>, 엔드포인트). 입력에 <code>run</code> 열이 없으면 실행기 · 판정 집계 모두 <code>"1"</code>을 씀 (<code>src/common/config.py:19</code>)</li>
 </ul>
-<h2 id="주의할-점">주의할 점<a class="headerlink" href="#주의할-점" title="Permanent link">&para;</a></h2>
+<h2 id="환경-변수">환경 변수<a class="headerlink" href="#환경-변수" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>환경 변수</th>
+<th>기본값</th>
+<th>쓰는 곳</th>
+<th>근거</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>JUDGE_BACKEND</code></td>
+<td><code>real</code></td>
+<td>판정 서버: <code>real</code> 실제 판정 모델 · <code>fake</code> 가짜 판정 모델</td>
+<td><code>src/judge_api/backend.py:45-58</code></td>
+</tr>
+<tr>
+<td><code>JUDGE_MODEL</code> · <code>JUDGE_MODEL_XLING</code></td>
+<td>(real 필수) · fake 면 <code>offline-fake-judge</code></td>
+<td>판정 서버: 판정 모델 · 교차 확인 모델 이름</td>
+<td><code>src/judge_api/backend.py:35-42</code></td>
+</tr>
+<tr>
+<td><code>JUDGE_MODEL_BASE_URL</code> · <code>JUDGE_MODEL_API_KEY</code></td>
+<td>(real 필수)</td>
+<td>판정 서버 → 판정 모델 API 주소 · 키</td>
+<td><code>src/common/http.py:198-209</code></td>
+</tr>
+<tr>
+<td><code>JUDGE_MAX_CONCURRENCY</code></td>
+<td>24</td>
+<td>판정 서버 → 판정 모델 API 동시 호출 상한</td>
+<td><code>src/common/http.py:200</code></td>
+</tr>
+<tr>
+<td><code>JUDGE_XLING</code></td>
+<td><code>auto</code></td>
+<td>교차 확인 모델 사용: <code>on</code> · <code>off</code> · <code>auto</code></td>
+<td><code>src/judge_api/backend.py:54</code></td>
+</tr>
+<tr>
+<td><code>JUDGE_XLING_COOLDOWN_S</code></td>
+<td>600</td>
+<td><code>auto</code>에서 교차 확인 실패 뒤 건너뛰는 시간(초)</td>
+<td><code>src/judge_api/backend.py:55</code></td>
+</tr>
+<tr>
+<td><code>JUDGE_API_TOKEN</code></td>
+<td>없음</td>
+<td>있으면 판정 서버가 Bearer 토큰 검사, 클라이언트가 보냄</td>
+<td><code>src/judge_api/app.py:73-79</code>, <code>src/judge_api/client.py:23-26</code></td>
+</tr>
+<tr>
+<td><code>JUDGE_API_URL</code></td>
+<td><code>http://127.0.0.1:8787</code></td>
+<td>클라이언트 · 실행기가 부를 판정 서버</td>
+<td><code>src/judge_api/client.py:34</code></td>
+</tr>
+<tr>
+<td><code>EVAL_DATA_DIR</code> · <code>EVAL_RAW_DIR</code></td>
+<td><code>data/</code> · <code>raw/</code></td>
+<td>입력 · 결과 · 실행 기록 폴더 · 호출 원본 폴더</td>
+<td><code>src/common/config.py:30-37</code></td>
+</tr>
+</tbody>
+</table>
 <ul>
-<li>입력 파일의 <code>run</code> 열은 문자열로 넣을 것 — 판정 집계는 <code>run</code>이 비면 <code>"v2"</code>로, 실행기는 <code>run</code> 열이 없으면 <code>1</code>로 채워 서로 짝이 안 맞음 (<code>src/report/verdict.py:510</code>, <code>src/judge_api/run_judge.py:207-208</code>)</li>
-<li>실행기 결과를 판정 집계가 찾는 열쇠: (<code>case_id</code>, <code>run</code>, <code>endpoint</code>) (<code>src/report/verdict.py:76</code>, <code>:512-517</code>)</li>
+<li>값이 없는 필수 변수: 판정 서버 첫 요청(또는 시작) 때 <code>RuntimeError: missing env &lt;이름&gt;</code></li>
 </ul>
 
 

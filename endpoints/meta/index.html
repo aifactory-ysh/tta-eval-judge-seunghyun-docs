@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="규칙 판정 · 독립 판정 모델(판정 서버) · 판정 집계의 사용법">
+        <meta name="description" content="규칙 판정 · 독립 판정 모델(판정 서버) · 판정 집계의 사용법(기업 API 호출 없음)">
       
       
       
@@ -27,7 +27,7 @@
     
     
       
-        <title>POST /judge/meta - TTA 신뢰성 평가 v2 판정 모듈 개발 문서 (윤승현 · seunghyun)</title>
+        <title>POST /judge/meta - TTA 신뢰성 평가 판정 모듈 개발 문서 (윤승현 · seunghyun)</title>
       
     
     
@@ -94,7 +94,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="상단/헤더">
-    <a href="../.." title="TTA 신뢰성 평가 v2 판정 모듈 개발 문서 (윤승현 · seunghyun)" class="md-header__button md-logo" aria-label="TTA 신뢰성 평가 v2 판정 모듈 개발 문서 (윤승현 · seunghyun)" data-md-component="logo">
+    <a href="../.." title="TTA 신뢰성 평가 판정 모듈 개발 문서 (윤승현 · seunghyun)" class="md-header__button md-logo" aria-label="TTA 신뢰성 평가 판정 모듈 개발 문서 (윤승현 · seunghyun)" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -108,7 +108,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            TTA 신뢰성 평가 v2 판정 모듈 개발 문서 (윤승현 · seunghyun)
+            TTA 신뢰성 평가 판정 모듈 개발 문서 (윤승현 · seunghyun)
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -218,13 +218,13 @@
 
 <nav class="md-nav md-nav--primary" aria-label="네비게이션" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="TTA 신뢰성 평가 v2 판정 모듈 개발 문서 (윤승현 · seunghyun)" class="md-nav__button md-logo" aria-label="TTA 신뢰성 평가 v2 판정 모듈 개발 문서 (윤승현 · seunghyun)" data-md-component="logo">
+    <a href="../.." title="TTA 신뢰성 평가 판정 모듈 개발 문서 (윤승현 · seunghyun)" class="md-nav__button md-logo" aria-label="TTA 신뢰성 평가 판정 모듈 개발 문서 (윤승현 · seunghyun)" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
-    TTA 신뢰성 평가 v2 판정 모듈 개발 문서 (윤승현 · seunghyun)
+    TTA 신뢰성 평가 판정 모듈 개발 문서 (윤승현 · seunghyun)
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -515,10 +515,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#무엇을-판정하나--언제-쓰나" class="md-nav__link">
+  <a href="#무엇" class="md-nav__link">
     <span class="md-ellipsis">
       
-        무엇을 판정하나 · 언제 쓰나
+        무엇
       
     </span>
   </a>
@@ -526,10 +526,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#경로--메서드" class="md-nav__link">
+  <a href="#왜--판정-흐름에서의-자리" class="md-nav__link">
     <span class="md-ellipsis">
       
-        경로 · 메서드
+        왜 — 판정 흐름에서의 자리
       
     </span>
   </a>
@@ -537,10 +537,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#요청-필드" class="md-nav__link">
+  <a href="#어떻게--요청-필드" class="md-nav__link">
     <span class="md-ellipsis">
       
-        요청 필드
+        어떻게 — 요청 필드
       
     </span>
   </a>
@@ -548,10 +548,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#응답-필드" class="md-nav__link">
+  <a href="#어떻게--응답-필드" class="md-nav__link">
     <span class="md-ellipsis">
       
-        응답 필드
+        어떻게 — 응답 필드
       
     </span>
   </a>
@@ -563,17 +563,6 @@
     <span class="md-ellipsis">
       
         예시
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#응답-예시" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        응답 예시
       
     </span>
   </a>
@@ -863,10 +852,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#무엇을-판정하나--언제-쓰나" class="md-nav__link">
+  <a href="#무엇" class="md-nav__link">
     <span class="md-ellipsis">
       
-        무엇을 판정하나 · 언제 쓰나
+        무엇
       
     </span>
   </a>
@@ -874,10 +863,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#경로--메서드" class="md-nav__link">
+  <a href="#왜--판정-흐름에서의-자리" class="md-nav__link">
     <span class="md-ellipsis">
       
-        경로 · 메서드
+        왜 — 판정 흐름에서의 자리
       
     </span>
   </a>
@@ -885,10 +874,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#요청-필드" class="md-nav__link">
+  <a href="#어떻게--요청-필드" class="md-nav__link">
     <span class="md-ellipsis">
       
-        요청 필드
+        어떻게 — 요청 필드
       
     </span>
   </a>
@@ -896,10 +885,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#응답-필드" class="md-nav__link">
+  <a href="#어떻게--응답-필드" class="md-nav__link">
     <span class="md-ellipsis">
       
-        응답 필드
+        어떻게 — 응답 필드
       
     </span>
   </a>
@@ -911,17 +900,6 @@
     <span class="md-ellipsis">
       
         예시
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#응답-예시" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        응답 예시
       
     </span>
   </a>
@@ -968,23 +946,33 @@
 
 
 <h1 id="post-judgemeta--점수-불일치-원인-분류펀웨이브">POST /judge/meta — 점수 불일치 원인 분류(펀웨이브)<a class="headerlink" href="#post-judgemeta--점수-불일치-원인-분류펀웨이브" title="Permanent link">&para;</a></h1>
-<h2 id="무엇을-판정하나--언제-쓰나">무엇을 판정하나 · 언제 쓰나<a class="headerlink" href="#무엇을-판정하나--언제-쓰나" title="Permanent link">&para;</a></h2>
+<div class="admonition abstract">
+<p class="admonition-title">이 쪽에서 알 수 있는 것</p>
 <ul>
-<li>기업 채점 점수와 <a href="../faithfulness/">/judge/faithfulness</a>의 결과가 어긋난 문항 1건에 대해, 어긋난 <strong>원인을 하나로 분류</strong>함("평가 결과를 다시 평가")</li>
-<li>판정 흐름에서의 자리: ② 독립 판정 모델 단계의 뒤쪽<ul>
-<li>실행기가 <code>/judge/faithfulness</code> 1회차 결과를 받은 뒤, <code>vendor_meaning_assessment</code>가 <code>적정</code>이 아니거나 <code>correct_relevance</code>가 <code>동일상황</code>이 아닌 문항만 1번 부름 (<code>src/judge_api/run_judge.py:302-315</code>)</li>
+<li>기업 채점 점수와 판정 모델 채점이 어긋난 문항에서 "왜 어긋났는지"를 분류하는 엔드포인트</li>
+<li>요청 · 응답 필드, 원인 값의 뜻</li>
+<li>이 결과는 판정 값을 바꾸지 않고 판정 사유 문장에만 붙는다는 것</li>
+</ul>
+</div>
+<h2 id="무엇">무엇<a class="headerlink" href="#무엇" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../faithfulness/">/judge/faithfulness</a> 결과와 기업 점수가 어긋난 문항 1건의 <strong>원인을 하나로 분류</strong>함("평가 결과를 다시 평가")</li>
+<li>경로: <code>POST /judge/meta</code> (<code>src/judge_api/app.py:263-269</code>)</li>
+<li>교차 확인(<code>xling</code>) 없음 — <code>language</code>와 무관하게 기본 판정 모델만 부름 (<code>src/judge_api/app.py:267</code>)</li>
+</ul>
+<h2 id="왜--판정-흐름에서의-자리">왜 — 판정 흐름에서의 자리<a class="headerlink" href="#왜--판정-흐름에서의-자리" title="Permanent link">&para;</a></h2>
+<ul>
+<li>실패 · 통과를 정하지 않음 — 보고서에서 불일치 원인을 설명하는 근거용</li>
+<li>실행기가 <code>/judge/faithfulness</code> 1회차 결과를 받은 뒤, 아래 문항만 1번 부름 (<code>src/judge_api/run_judge.py:268-287</code>)<ul>
+<li><code>vendor_meaning_assessment</code>가 <code>적정</code>이 아님, 또는 <code>correct_relevance</code>가 <code>동일상황</code>이 아님</li>
 <li>실행기 <code>--no-meta</code>면 부르지 않음</li>
 </ul>
 </li>
-<li>판정 값을 바꾸지 않음 — 판정 집계가 판정 사유 문장 끝에 "불일치 원인: …"으로만 붙임 (<code>src/report/verdict.py:321</code>)</li>
+<li>판정 집계가 판정 사유 끝에 "불일치 원인: …"으로만 붙임 (<code>src/report/verdict/funwave.py:176</code>)</li>
 </ul>
-<h2 id="경로--메서드">경로 · 메서드<a class="headerlink" href="#경로--메서드" title="Permanent link">&para;</a></h2>
+<h2 id="어떻게--요청-필드">어떻게 — 요청 필드<a class="headerlink" href="#어떻게--요청-필드" title="Permanent link">&para;</a></h2>
 <ul>
-<li><code>POST /judge/meta</code> (<code>src/judge_api/app.py:415-425</code>)</li>
-</ul>
-<h2 id="요청-필드">요청 필드<a class="headerlink" href="#요청-필드" title="Permanent link">&para;</a></h2>
-<ul>
-<li>요청 형식 정의: <code>MetaReq</code> (<code>src/judge_api/app.py:234-242</code>)</li>
+<li>요청 형식: <code>MetaReq</code> (<code>src/judge_api/schemas.py:39-47</code>)</li>
 </ul>
 <table>
 <thead>
@@ -1056,10 +1044,12 @@
 </tbody>
 </table>
 <ul>
-<li>실행기가 만드는 요청: <code>src/judge_api/run_judge.py:315</code></li>
-<li><code>judge_result</code> 밖의 값은 2,000자에서 잘림 (<code>src/judge_api/app.py:417</code>, <code>:271-277</code>)</li>
+<li><code>judge_result</code> 밖의 값은 2,000자에서 잘림 (<code>src/judge_api/app.py:266</code>, <code>:87-94</code>)</li>
 </ul>
-<h2 id="응답-필드">응답 필드<a class="headerlink" href="#응답-필드" title="Permanent link">&para;</a></h2>
+<h2 id="어떻게--응답-필드">어떻게 — 응답 필드<a class="headerlink" href="#어떻게--응답-필드" title="Permanent link">&para;</a></h2>
+<ul>
+<li>응답 형식: <code>MetaResp</code> (<code>src/judge_api/schemas.py:139-142</code>) · 판정 모델 출력 형식: <code>META_SCHEMA</code> (<code>src/judge_api/prompts.py:135-144</code>)</li>
+</ul>
 <table>
 <thead>
 <tr>
@@ -1091,8 +1081,8 @@
 <tr>
 <td><code>cause</code></td>
 <td>문자열</td>
-<td>불일치 원인</td>
-<td><code>유사도 코퍼스 미스매치</code> · <code>LLM 판정 흔들림</code> · <code>채점 기준 한계</code> · <code>judge 오류</code> · <code>불일치 없음</code></td>
+<td>불일치 원인(아래 표)</td>
+<td>다섯 값 중 하나</td>
 </tr>
 <tr>
 <td><code>explanation</code></td>
@@ -1103,15 +1093,13 @@
 <tr>
 <td><code>usage</code> · <code>latency_s</code> · <code>raw_key</code></td>
 <td>—</td>
-<td><a href="../#응답-공통">공통 사항</a></td>
+<td><a href="../">공통 사항</a></td>
 <td>—</td>
 </tr>
 </tbody>
 </table>
 <ul>
-<li>모델 출력 형식 정의: <code>META_SCHEMA</code> (<code>src/judge_api/app.py:170-179</code>), 응답 조립 (<code>:420-425</code>)</li>
-<li>교차 확인(<code>xling</code>) 없음 — <code>language</code>와 무관하게 주 모델만 부름 (<code>src/judge_api/app.py:418</code>)</li>
-<li><code>cause</code> 값의 뜻 (<code>src/judge_api/app.py:155-160</code>)</li>
+<li><code>cause</code> 값의 뜻 (<code>src/judge_api/prompts.py:120-125</code>)</li>
 </ul>
 <table>
 <thead>
@@ -1135,7 +1123,7 @@
 </tr>
 <tr>
 <td><code>judge 오류</code></td>
-<td>독립 판정 모델 쪽 판정이 명백히 틀렸거나 과도함</td>
+<td>판정 모델 쪽 판정이 명백히 틀렸거나 과도함</td>
 </tr>
 <tr>
 <td><code>불일치 없음</code></td>
@@ -1154,17 +1142,16 @@
 <a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="s1">        "source": "이 약은 하루에 두 번, 식사 후에 드세요.",</span>
 <a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="s1">        "input": "Take this medicine three times a day after meals.",</span>
 <a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="s1">        "vendor_scores": {"meaning": 90, "similarity": 85, "final": 88, "terminology_score": 100},</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="s1">        "judge_result": {"meaning_fidelity": 20, "vendor_meaning_assessment": "과대",</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="s1">                         "comment_accuracy": "오류", "correct_relevance": "동일상황"},</span>
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="s1">        "correct": "Take this medicine twice a day after meals.",</span>
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="s1">        "correct_relevance": "동일상황"</span>
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="s1">      }'</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="s1">        "judge_result": {"meaning_fidelity": 20, "vendor_meaning_assessment": "과대", "comment_accuracy": "오류", "correct_relevance": "동일상황"},</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="s1">        "correct": "Take this medicine twice a day after meals.",</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="s1">        "correct_relevance": "동일상황"</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="s1">      }'</span>
 </code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">asyncio</span><span class="o">,</span><span class="w"> </span><span class="nn">sys</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s2">"src"</span><span class="p">)</span>            <span class="c1"># 저장소 최상위에서 실행</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="kn">from</span><span class="w"> </span><span class="nn">judge_api.client</span><span class="w"> </span><span class="kn">import</span> <span class="n">JudgeClient</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># 저장소 최상위에서 실행</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">asyncio</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="kn">from</span><span class="w"> </span><span class="nn">src.judge_api.client</span><span class="w"> </span><span class="kn">import</span> <span class="n">JudgeClient</span>
 <a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
 <a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
 <a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>    <span class="s2">"case_id"</span><span class="p">:</span> <span class="s2">"DEMO-FT-002"</span><span class="p">,</span>
@@ -1186,9 +1173,8 @@
 </div>
 </div>
 </div>
-<h2 id="응답-예시">응답 예시<a class="headerlink" href="#응답-예시" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>예시(실제 호출 결과 아님)</strong> — 코드의 응답 구조대로 손으로 씀. 값은 지어낸 것</li>
+<li>응답 예시 — <strong>실제 호출 결과 아님</strong>(코드의 응답 구조대로 손으로 씀, 값은 지어냄)</li>
 </ul>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">{</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="nt">"case_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DEMO-FT-002"</span><span class="p">,</span>
@@ -1203,15 +1189,15 @@
 </code></pre></div>
 <h2 id="판정-값-읽는-법">판정 값 읽는 법<a class="headerlink" href="#판정-값-읽는-법" title="Permanent link">&para;</a></h2>
 <ul>
-<li>판정 값(<code>성공</code> · <code>실패</code> 등) 없음 — 실패 · 통과를 정하지 않음</li>
-<li><code>cause</code>가 <code>불일치 없음</code>이 아니면 판정 집계가 판정 사유 끝에 "불일치 원인: <code>cause</code> — <code>explanation</code> 앞 100자"를 붙임 (<code>src/report/verdict.py:321</code>)</li>
-<li>판정 집계 결과 파일의 <code>meta_cause</code> 열에 <code>cause</code>가 들어감 (<code>src/report/verdict.py:515</code>)</li>
+<li>판정 값 없음 — 실패 · 통과를 정하지 않음</li>
+<li><code>cause</code>가 <code>불일치 없음</code>이 아니면 판정 집계가 판정 사유 끝에 "불일치 원인: <code>cause</code> — <code>explanation</code> 앞 100자"를 붙임 (<code>src/report/verdict/funwave.py:176</code>)</li>
+<li>판정 집계 결과 파일의 <code>meta_cause</code> 열에 <code>cause</code>가 들어감 (<code>src/report/verdict/__init__.py:65-68</code>)</li>
 </ul>
 <h2 id="주의할-점">주의할 점<a class="headerlink" href="#주의할-점" title="Permanent link">&para;</a></h2>
 <ul>
-<li>판정 모델을 실제로 호출함 → 사용 한도를 씀, 요청 · 응답 전문이 <code>raw/judge/</code>에 남음</li>
-<li>판정 집계는 <code>run</code>과 <code>case_id</code>가 같은 <code>meta</code> 결과를 찾음 — 실행기는 1회차 결과에 대해서만 부르므로 문항당 1건</li>
-<li><code>judge_result</code>에 무엇을 넣을지는 서버가 정하지 않음(그대로 모델에 넘김). 실행기와 같은 키를 넣어야 같은 조건으로 판정됨</li>
+<li>실제 판정 모델이면 사용 한도를 쓰고, 요청 · 응답 전문이 <code>raw/judge/</code>에 남음(공유 · 커밋 금지)</li>
+<li>판정 집계는 <code>case_id</code> · <code>run</code>이 같은 결과를 찾음 — 실행기는 1회차 결과에 대해서만 부르므로 문항당 1건</li>
+<li><code>judge_result</code>에 무엇을 넣을지는 서버가 정하지 않음(그대로 판정 모델에 넘김) — 실행기와 같은 키를 넣어야 같은 조건</li>
 </ul>
 
 

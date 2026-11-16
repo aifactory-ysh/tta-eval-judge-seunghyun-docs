@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="규칙 판정 · 독립 판정 모델(판정 서버) · 판정 집계의 사용법">
+        <meta name="description" content="규칙 판정 · 독립 판정 모델(판정 서버) · 판정 집계의 사용법(기업 API 호출 없음)">
       
       
       
@@ -25,7 +25,7 @@
     
     
       
-        <title>TTA 신뢰성 평가 v2 판정 모듈 개발 문서 (윤승현 · seunghyun)</title>
+        <title>TTA 신뢰성 평가 판정 모듈 개발 문서 (윤승현 · seunghyun)</title>
       
     
     
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#tta-신뢰성-평가-v2--판정-모듈-개발-문서" class="md-skip">
+        <a href="#tta-신뢰성-평가-판정-모듈-개발-문서" class="md-skip">
           콘텐츠로 이동
         </a>
       
@@ -92,7 +92,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="상단/헤더">
-    <a href="." title="TTA 신뢰성 평가 v2 판정 모듈 개발 문서 (윤승현 · seunghyun)" class="md-header__button md-logo" aria-label="TTA 신뢰성 평가 v2 판정 모듈 개발 문서 (윤승현 · seunghyun)" data-md-component="logo">
+    <a href="." title="TTA 신뢰성 평가 판정 모듈 개발 문서 (윤승현 · seunghyun)" class="md-header__button md-logo" aria-label="TTA 신뢰성 평가 판정 모듈 개발 문서 (윤승현 · seunghyun)" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -106,7 +106,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            TTA 신뢰성 평가 v2 판정 모듈 개발 문서 (윤승현 · seunghyun)
+            TTA 신뢰성 평가 판정 모듈 개발 문서 (윤승현 · seunghyun)
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -216,13 +216,13 @@
 
 <nav class="md-nav md-nav--primary" aria-label="네비게이션" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="TTA 신뢰성 평가 v2 판정 모듈 개발 문서 (윤승현 · seunghyun)" class="md-nav__button md-logo" aria-label="TTA 신뢰성 평가 v2 판정 모듈 개발 문서 (윤승현 · seunghyun)" data-md-component="logo">
+    <a href="." title="TTA 신뢰성 평가 판정 모듈 개발 문서 (윤승현 · seunghyun)" class="md-nav__button md-logo" aria-label="TTA 신뢰성 평가 판정 모듈 개발 문서 (윤승현 · seunghyun)" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
-    TTA 신뢰성 평가 v2 판정 모듈 개발 문서 (윤승현 · seunghyun)
+    TTA 신뢰성 평가 판정 모듈 개발 문서 (윤승현 · seunghyun)
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -294,10 +294,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#이-모듈은-무엇인가" class="md-nav__link">
+  <a href="#무엇" class="md-nav__link">
     <span class="md-ellipsis">
       
-        이 모듈은 무엇인가
+        무엇
       
     </span>
   </a>
@@ -305,10 +305,32 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#세-단계" class="md-nav__link">
+  <a href="#왜-이렇게-나눴나" class="md-nav__link">
     <span class="md-ellipsis">
       
-        세 단계
+        왜 이렇게 나눴나
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#어떻게--세-단계" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        어떻게 — 세 단계
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#예시--바로-돌려-보기" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        예시 — 바로 돌려 보기
       
     </span>
   </a>
@@ -826,10 +848,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#이-모듈은-무엇인가" class="md-nav__link">
+  <a href="#무엇" class="md-nav__link">
     <span class="md-ellipsis">
       
-        이 모듈은 무엇인가
+        무엇
       
     </span>
   </a>
@@ -837,10 +859,32 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#세-단계" class="md-nav__link">
+  <a href="#왜-이렇게-나눴나" class="md-nav__link">
     <span class="md-ellipsis">
       
-        세 단계
+        왜 이렇게 나눴나
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#어떻게--세-단계" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        어떻게 — 세 단계
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#예시--바로-돌려-보기" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        예시 — 바로 돌려 보기
       
     </span>
   </a>
@@ -897,35 +941,48 @@
 
 
 
-<h1 id="tta-신뢰성-평가-v2--판정-모듈-개발-문서">TTA 신뢰성 평가 v2 — 판정 모듈 개발 문서<a class="headerlink" href="#tta-신뢰성-평가-v2--판정-모듈-개발-문서" title="Permanent link">&para;</a></h1>
-<h2 id="이-모듈은-무엇인가">이 모듈은 무엇인가<a class="headerlink" href="#이-모듈은-무엇인가" title="Permanent link">&para;</a></h2>
+<h1 id="tta-신뢰성-평가-판정-모듈-개발-문서">TTA 신뢰성 평가 판정 모듈 개발 문서<a class="headerlink" href="#tta-신뢰성-평가-판정-모듈-개발-문서" title="Permanent link">&para;</a></h1>
+<div class="admonition abstract">
+<p class="admonition-title">이 쪽에서 알 수 있는 것</p>
 <ul>
-<li>TTA 신뢰성 평가 v2에서 <strong>기업 서비스의 응답 1건을 실패 / 통과로 가르는 코드</strong>만 떼어 낸 저장소</li>
+<li>이 모듈이 무엇을 하는지(응답 1건 → 실패 / 통과)와 세 단계</li>
+<li>기업 API · 판정 모델 없이 바로 돌려 보는 방법</li>
+<li>하려는 일별로 어느 쪽을 보면 되는지</li>
+</ul>
+</div>
+<h2 id="무엇">무엇<a class="headerlink" href="#무엇" title="Permanent link">&para;</a></h2>
+<ul>
+<li>TTA 신뢰성 평가에서 <strong>기업 서비스의 응답 1건을 실패 / 통과로 가르는 코드</strong>만 떼어 낸 저장소</li>
 <li>평가 대상 두 곳<ul>
-<li>액티부키: 관광 해설 RAG 챗봇(지식베이스를 찾아 답하는 챗봇)</li>
+<li>액티부키: 관광 해설 RAG 챗봇(지식베이스(답의 근거 자료 묶음)를 찾아 답하는 챗봇)</li>
 <li>펀웨이브: 의료 통역 학습 서비스의 통역 채점 API(학습자가 입력한 통역문에 점수를 매김)</li>
 </ul>
 </li>
 <li>작성 · 담당: 윤승현(seunghyun, ㈜인공지능팩토리 · 평가 용역사)</li>
-<li>문항 생성 · 기업 API 호출 · 자료는 들어 있지 않음(<a href="limits/">한계와 빠진 것</a>)</li>
+</ul>
+<h2 id="왜-이렇게-나눴나">왜 이렇게 나눴나<a class="headerlink" href="#왜-이렇게-나눴나" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>기업 API를 부르지 않음</strong> — 입력은 미리 받아 둔 기업 응답 파일. 판정만 다시 돌려 볼 수 있게 함</li>
+<li>같은 입력이면 같은 판정 — 이미 제출한 데이터셋의 판정을 만든 코드이므로 판정 값 · 판정 사유 문장이 바뀌지 않게 시험으로 고정(<code>tests/</code>)</li>
+<li>문항 생성 · 기업 API 호출 · 실제 자료는 들어 있지 않음(<a href="limits/">한계와 빠진 것</a>)</li>
 </ul>
 <div class="admonition warning">
-<p class="admonition-title">판정 값 표기 — 먼저 읽을 것</p>
+<p class="admonition-title">판정 값 표기</p>
 <ul>
-<li>이 문서는 <strong>서비스 쪽 표기</strong>로 설명함: 실패 = 서비스가 잘못 동작, 통과 = 서비스가 바르게 동작</li>
-<li>코드 · 엔드포인트 응답 · 결과 파일의 판정 값은 <strong>공격 쪽 표기</strong></li>
+<li>이 문서는 <strong>서비스 쪽 표기</strong>만 씀: 실패 = 서비스가 잘못 동작, 통과 = 서비스가 바르게 동작</li>
+<li>결과 파일 · 판정 서버 응답의 값은 평가 설계 때 정한 코드 값(공격 쪽 말) — <a href="glossary/#판정-값-표기">용어 풀이의 대응표</a></li>
 </ul>
 <table>
 <thead>
 <tr>
-<th>코드 · 응답의 값</th>
-<th>서비스 쪽 표기(이 문서)</th>
+<th>코드 값</th>
+<th>서비스 쪽 표기</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>성공</code></td>
-<td>실패(공격이 통함 · 오류를 놓침 · 정상 입력을 잘못 막음)</td>
+<td>실패</td>
 </tr>
 <tr>
 <td><code>실패</code></td>
@@ -942,20 +999,20 @@
 </tbody>
 </table>
 </div>
-<h2 id="세-단계">세 단계<a class="headerlink" href="#세-단계" title="Permanent link">&para;</a></h2>
+<h2 id="어떻게--세-단계">어떻게 — 세 단계<a class="headerlink" href="#어떻게--세-단계" title="Permanent link">&para;</a></h2>
 <pre class="mermaid"><code>flowchart LR
-    IN["기업 응답 파일&lt;br/&gt;data/inference_기업.parquet"] --&gt; R["① 규칙 판정&lt;br/&gt;src/report/rules.py"]
-    IN --&gt; J["② 독립 판정 모델&lt;br/&gt;판정 서버 src/judge_api/app.py&lt;br/&gt;+ 실행기 run_judge.py"]
-    R --&gt; V["③ 판정 집계&lt;br/&gt;src/report/verdict.py"]
+    IN["기업 응답 파일&lt;br/&gt;(미리 받아 둔 것)"] --&gt; R["① 규칙 판정"]
+    IN --&gt; J["② 독립 판정 모델&lt;br/&gt;판정 서버 + 실행기"]
+    R --&gt; V["③ 판정 집계"]
     J --&gt; V
-    V --&gt; OUT["최종 판정 + 한국어 판정 사유&lt;br/&gt;data/verdict_기업.parquet"]</code></pre>
+    V --&gt; OUT["최종 판정 +&lt;br/&gt;한국어 판정 사유"]</code></pre>
 <table>
 <thead>
 <tr>
 <th>단계</th>
 <th>하는 일</th>
 <th>외부 호출</th>
-<th>자세히</th>
+<th>코드</th>
 </tr>
 </thead>
 <tbody>
@@ -963,22 +1020,30 @@
 <td>① 규칙 판정</td>
 <td>응답의 필드 값 · 문자열을 정해진 조건으로 비교</td>
 <td>없음</td>
-<td><a href="criteria/">기업별 판정 기준</a></td>
+<td><code>src/report/rules/</code></td>
 </tr>
 <tr>
 <td>② 독립 판정 모델</td>
-<td>규칙으로 가르기 어려운 응답을 언어 모델이 읽고 판정. HTTP 서버(판정 서버)로 띄워 실행기가 호출</td>
-<td>판정 모델 API</td>
-<td><a href="endpoints/">엔드포인트 사용법</a></td>
+<td>규칙으로 가르기 어려운 응답을 언어 모델이 읽고 판정. HTTP 서버(판정 서버)를 실행기가 부름</td>
+<td>판정 모델 API(가짜 판정 모델을 고르면 없음)</td>
+<td><code>src/judge_api/</code></td>
 </tr>
 <tr>
 <td>③ 판정 집계</td>
-<td>①과 ②를 합쳐 호출마다 최종 판정과 판정 사유를 냄</td>
+<td>①과 ②를 합쳐 호출마다 최종 판정 · 판정 사유를 냄</td>
 <td>없음</td>
-<td><a href="flow/">판정 흐름</a></td>
+<td><code>src/report/verdict/</code></td>
 </tr>
 </tbody>
 </table>
+<h2 id="예시--바로-돌려-보기">예시 — 바로 돌려 보기<a class="headerlink" href="#예시--바로-돌려-보기" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>make<span class="w"> </span>venv
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>make<span class="w"> </span>demo<span class="w">      </span><span class="c1"># 지어낸 예시 입력으로 ① → ②(가짜 판정 모델) → ③, 외부 호출 0</span>
+</code></pre></div>
+<ul>
+<li>결과: <code>build/demo/data/verdict_&lt;기업&gt;.parquet</code></li>
+<li>자세히: <a href="quickstart/">빠른 시작</a></li>
+</ul>
 <h2 id="문서-길잡이">문서 길잡이<a class="headerlink" href="#문서-길잡이" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -989,73 +1054,68 @@
 </thead>
 <tbody>
 <tr>
-<td>판정 서버를 처음 켜 보고 요청 1건 보내기</td>
+<td>기업 API · 판정 모델 없이 돌려 보고, 실제 판정 모델 붙이기</td>
 <td><a href="quickstart/">빠른 시작</a></td>
 </tr>
 <tr>
-<td>엔드포인트의 주소 · 요청 · 응답 · 오류 알기</td>
-<td><a href="endpoints/">엔드포인트 사용법</a></td>
-</tr>
-<tr>
-<td>파이썬 코드에서 판정 서버 부르기</td>
-<td><a href="endpoints/client/">파이썬 클라이언트 JudgeClient</a></td>
-</tr>
-<tr>
-<td>기업 응답 파일 전체를 판정하기(명령 · 선택지 · Makefile)</td>
+<td>기업 응답 파일 전체를 판정하기(명령 · 선택지)</td>
 <td><a href="cli/">실행기와 명령</a></td>
 </tr>
 <tr>
-<td>응답 1건이 실패 / 통과 / 검토필요가 되는 과정 보기</td>
+<td>응답 1건이 실패 / 통과 / 검토필요가 되는 과정</td>
 <td><a href="flow/">판정 흐름</a></td>
 </tr>
 <tr>
-<td>평가 항목별 실패 · 통과 조건과 문턱 값 보기</td>
+<td>평가 항목별 실패 · 통과 조건과 문턱 값</td>
 <td><a href="criteria/">기업별 판정 기준</a></td>
 </tr>
 <tr>
-<td>입력 파일에 넣을 열 · 결과 파일의 열 보기</td>
+<td>입력 파일에 넣을 열 · 결과 파일의 열</td>
 <td><a href="files/">입력과 출력 파일의 열</a></td>
 </tr>
 <tr>
-<td>낯선 말 찾기</td>
+<td>판정 서버 엔드포인트의 요청 · 응답 · 오류</td>
+<td><a href="endpoints/">엔드포인트 사용법</a></td>
+</tr>
+<tr>
+<td>낯선 말</td>
 <td><a href="glossary/">용어 풀이</a></td>
 </tr>
 <tr>
-<td>알려진 약점 · 이 저장소에 없는 것</td>
+<td>고친 약점 · 선택지로 둔 것 · 못 고치는 것</td>
 <td><a href="limits/">한계와 빠진 것</a></td>
 </tr>
 </tbody>
 </table>
 <h2 id="폴더-구성">폴더 구성<a class="headerlink" href="#폴더-구성" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>tta-eval-judge-seunghyun/
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>├── README.md              요약
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>├── mkdocs.yml             이 개발 문서의 설정
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>├── requirements-docs.txt  문서 빌드용 패키지
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>├── docs/                  이 개발 문서(마크다운)
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>├── Makefile               판정 단계만 실행하는 명령
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>├── requirements.txt       판정 모듈에 필요한 파이썬 패키지
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>├── .env.example           판정 서버에 필요한 환경 변수 이름(값은 비움)
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>└── src/
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>    ├── common/core.py     공용 도구: 경로 · 환경 변수 · 동시 호출 수 자동 조절 HTTP 클라이언트 · 판정 모델 JSON 호출
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>    ├── report/rules.py    ① 규칙 판정
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>    ├── report/verdict.py  ③ 판정 집계
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>    ├── report/ko_labels.py  판정 사유 문장에 쓰는 한국어 이름표
-<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>    └── judge_api/
-<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>        ├── app.py         ② 판정 서버(FastAPI). 판정 지시문 · 출력 형식이 이 파일 안에 있음
-<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>        ├── client.py      판정 서버를 부르는 파이썬 클라이언트 JudgeClient
-<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>        └── run_judge.py   기업 응답 파일을 읽어 판정 서버에 보내고 결과를 모으는 실행기
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>tta-eval-judge-seunghyun/
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>├── README.md               요약
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>├── Makefile                실행 명령(demo · rules · judge · verdict · test)
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>├── requirements.txt        실행에 필요한 패키지
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>├── requirements-dev.txt    시험 · 코드 검사용(pytest · ruff)
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>├── requirements-docs.txt   이 문서 빌드용
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>├── .env.example            환경 변수 이름(값은 비움)
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>├── examples/               지어낸 예시 입력(가상 관광지 · 평범한 진료 대화)
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>├── tests/                  회귀 시험(리팩토링 전 코드의 결과와 같은지)
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>├── docs/ · mkdocs.yml      이 문서
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>└── src/
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>    ├── common/             공용: 경로 · 환경 변수(config) · 판정 값 코드(verdicts) · HTTP 호출(http) · 표 도구(tabular)
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>    ├── report/
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>    │   ├── rules/          ① 규칙 판정: funwave.py · actibuki.py · common.py
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>    │   ├── verdict/        ③ 판정 집계: funwave.py · actibuki.py · text.py(사유 문장 도구)
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>    │   └── ko_labels.py    판정 사유 문장에 쓰는 한국어 이름표
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>    ├── judge_api/          ② 판정 서버(app) · 지시문(prompts) · 요청 · 응답 형식(schemas) · 판정 모델 호출부(backend) · 클라이언트 · 실행기
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>    └── demo.py             외부 호출 없는 데모
 </code></pre></div>
 <ul>
-<li>import 하면 생기는 폴더: <code>src/common/core.py</code>가 저장소 최상위에 <code>data/</code> · <code>raw/</code> · <code>docs/</code> · <code>prompts/</code> · <code>report/</code>를 만듦 (<code>src/common/core.py:27-33</code>)<ul>
-<li><code>docs/</code>는 이 문서 폴더와 같음. 판정을 돌리면 <code>docs/rules_&lt;기업&gt;.md</code> · <code>docs/judge_&lt;기업&gt;_run.md</code>가 생김 — <code>.gitignore</code>와 <code>mkdocs.yml</code>의 <code>exclude_docs</code>로 커밋 · 문서 사이트에서 뺌</li>
-</ul>
-</li>
+<li>실행하면 생기는 폴더(모두 <code>.gitignore</code> 대상): <code>data/</code>(입력 · 결과 · 실행 기록) · <code>raw/</code>(호출 원본) · <code>build/demo/</code>(데모 결과)</li>
+<li>import 할 때는 폴더를 만들지 않음 — 쓰기 직전에 만듦</li>
 </ul>
 <h2 id="이-문서-보는-법">이 문서 보는 법<a class="headerlink" href="#이-문서-보는-법" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>python3<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>.venv-docs
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>.venv-docs/bin/pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements-docs.txt
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>.venv-docs/bin/mkdocs<span class="w"> </span>serve<span class="w">        </span><span class="c1"># 로컬에서 보기(기본 127.0.0.1:8000)</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>.venv-docs/bin/mkdocs<span class="w"> </span>build<span class="w"> </span>--strict<span class="w">   </span><span class="c1"># site/ 에 정적 사이트 생성(site/ 는 커밋하지 않음)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>python3<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>.venv-docs
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>.venv-docs/bin/pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements-docs.txt
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>.venv-docs/bin/mkdocs<span class="w"> </span>serve<span class="w">            </span><span class="c1"># 127.0.0.1:8000 에서 보기</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>.venv-docs/bin/mkdocs<span class="w"> </span>build<span class="w"> </span>--strict<span class="w">   </span><span class="c1"># site/ 에 정적 사이트(커밋하지 않음)</span>
 </code></pre></div>
 
 
