@@ -1,0 +1,1408 @@
+
+<!doctype html>
+<html lang="ko" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="규칙 판정 · 독립 판정 모델(판정 서버) · 판정 집계의 사용법">
+      
+      
+      
+        <link rel="canonical" href="https://aifactory-ysh.github.io/tta-eval-judge-seunghyun-docs/cli/">
+      
+      
+        <link rel="prev" href="../endpoints/client/">
+      
+      
+        <link rel="next" href="../flow/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>실행기와 명령 - TTA 신뢰성 평가 v2 판정 모듈 개발 문서 (윤승현 · seunghyun)</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#실행기와-명령" class="md-skip">
+          콘텐츠로 이동
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="상단/헤더">
+    <a href=".." title="TTA 신뢰성 평가 v2 판정 모듈 개발 문서 (윤승현 · seunghyun)" class="md-header__button md-logo" aria-label="TTA 신뢰성 평가 v2 판정 모듈 개발 문서 (윤승현 · seunghyun)" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            TTA 신뢰성 평가 v2 판정 모듈 개발 문서 (윤승현 · seunghyun)
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              실행기와 명령
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="어두운 화면으로"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="어두운 화면으로" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="밝은 화면으로"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="밝은 화면으로" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="검색" placeholder="검색" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="검색">
+        
+        <button type="reset" class="md-search__icon md-icon" title="지우기" aria-label="지우기" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            검색 초기화
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="네비게이션" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="TTA 신뢰성 평가 v2 판정 모듈 개발 문서 (윤승현 · seunghyun)" class="md-nav__button md-logo" aria-label="TTA 신뢰성 평가 v2 판정 모듈 개발 문서 (윤승현 · seunghyun)" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    TTA 신뢰성 평가 v2 판정 모듈 개발 문서 (윤승현 · seunghyun)
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    처음 화면
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quickstart/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    빠른 시작
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../endpoints/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    엔드포인트 사용법
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    엔드포인트 사용법
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../endpoints/ping/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GET /ping
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../endpoints/faithfulness/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    POST /judge/faithfulness
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../endpoints/rubric/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    POST /judge/rubric/{vendor}
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../endpoints/meta/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    POST /judge/meta
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../endpoints/robustness/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    POST /judge/robustness
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../endpoints/client/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    파이썬 클라이언트 JudgeClient
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    실행기와 명령
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    실행기와 명령
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="목차">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      목차
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#makefile-목표" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Makefile 목표
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Makefile 목표">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#한-기업을-처음부터-끝까지" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        한 기업을 처음부터 끝까지
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#①-규칙-판정--srcreportrulespy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ① 규칙 판정 — src/report/rules.py
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#②-판정-모델-호출--srcjudge_apirun_judgepy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ② 판정 모델 호출 — src/judge_api/run_judge.py
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="② 판정 모델 호출 — src/judge_api/run_judge.py">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#무엇을-어디로-보내나" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        무엇을 어디로 보내나
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#이어서-돌리기" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        이어서 돌리기
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#만드는-파일" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        만드는 파일
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#③-판정-집계--srcreportverdictpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ③ 판정 집계 — src/report/verdict.py
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#주의할-점" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        주의할 점
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../flow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    판정 흐름
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../criteria/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    기업별 판정 기준
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../files/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    입력과 출력 파일의 열
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    용어 풀이
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../limits/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    한계와 빠진 것
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="목차">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      목차
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#makefile-목표" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Makefile 목표
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Makefile 목표">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#한-기업을-처음부터-끝까지" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        한 기업을 처음부터 끝까지
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#①-규칙-판정--srcreportrulespy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ① 규칙 판정 — src/report/rules.py
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#②-판정-모델-호출--srcjudge_apirun_judgepy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ② 판정 모델 호출 — src/judge_api/run_judge.py
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="② 판정 모델 호출 — src/judge_api/run_judge.py">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#무엇을-어디로-보내나" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        무엇을 어디로 보내나
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#이어서-돌리기" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        이어서 돌리기
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#만드는-파일" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        만드는 파일
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#③-판정-집계--srcreportverdictpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ③ 판정 집계 — src/report/verdict.py
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#주의할-점" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        주의할 점
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="실행기와-명령">실행기와 명령<a class="headerlink" href="#실행기와-명령" title="Permanent link">&para;</a></h1>
+<ul>
+<li>기업 응답 파일 전체를 세 단계로 판정하는 명령</li>
+<li>모든 명령은 저장소 최상위 폴더에서 실행</li>
+<li><code>&lt;기업&gt;</code> = <code>funwave</code>(펀웨이브) 또는 <code>actibuki</code>(액티부키)</li>
+</ul>
+<pre class="mermaid"><code>flowchart LR
+    I["data/inference_기업.parquet"] --&gt; R["make rules&lt;br/&gt;rules.py"]
+    I --&gt; J["make judge&lt;br/&gt;run_judge.py&lt;br/&gt;(판정 서버 필요)"]
+    R --&gt; RO["data/rules_기업.parquet"]
+    J --&gt; JO["data/judge_기업.parquet"]
+    RO --&gt; V["make verdict&lt;br/&gt;verdict.py"]
+    JO -. "있으면 읽음" .-&gt; V
+    V --&gt; VO["data/verdict_기업.parquet"]</code></pre>
+<h2 id="makefile-목표">Makefile 목표<a class="headerlink" href="#makefile-목표" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>목표</th>
+<th>하는 일</th>
+<th>실제 명령</th>
+<th>근거</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>make venv</code></td>
+<td><code>.venv</code>를 만들고 <code>requirements.txt</code> 설치</td>
+<td><code>python3 -m venv .venv &amp;&amp; .venv/bin/pip install ...</code></td>
+<td><code>Makefile:10-11</code></td>
+</tr>
+<tr>
+<td><code>make rules VENDOR=&lt;기업&gt;</code></td>
+<td>① 규칙 판정</td>
+<td><code>.venv/bin/python src/report/rules.py --vendor &lt;기업&gt;</code></td>
+<td><code>Makefile:14-15</code></td>
+</tr>
+<tr>
+<td><code>make judge-up</code></td>
+<td>판정 서버를 로컬 8787 포트로 켜고 3초 뒤 <code>/ping</code></td>
+<td><code>.venv/bin/uvicorn src.judge_api.app:app --host 127.0.0.1 --port 8787</code> (백그라운드, 로그 <code>judge_api.log</code>, 프로세스 번호 <code>.judge.pid</code>)</td>
+<td><code>Makefile:18-19</code></td>
+</tr>
+<tr>
+<td><code>make judge VENDOR=&lt;기업&gt; CALLS=2</code></td>
+<td>② 판정 모델 호출</td>
+<td><code>.venv/bin/python src/judge_api/run_judge.py --vendor &lt;기업&gt; --calls-per-case 2</code></td>
+<td><code>Makefile:25-26</code></td>
+</tr>
+<tr>
+<td><code>make judge-down</code></td>
+<td>판정 서버 끄기</td>
+<td><code>kill $(cat .judge.pid)</code> 후 파일 삭제</td>
+<td><code>Makefile:21-22</code></td>
+</tr>
+<tr>
+<td><code>make verdict VENDOR=&lt;기업&gt;</code></td>
+<td>③ 판정 집계</td>
+<td><code>.venv/bin/python src/report/verdict.py --vendor &lt;기업&gt;</code></td>
+<td><code>Makefile:29-30</code></td>
+</tr>
+<tr>
+<td><code>make all VENDOR=&lt;기업&gt;</code></td>
+<td><code>rules</code> → <code>judge</code> → <code>verdict</code> 차례로(판정 서버는 먼저 켜 둘 것)</td>
+<td>—</td>
+<td><code>Makefile:33</code></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>변수 기본값: <code>VENDOR=funwave</code> · <code>CALLS=2</code> · <code>PY=.venv/bin/python</code> · <code>UVICORN=.venv/bin/uvicorn</code> (<code>Makefile:3-6</code>)</li>
+</ul>
+<h3 id="한-기업을-처음부터-끝까지">한 기업을 처음부터 끝까지<a class="headerlink" href="#한-기업을-처음부터-끝까지" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>make<span class="w"> </span>rules<span class="w">   </span><span class="nv">VENDOR</span><span class="o">=</span>funwave
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>make<span class="w"> </span>judge-up
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>make<span class="w"> </span>judge<span class="w">   </span><span class="nv">VENDOR</span><span class="o">=</span>funwave<span class="w"> </span><span class="nv">CALLS</span><span class="o">=</span><span class="m">2</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>make<span class="w"> </span>judge-down
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>make<span class="w"> </span>verdict<span class="w"> </span><span class="nv">VENDOR</span><span class="o">=</span>funwave
+</code></pre></div>
+<ul>
+<li>판정 모델 없이도 <code>rules</code> → <code>verdict</code>만으로 돌아감 — 이때 판정 모델 몫 항목은 규칙 결과 그대로이거나 검토필요로 남음</li>
+</ul>
+<h2 id="①-규칙-판정--srcreportrulespy">① 규칙 판정 — <code>src/report/rules.py</code><a class="headerlink" href="#①-규칙-판정--srcreportrulespy" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>usage: rules.py [-h] --vendor {funwave,actibuki} [--input INPUT]
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>선택지</th>
+<th>필수</th>
+<th>기본값</th>
+<th>뜻</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--vendor</code></td>
+<td>예</td>
+<td>—</td>
+<td><code>funwave</code> · <code>actibuki</code></td>
+</tr>
+<tr>
+<td><code>--input</code></td>
+<td>아니오</td>
+<td><code>data/inference_&lt;기업&gt;.parquet</code></td>
+<td>기업 응답 파일</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>근거: <code>src/report/rules.py:658-668</code></li>
+<li>외부 호출 없음 · 환경 변수 필요 없음</li>
+<li>만드는 파일</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>파일</th>
+<th>내용</th>
+<th>근거</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>data/rules_&lt;기업&gt;.parquet</code></td>
+<td>입력 열 + 규칙 판정 열(<a href="../files/#규칙-판정-결과">입력과 출력 파일의 열</a>)</td>
+<td><code>src/report/rules.py:666</code></td>
+</tr>
+<tr>
+<td><code>data/repeat_stats_&lt;기업&gt;.parquet</code></td>
+<td>반복 호출 통계(해당 문항이 있을 때)</td>
+<td><code>src/report/rules.py:322</code>, <code>:645</code></td>
+</tr>
+<tr>
+<td><code>docs/rules_&lt;기업&gt;.md</code></td>
+<td>평가 항목별 판정 수 요약(실행 기록). 커밋 · 문서 사이트 제외</td>
+<td><code>src/report/rules.py:338</code>, <code>:654</code></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>있으면 읽는 보조 파일: <code>data/repeat_kb_semantic_actibuki.jsonl</code> — 반복 안정성 회차별 "정답 값 포함 여부"를 판정 모델로 다시 확인한 결과. 이 저장소에 만드는 코드 없음, 없으면 문자열 비교만 씀 (<code>src/report/rules.py:489-513</code>)</li>
+</ul>
+<h2 id="②-판정-모델-호출--srcjudge_apirun_judgepy">② 판정 모델 호출 — <code>src/judge_api/run_judge.py</code><a class="headerlink" href="#②-판정-모델-호출--srcjudge_apirun_judgepy" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>usage: run_judge.py [-h] --vendor {funwave,actibuki} [--input INPUT]
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>                    [--out OUT] [--calls-per-case CALLS_PER_CASE]
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>                    [--limit LIMIT] [--case-ids [CASE_IDS ...]] [--no-meta]
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>                    [--force] [--start START] [--cap CAP]
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>                    [--judge-url JUDGE_URL] [--cache-only]
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>선택지</th>
+<th>기본값</th>
+<th>뜻</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--vendor</code></td>
+<td>(필수)</td>
+<td><code>funwave</code> · <code>actibuki</code></td>
+</tr>
+<tr>
+<td><code>--input</code></td>
+<td><code>data/inference_&lt;기업&gt;.parquet</code></td>
+<td>기업 응답 파일</td>
+</tr>
+<tr>
+<td><code>--out</code></td>
+<td><code>data/judge_&lt;기업&gt;.parquet</code></td>
+<td>결과 파일</td>
+</tr>
+<tr>
+<td><code>--calls-per-case</code></td>
+<td>2</td>
+<td>문항마다 판정 모델을 부르는 횟수</td>
+</tr>
+<tr>
+<td><code>--limit N</code></td>
+<td>없음</td>
+<td>앞에서부터 N 문항만(시험용). 액티부키는 일반 문항 · 변형 문항 각각 N개</td>
+</tr>
+<tr>
+<td><code>--case-ids A B ...</code></td>
+<td>없음</td>
+<td>이 문항만. 액티부키 변형 문항만 골라도 비교할 원문은 전체에서 찾음</td>
+</tr>
+<tr>
+<td><code>--no-meta</code></td>
+<td>꺼짐</td>
+<td>펀웨이브 <code>/judge/meta</code> 호출을 건너뜀</td>
+</tr>
+<tr>
+<td><code>--force</code></td>
+<td>꺼짐</td>
+<td>이미 있는 결과 파일을 무시하고 처음부터(결과 파일을 새로 씀)</td>
+</tr>
+<tr>
+<td><code>--start</code></td>
+<td>4</td>
+<td>클라이언트 처음 동시 호출 수</td>
+</tr>
+<tr>
+<td><code>--cap</code></td>
+<td>16</td>
+<td>클라이언트 동시 호출 수 상한</td>
+</tr>
+<tr>
+<td><code>--judge-url</code></td>
+<td><code>JUDGE_API_URL</code> 또는 <code>http://127.0.0.1:8787</code></td>
+<td>판정 서버 주소</td>
+</tr>
+<tr>
+<td><code>--cache-only</code></td>
+<td>꺼짐</td>
+<td><code>raw/judge_client/</code>에 남은 결과만 되살리고 새 호출은 하지 않음(사용 한도가 바닥났을 때)</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>근거: <code>src/judge_api/run_judge.py:190-205</code></li>
+<li>판정 서버가 켜져 있어야 함 — 시작할 때 <code>/ping</code>이 실패하면 <code>judge API not reachable</code>로 멈춤 (<code>:218-221</code>)</li>
+</ul>
+<h3 id="무엇을-어디로-보내나">무엇을 어디로 보내나<a class="headerlink" href="#무엇을-어디로-보내나" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>기업</th>
+<th>고르는 행</th>
+<th>엔드포인트</th>
+<th>근거</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>펀웨이브</td>
+<td>HTTP 200 · <code>error</code> 없음 · 필터에 막히지 않음 · 평가 항목(<code>category</code>의 <code>+</code> 앞부분)이 <code>근거충실성/사실정확성</code> · <code>입력 및 반복 강건성</code>(문항마다 첫 회차만) · <code>다국어 강건성(크로스)</code> · <code>인젝션/맥락 조작</code></td>
+<td><code>/judge/faithfulness</code></td>
+<td><code>:31</code>, <code>:66-73</code>, <code>:141-150</code></td>
+</tr>
+<tr>
+<td>펀웨이브</td>
+<td>위 결과 중 1회차가 <code>적정</code> + <code>동일상황</code>이 아닌 문항</td>
+<td><code>/judge/meta</code>(1번)</td>
+<td><code>:302-315</code></td>
+</tr>
+<tr>
+<td>액티부키</td>
+<td>HTTP 200 · <code>error</code> 없음인 행(문항마다 첫 회차) 중 <code>P3 입력 강건성</code> 변형이 아닌 것</td>
+<td><code>/judge/rubric/actibuki</code></td>
+<td><code>:153-162</code>, <code>:240-243</code></td>
+</tr>
+<tr>
+<td>액티부키</td>
+<td><code>P3 입력 강건성</code> 변형(같은 <code>group_id</code>의 원문과 짝지음)</td>
+<td><code>/judge/robustness</code></td>
+<td><code>:244-251</code></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>요청 본문을 만드는 곳: 펀웨이브 <code>funwave_payload</code> (<code>:77-106</code>) · 액티부키 <code>actibuki_payload</code> (<code>:126-137</code>)</li>
+</ul>
+<h3 id="이어서-돌리기">이어서 돌리기<a class="headerlink" href="#이어서-돌리기" title="Permanent link">&para;</a></h3>
+<ul>
+<li>결과 파일에 이미 성공(<code>ok</code>=참)으로 있는 (<code>case_id</code>, <code>run</code>, <code>call_idx</code>, <code>endpoint</code>)는 다시 부르지 않음 (<code>:212-216</code>, <code>:252</code>)</li>
+<li><code>raw/judge_client/</code>에 HTTP 200 결과가 남은 호출도 다시 부르지 않고 되살림 (<code>:262-283</code>)</li>
+<li>실패했다가 다시 성공한 호출은 성공 기록만 남김 (<code>:329-332</code>)</li>
+</ul>
+<h3 id="만드는-파일">만드는 파일<a class="headerlink" href="#만드는-파일" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>파일</th>
+<th>내용</th>
+<th>근거</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>data/judge_&lt;기업&gt;.parquet</code></td>
+<td>호출 1번 = 1행(<a href="../files/#판정-모델-호출-결과">입력과 출력 파일의 열</a>)</td>
+<td><code>:333-335</code></td>
+</tr>
+<tr>
+<td><code>docs/judge_&lt;기업&gt;_run.md</code></td>
+<td>실행 요약(호출 수 · 성공 · 오류 · 동시 호출 수 변화). 커밋 · 문서 사이트 제외</td>
+<td><code>:336-338</code></td>
+</tr>
+<tr>
+<td><code>raw/judge_client/*.json</code></td>
+<td>클라이언트 호출 원본</td>
+<td><code>src/judge_api/client.py:18</code></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>2회 결과 일치(<code>self_consistent</code>): 펀웨이브 <code>faithfulness</code>는 충실도 차이 10 이하, <code>meta</code>는 원인이 같음, 그 밖은 판정 값이 같으면 일치 (<code>:341-356</code>)</li>
+</ul>
+<h2 id="③-판정-집계--srcreportverdictpy">③ 판정 집계 — <code>src/report/verdict.py</code><a class="headerlink" href="#③-판정-집계--srcreportverdictpy" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>usage: verdict.py [-h] --vendor {funwave,actibuki}
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>선택지</th>
+<th>필수</th>
+<th>뜻</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--vendor</code></td>
+<td>예</td>
+<td><code>funwave</code> · <code>actibuki</code></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>근거: <code>src/report/verdict.py:496-537</code></li>
+<li>읽는 파일: <code>data/rules_&lt;기업&gt;.parquet</code>(필수) · <code>data/judge_&lt;기업&gt;.parquet</code>(없으면 규칙 결과만) · <code>data/actibuki_kb_sites.json</code>(있으면 판정 사유에 지식베이스 속성 이름을 씀, <code>:91-101</code>)</li>
+<li>만드는 파일: <code>data/verdict_&lt;기업&gt;.parquet</code> — 임시 파일에 쓴 뒤 바꿔치기 (<code>:533-536</code>)</li>
+<li>화면에 최종 판정 값별 개수를 찍음(코드 표기) (<code>:537</code>)</li>
+<li>외부 호출 없음 · 환경 변수 필요 없음</li>
+</ul>
+<h2 id="주의할-점">주의할 점<a class="headerlink" href="#주의할-점" title="Permanent link">&para;</a></h2>
+<ul>
+<li>입력 파일의 <code>run</code> 열은 문자열로 넣을 것 — 판정 집계는 <code>run</code>이 비면 <code>"v2"</code>로, 실행기는 <code>run</code> 열이 없으면 <code>1</code>로 채워 서로 짝이 안 맞음 (<code>src/report/verdict.py:510</code>, <code>src/judge_api/run_judge.py:207-208</code>)</li>
+<li>실행기 결과를 판정 집계가 찾는 열쇠: (<code>case_id</code>, <code>run</code>, <code>endpoint</code>) (<code>src/report/verdict.py:76</code>, <code>:512-517</code>)</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  맨위로
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.sections", "navigation.top", "navigation.indexes", "content.code.copy", "search.highlight"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\ud074\ub9bd\ubcf4\ub4dc\uc5d0 \ubcf5\uc0ac\ub428", "clipboard.copy": "\ud074\ub9bd\ubcf4\ub4dc\ub85c \ubcf5\uc0ac", "search.result.more.one": "\uc774 \ubb38\uc11c\uc5d0\uc11c 1\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.more.other": "\uc774 \ubb38\uc11c\uc5d0\uc11c #\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.none": "\uac80\uc0c9\uc5b4\uc640 \uc77c\uce58\ud558\ub294 \ubb38\uc11c\uac00 \uc5c6\uc2b5\ub2c8\ub2e4", "search.result.one": "1\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.other": "#\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.placeholder": "\uac80\uc0c9\uc5b4\ub97c \uc785\ub825\ud558\uc138\uc694", "search.result.term.missing": "\ud3ec\ud568\ub418\uc9c0 \uc54a\uc740 \uac80\uc0c9\uc5b4", "select.version": "\ubc84\uc804 \uc120\ud0dd"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>
